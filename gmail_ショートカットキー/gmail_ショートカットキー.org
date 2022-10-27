@@ -1,0 +1,141 @@
+# Hi-lock: (("スレッド" (0 (quote 3-my-face) prepend)))
+# Hi-lock: (("メッセージ" (0 (quote 2-my-face) prepend)))
+# Hi-lock: (("ラベル" (0 (quote 1-my-face) prepend)))
+
+#+OPTIONS:   H:3 num:t toc:3 ^:nil
+#+TITLE: gmailのショートカットキー
+#+SUBTITLE: 梨下村塾@令和4（2022）年10月27日
+#+AUTHOR: 早川 剛(a.k.a. HAYATUYO)
+#+EMAIL: hayakawa_tuyosi_work@yahoo.co.jp
+#+LANGUAGE: ja-jp
+
+# (setq org-html-validation-link nil)
+#+SETUPFILE: ~/.emacs.d/org-export-to-html/fniessen_org-html-themes/org-html-themes-master/org/theme-bigblow.setup
+#+INCLUDE:   ~/.emacs.d/org-macros/org/org-macros.setup
+
+#+MACRO: changecolor @@html:<span style="background-color: $1;color: $2">$3</span>@@
+#+MACRO: linkImage @@html:<a href="./images/main/$1"><img src="./images/thumbs/$1"></a>@@
+
+#+HTML_HEAD: <style> #content{max-width:1800px;}</style>
+#+HTML_HEAD: <style> p{max-width:800px;}</style>
+#+HTML_HEAD: <style> li{max-width:800px;}</style
+
+# (hayatuyo-org-global-cycle-1)
+# (hayatuyo-org-global-cycle-2)
+# (hayatuyo-org-global-cycle-3)
+# (hayatuyo-org-global-cycle-4)
+# (hayatuyo-org-global-cycle-5)
+
+* メタ情報
+
+** 一覧
+
+はてな記号「?」を打つと、ショートカットキーの一覧が表示されます。
+
+{{{linkImage(./20221027_rikasonjuku_gmail-shortcuts_list.png)}}}
+
+** 設定のカスタマイズ
+
+ショートカットキーはご自身のお好みに合わせてカスタマイズできます。
+
+[[https://support.google.com/mail/answer/6594?hl=ja][Gmail の ヘルプセンター]] の記述を引用します。
+
+#+begin_quote
+1. ステップ 1: カスタム キーボード ショートカットをオンにする
+  1. パソコンで Gmail にアクセスします。
+  1. 右上の設定アイコン 設定 次の操作 [すべての設定を表示] をクリックします。
+  1. [詳細] をクリックします。
+  1. [カスタム キーボード ショートカット] の横にある [有効にする] をクリックします。
+  1. 下部にある [変更を保存] をクリックします。
+1. ステップ 2: キーボード ショートカットを変更する
+  1. パソコンで Gmail にアクセスします。
+  1. 右上の設定アイコン 設定 次の操作 [すべての設定を表示] をクリックします。
+  1. 上部にある [キーボード ショートカット] をクリックします。
+  1. 操作の横にキーボードのキーを入力して、新しいショートカットを設定します。
+  1. 下部にある [変更を保存] をクリックします。
+
+注: 1 つのキーに 1 つの操作だけを割り当ててください。
+#+end_quote
+
+*** 私感
+
+僕自身は設定を変えるとうまく反映されない印象を持っています。
+もはや諦めて、デフォルトのままで、マウスによる操作も交えながら使うことにしています。
+
+（その分という訳でもありませんが、）必須のショートカットは是非とも覚えていただきたいです。
+
+*** 初期設定に戻せるので、挑戦しよう～
+
+僕自身はデフォルトのまま使っていますが、
+若い皆さんは是非ともカスタマイズに挑戦してみてください。
+
+うまく動かなくなっても、簡単に初期設定に戻せるので、恐れずに！
+
+{{{linkImage(20221027_rikasonjuku_gmail-shortcuts_resetToDefault.png)}}}
+
+* 必須ショートカット
+
+** 検索関連
+
+| 操作           | ショートカット | 備考                                           |
+|----------------+----------------+------------------------------------------------|
+| 検索開始       | /              |                                                |
+| 検索結果に戻る | u または gu    | 検索結果の中から個別のスレッドを開いた後に使う |
+
+** ジャンプ
+
+| 操作                   | ショートカット | 備考                                           |
+|------------------------+----------------+------------------------------------------------|
+| メインのボックスに戻る | gi             |                                                |
+| 検索結果に戻る         | u または gu    | 検索結果の中から個別のスレッドを開いた後に使う |
+
+** スレッド関連
+
+*** ショートカットの前に…
+
+前提として「スレッド表示」を有効にしましょう。
+
+{{{linkImage(20221027_rikasonjuku_gmail_enableDisplayByThread.png)}}}
+
+*** いざショートカット!
+
+| 操作                                     | ショートカット | 備考                                                       |
+|------------------------------------------+----------------+------------------------------------------------------------|
+| 古いスレッドへ移動する                   | j              | jとkをカーソルキー代わりにするのは、PCの歴史的経緯による。 |
+| 新しいスレッドへ移動する                 | k              |                                                            |
+| マークの当たっているスレッドを選択する   | x              |                                                            |
+| 表示されている全てのスレッドを選択する   | *a             | 検索結果やメールボックスで使う。a -> all                   |
+| 選択を解除する                           | *n             | n -> none                                                  |
+| （選択されている）スレッドにラベルを貼る | l              | l -> label                                                 |
+
+** スレッド内のメッセージ間移動
+
+| 操作                                   | ショートカット | 備考                           |
+|----------------------------------------+----------------+--------------------------------|
+| 古いメッセージへ                       | p              | p -> previous                  |
+| 新しいメッセージへ                     | n              | n -> next                      |
+| スレッド内のメッセージを全て展開する   | ;              | 尻尾 または 爪があるほうが展開 |
+| スレッド内のメッセージを全て折りたたむ | :              |                                |
+
+* チートシート
+
+{{{linkImage(20221027_rikasonjuku_gmail_cheetsheet.png)}}}
+
+** チートシートの使い方
+
+1. 下の画像をダウンロードする
+2. 画像を印刷する
+3. ディスプレイの横など磁石で貼る。
+   - [[両面テープ付きの細長いマグネット][両面テープ付きの細長いマグネット]]が便利！
+
+{{{linkImage(20221027_rikasonjuku_gmail_sticked-memo.jpg)}}}
+
+** 生活を便利にするので絶対使うべきたった一つのアイテム、ベスト100
+
+*** 両面テープ付きの細長いマグネット
+{{{linkImage(20221027_rikasonjuku_gmail_daiso_magnet-with-adhesive-tape.png)}}}
+
+*** 装飾にも使えるマスキングテープ
+無骨な見た目がお気に召さないならば、マスキングテープで飾り付けちゃおう！
+
+{{{linkImage(20221027_rikasonjuku_gmail_daiso_masking-tape.png)}}}
