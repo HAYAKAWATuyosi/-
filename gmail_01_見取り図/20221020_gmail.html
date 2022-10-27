@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja-jp" xml:lang="ja-jp">
+<head>
+<!-- 2022-10-20 木 17:43 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>gmail、その1</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="早川 剛(a.k.a. HAYATUYO)" />
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">gmail、その1</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org5f4cb7e">1. メールを中心とした世界観</a></li>
+<li><a href="#org6850338">2. 予定</a></li>
+<li><a href="#orgac31a8b">3. 「アーカイブ」とは？</a>
+<ul>
+<li><a href="#org5421c90">3.1. アーカイブ機能の客観情報</a></li>
+<li><a href="#org08dc5fa">3.2. メール（スレッド）との付き合い方</a>
+<ul>
+<li><a href="#org2c9c5fa">3.2.1. 手順</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org848bcf8">4. ショートカットキー</a>
+<ul>
+<li><a href="#orga9d959a">4.1. 移動</a></li>
+<li><a href="#org44c1919">4.2. スレッドの操作</a></li>
+<li><a href="#org2149663">4.3. 移動（概念）</a></li>
+<li><a href="#orga9c66fc">4.4. 移動（高次概念）</a></li>
+</ul>
+</li>
+<li><a href="#orga87ff9c">5. 検索</a></li>
+<li><a href="#org8d3008a">6. フィルタとラベル</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org5f4cb7e" class="outline-2">
+<h2 id="org5f4cb7e"><span class="section-number-2">1.</span> メールを中心とした世界観</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+<b>メールは世界との窓口（interface）</b>
+</p>
+
+<p>
+仕事では報連相のコミュニケーションが大切と言われます。
+最近はチャットツールも増えてきましたが、口頭以外の手段では、
+コミュニケーションで最も多く使われているのはメールではないでしょうか。
+</p>
+
+<p>
+メールを受信し、タスクが発生し、
+カレンダーに予定を入れ、
+タスクをこなす中で、報連相のメールを送信する。
+</p>
+
+<p>
+そのような作業を日々繰り返されていると思います。
+</p>
+
+<p>
+googleのサービス群でも、メールサービスであるgmail（google mail）は重要な位置を占めており、
+メールからカレンダーへ、またはメールからTODOリストへ、さらにはメールからメモ（google Keep）へと
+流れるように行き来でき、僕たちの仕事の付加価値向上に寄与しています。
+</p>
+
+<pre class="example" id="org2396f42">
+ちょっとウソをつきました...
+- 行き来のショートカットキーは貧困。マウス頼り。
+  - いちおう「C-A-.」で受信ボックスから画面右端のカレンダーなどへ行ける。
+  - 双方向性はない。画面右端から受信ボックスにキーボードでは戻ってこれない。
+</pre>
+
+<p>
+とはいえ、メールがコミュニケーションの窓口であることは確かであり、
+以下のようなミスを防げるので、何回かに分けて、gmailの基本操作を学んでいきたいと思います。
+</p>
+
+<ul class="org-ul">
+<li>タスクの漏れ、または期日の失念</li>
+<li>未読のままでのメッセージの放置
+<ul class="org-ul">
+<li>そもそも受信に気が付かないことも！！</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org6850338" class="outline-2">
+<h2 id="org6850338"><span class="section-number-2">2.</span> 予定</h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>アーカイブ機能</li>
+<li>検索
+<ul class="org-ul">
+<li>検索演算子</li>
+<li>検索結果の中の特定のスレッドから検索結果の一覧に戻る方法</li>
+</ul></li>
+<li>ラベルとフィルター
+<ul class="org-ul">
+<li>ラベルとは？
+<ul class="org-ul">
+<li>ラベル名のコツ</li>
+</ul></li>
+<li>フィルターとは？</li>
+<li>自動ラベル設定</li>
+</ul></li>
+<li>他のgoogleサービスとの連携
+<ul class="org-ul">
+<li>カレンダー</li>
+<li>TODOリスト</li>
+<li>メモ（google keep）</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgac31a8b" class="outline-2">
+<h2 id="orgac31a8b"><span class="section-number-2">3.</span> 「アーカイブ」とは？</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-org5421c90" class="outline-3">
+<h3 id="org5421c90"><span class="section-number-3">3.1.</span> アーカイブ機能の客観情報</h3>
+<div class="outline-text-3" id="text-3-1">
+<ul class="org-ul">
+<li>見えなくする。</li>
+<li>削除されるわけではない。</li>
+<li>検索結果には現れる。</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org08dc5fa" class="outline-3">
+<h3 id="org08dc5fa"><span class="section-number-3">3.2.</span> メール（スレッド）との付き合い方</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+<b>済んだタスクのスレッドはアーカイブし、inobxも心もスッキリさせる !</b>
+</p>
+
+<p>
+inbox にスレッドがたくさんあると&#x2026;
+</p>
+<ul class="org-ul">
+<li>探すのが大変。</li>
+<li>ストレスになる。</li>
+</ul>
+</div>
+
+<div id="outline-container-org2c9c5fa" class="outline-4">
+<h4 id="org2c9c5fa"><span class="section-number-4">3.2.1.</span> 手順</h4>
+<div class="outline-text-4" id="text-3-2-1">
+<ol class="org-ol">
+<li>メッセージを受信する（自動）</li>
+<li>"todo/undone" ラベルを付ける
+<ul class="org-ul">
+<li><a href="#org8d3008a">ラベルについては後述します</a></li>
+</ul></li>
+<li>タスクを完了させる</li>
+<li>"todo/done" ラベルを付ける（"todo/undone" ラベルを剥がす）</li>
+<li>アーカイブする</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org848bcf8" class="outline-2">
+<h2 id="org848bcf8"><span class="section-number-2">4.</span> ショートカットキー</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+たくさんありすぎる。
+マウスも結構使ってる by 早川
+</p>
+</div>
+
+<div id="outline-container-orga9d959a" class="outline-3">
+<h3 id="orga9d959a"><span class="section-number-3">4.1.</span> 移動</h3>
+<div class="outline-text-3" id="text-4-1">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">機能</td>
+<td class="org-left">キー</td>
+</tr>
+
+<tr>
+<td class="org-left">スレッド間 / 新しいスレッドへ</td>
+<td class="org-left">k</td>
+</tr>
+
+<tr>
+<td class="org-left">スレッド間 / 古いスレッドへ</td>
+<td class="org-left">j</td>
+</tr>
+
+<tr>
+<td class="org-left">スレッド内 / 新しいメッセージへ</td>
+<td class="org-left">n</td>
+</tr>
+
+<tr>
+<td class="org-left">スレッド内 / 古いメッセージへ</td>
+<td class="org-left">p</td>
+</tr>
+
+<tr>
+<td class="org-left">スレッド内 / スレッド全体を展開する（全てのメッセージを表示する）</td>
+<td class="org-left">;</td>
+</tr>
+
+<tr>
+<td class="org-left">スレッド内 / スレッド全体を折りたたむ</td>
+<td class="org-left">:</td>
+</tr>
+
+<tr>
+<td class="org-left">検索結果 や スレッドリストに戻る</td>
+<td class="org-left">u</td>
+</tr>
+
+<tr>
+<td class="org-left">検索フォームにカーソルを移す（検索を始める）</td>
+<td class="org-left">/</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-org44c1919" class="outline-3">
+<h3 id="org44c1919"><span class="section-number-3">4.2.</span> スレッドの操作</h3>
+<div class="outline-text-3" id="text-4-2">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">機能</td>
+<td class="org-left">キー</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">スレッドの選択 / カーソルの当たっているスレッドの選択</td>
+<td class="org-left">x</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">スレッドの選択 / 全てのスレッド</td>
+<td class="org-left">[*, a]</td>
+<td class="org-left">表示されている全てのスレッドや、検索結果の全てのスレッドの全選択</td>
+</tr>
+
+<tr>
+<td class="org-left">スレッドの選択 / 選択を解除する</td>
+<td class="org-left">[*, n]</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">アーカイブ</td>
+<td class="org-left">e</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">（選択されている）スレッドを開く</td>
+<td class="org-left">o</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">返信</td>
+<td class="org-left">r</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">転送</td>
+<td class="org-left">f</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">送信</td>
+<td class="org-left">ctrl-enter</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">機能</td>
+<td class="org-left">キー</td>
+</tr>
+
+<tr>
+<td class="org-left">[その他の操作] メニューを開く</td>
+<td class="org-left">.</td>
+</tr>
+
+<tr>
+<td class="org-left">ツールバーにフォーカスする</td>
+<td class="org-left">,</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-org2149663" class="outline-3">
+<h3 id="org2149663"><span class="section-number-3">4.3.</span> 移動（概念）</h3>
+<div class="outline-text-3" id="text-4-3">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">機能</td>
+<td class="org-left">キー</td>
+<td class="org-left">覚え方</td>
+</tr>
+
+<tr>
+<td class="org-left">メールの "メイン" ボックス</td>
+<td class="org-left">[g, i]</td>
+<td class="org-left">i は inbox の頭文字</td>
+</tr>
+
+<tr>
+<td class="org-left">下書き</td>
+<td class="org-left">[g, d]</td>
+<td class="org-left">d は draft の頭文字</td>
+</tr>
+
+<tr>
+<td class="org-left">送信済み</td>
+<td class="org-left">[g, t]</td>
+<td class="org-left">（早川流の強引な関連付け）t は tranfer の 頭文字。 または sent の 末尾の文字。</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">なお、[g, s] は「スター付きのメールの一覧」に割り当てられています。</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+<div id="outline-container-orga9c66fc" class="outline-3">
+<h3 id="orga9c66fc"><span class="section-number-3">4.4.</span> 移動（高次概念）</h3>
+<div class="outline-text-3" id="text-4-4">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">機能</td>
+<td class="org-left">キー</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">チャットへ</td>
+<td class="org-left">[h, c]</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">[ToDo リスト] に移動</td>
+<td class="org-left">[g, k]</td>
+<td class="org-left">正直、使ってない</td>
+</tr>
+
+<tr>
+<td class="org-left">カレンダー、Keep、ToDo リストのサイドバーと受信トレイを切り替え</td>
+<td class="org-left">C-A-.</td>
+<td class="org-left">正直、使ってない</td>
+</tr>
+
+<tr>
+<td class="org-left">ToDo リストにスレッドを追加</td>
+<td class="org-left">Shift+t</td>
+<td class="org-left">正直、使ってない</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orga87ff9c" class="outline-2">
+<h2 id="orga87ff9c"><span class="section-number-2">5.</span> 検索</h2>
+</div>
+<div id="outline-container-org8d3008a" class="outline-2">
+<h2 id="org8d3008a"><span class="section-number-2">6.</span> フィルタとラベル</h2>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: ～梨下村塾～ @令和4（2022）年10月20日</p>
+<p class="author">Author: 早川 剛(a.k.a. HAYATUYO)</p>
+<p class="date">Created: 2022-10-20 木 17:43</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
