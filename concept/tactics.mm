@@ -10,8 +10,7 @@
       <img src="seven-layers-in-geopolitics_tactics.png" width="200" />
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <font NAME="UD &#x30c7;&#x30b8;&#x30bf;&#x30eb; &#x6559;&#x79d1;&#x66f8;&#x4f53; NP-R" SIZE="20"/>
 <node BACKGROUND_COLOR="#c00000" COLOR="#ffffff" CREATED="1666971770329" HGAP="63" ID="ID_1999315607" MODIFIED="1667148329651" POSITION="left" STYLE="fork" TEXT="&#x8a66;&#x884c;&#x932f;&#x8aa4;" VSHIFT="-15">
 <edge COLOR="#c00000" STYLE="sharp_bezier" WIDTH="8"/>
@@ -30,6 +29,10 @@
 <node COLOR="#000000" CREATED="1666973040716" ID="ID_1772380441" MODIFIED="1667148326338" TEXT="&#x8ae6;&#x3081;&#x308b;">
 <edge STYLE="bezier" WIDTH="thin"/>
 <font NAME="UD &#x30c7;&#x30b8;&#x30bf;&#x30eb; &#x6559;&#x79d1;&#x66f8;&#x4f53; NP-R" SIZE="16"/>
+</node>
+<node BACKGROUND_COLOR="#000080" COLOR="#ffffff" CREATED="1667149351516" ID="ID_1852583820" MODIFIED="1667149355120" TEXT="git">
+<edge COLOR="#000080" STYLE="sharp_bezier"/>
+<font BOLD="true" NAME="UD &#x30c7;&#x30b8;&#x30bf;&#x30eb; &#x6559;&#x79d1;&#x66f8;&#x4f53; NP-R" SIZE="12"/>
 </node>
 </node>
 <node BACKGROUND_COLOR="#c00000" COLOR="#ffffff" CREATED="1666971776587" HGAP="39" ID="ID_594567544" MODIFIED="1667148330819" POSITION="left" TEXT="&#x5171;&#x6709;" VSHIFT="129">
@@ -67,12 +70,13 @@
 <node BACKGROUND_COLOR="#000080" COLOR="#ffffff" CREATED="1666972433581" ID="ID_1700954175" MODIFIED="1667148400961" STYLE="fork" TEXT="git">
 <edge COLOR="#000080" STYLE="sharp_bezier" WIDTH="thin"/>
 <font BOLD="true" NAME="UD &#x30c7;&#x30b8;&#x30bf;&#x30eb; &#x6559;&#x79d1;&#x66f8;&#x4f53; NP-R" SIZE="16"/>
-<node BACKGROUND_COLOR="#ffffff" COLOR="#000000" CREATED="1666972151065" ID="ID_473555329" MODIFIED="1667148326337" STYLE="fork" TEXT="github.com">
-<edge COLOR="#000000" STYLE="sharp_bezier"/>
-<font NAME="UD &#x30c7;&#x30b8;&#x30bf;&#x30eb; &#x6559;&#x79d1;&#x66f8;&#x4f53; NP-R" SIZE="14"/>
+<node BACKGROUND_COLOR="#008000" COLOR="#ffffff" CREATED="1666972151065" ID="ID_473555329" MODIFIED="1667149371468" STYLE="fork" TEXT="github.com">
+<edge COLOR="#008000" STYLE="sharp_bezier"/>
+<font BOLD="true" NAME="UD &#x30c7;&#x30b8;&#x30bf;&#x30eb; &#x6559;&#x79d1;&#x66f8;&#x4f53; NP-R" SIZE="14"/>
 </node>
-<node COLOR="#000000" CREATED="1666972420192" ID="ID_880811787" MODIFIED="1667148326337" TEXT="FSI&#x793e;&#x5185;git&#x30b5;&#x30fc;&#x30d3;&#x30b9;">
-<font NAME="UD &#x30c7;&#x30b8;&#x30bf;&#x30eb; &#x6559;&#x79d1;&#x66f8;&#x4f53; NP-R" SIZE="14"/>
+<node BACKGROUND_COLOR="#008000" COLOR="#ffffff" CREATED="1666972420192" ID="ID_880811787" MODIFIED="1667149366359" TEXT="FSI&#x793e;&#x5185;git&#x30b5;&#x30fc;&#x30d3;&#x30b9;">
+<edge COLOR="#008000" STYLE="sharp_bezier"/>
+<font BOLD="true" NAME="UD &#x30c7;&#x30b8;&#x30bf;&#x30eb; &#x6559;&#x79d1;&#x66f8;&#x4f53; NP-R" SIZE="14"/>
 <node COLOR="#000000" CREATED="1666973634267" ID="ID_890391860" MODIFIED="1667148326336" TEXT="&#x500b;&#x4eba;git">
 <font NAME="UD &#x30c7;&#x30b8;&#x30bf;&#x30eb; &#x6559;&#x79d1;&#x66f8;&#x4f53; NP-R" SIZE="12"/>
 </node>
@@ -102,12 +106,15 @@
 <edge COLOR="#000000" STYLE="bezier" WIDTH="thin"/>
 <font NAME="UD &#x30c7;&#x30b8;&#x30bf;&#x30eb; &#x6559;&#x79d1;&#x66f8;&#x4f53; NP-R" SIZE="14"/>
 </node>
-<node BACKGROUND_COLOR="#ffffff" COLOR="#000000" CREATED="1666971965361" ID="ID_940922404" MODIFIED="1667148326336" STYLE="fork" TEXT="&#x30af;&#x30ea;&#x30c3;&#x30d7;&#x30dc;&#x30fc;&#x30c9;&#x5c65;&#x6b74;">
-<edge COLOR="#000000" STYLE="bezier" WIDTH="thin"/>
-<font NAME="UD &#x30c7;&#x30b8;&#x30bf;&#x30eb; &#x6559;&#x79d1;&#x66f8;&#x4f53; NP-R" SIZE="14"/>
+<node BACKGROUND_COLOR="#000080" COLOR="#ffffff" CREATED="1666971965361" ID="ID_940922404" MODIFIED="1667149320754" STYLE="fork" TEXT="&#x30af;&#x30ea;&#x30c3;&#x30d7;&#x30dc;&#x30fc;&#x30c9;&#x5c65;&#x6b74;">
+<edge COLOR="#000080" STYLE="sharp_bezier" WIDTH="thin"/>
+<font BOLD="true" NAME="UD &#x30c7;&#x30b8;&#x30bf;&#x30eb; &#x6559;&#x79d1;&#x66f8;&#x4f53; NP-R" SIZE="14"/>
 <node BACKGROUND_COLOR="#000000" COLOR="#ffffff" CREATED="1666972005931" ID="ID_1698060696" MODIFIED="1667148343784" TEXT="&#x30d5;&#x30ea;&#x30fc;&#x30bd;&#x30d5;&#x30c8;&#x306e;&#x5c0e;&#x5165;">
 <edge STYLE="sharp_bezier"/>
 <font BOLD="true" NAME="UD &#x30c7;&#x30b8;&#x30bf;&#x30eb; &#x6559;&#x79d1;&#x66f8;&#x4f53; NP-R" SIZE="12"/>
+</node>
+<node CREATED="1667149322102" ID="ID_1470408326" MODIFIED="1667149335260" TEXT="&#x5b9a;&#x578b;&#x53e5;">
+<font NAME="UD &#x30c7;&#x30b8;&#x30bf;&#x30eb; &#x6559;&#x79d1;&#x66f8;&#x4f53; NP-R" SIZE="12"/>
 </node>
 </node>
 <node BACKGROUND_COLOR="#ffffff" COLOR="#000000" CREATED="1666971980805" ID="ID_1241666844" MODIFIED="1667148326336" STYLE="fork" TEXT="&#x6700;&#x8fd1;&#x8a2a;&#x554f;&#x3057;&#x305f;&#x30c7;&#x30a3;&#x30ec;&#x30af;&#x30c8;&#x30ea;">
