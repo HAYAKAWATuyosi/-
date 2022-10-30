@@ -31,7 +31,7 @@
 # ################
 #+HTML_HEAD: <style> #content{max-width:1800px;}</style>
 #+HTML_HEAD: <style> p{max-width:800px;}</style>
-#+HTML_HEAD: <style> li{max-width:800px;}</style
+#+HTML_HEAD: <style> li{max-width:800px;}</style>
 
 # ################################################################
 # 画像を処理するためのコマンド のメモ（orgとは無関係）
