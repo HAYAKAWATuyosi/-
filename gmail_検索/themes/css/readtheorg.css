@@ -836,17 +836,9 @@ ul.nav>li.active>a {
     display: block !important;
 }
 
-// ////////////////////////////////////////////////////////////////
-/* hayatuyo */
-/* 主領域で表示されている部分に関わらず、全てのナビゲーション（目次）を表示する */
-// ////////////////////////////////////////////////////////////////
-//li.active>ul {
-//    display: inline !important;
-//}
-li>ul {
+li.active>ul {
     display: inline !important;
 }
-
 
 /* ul.nav li ul li { */
 /*     display: none; */
