@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja-jp" xml:lang="ja-jp">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>gmailの検索</title>
+<meta name="generator" content="Org mode" />
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="./themes/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="./themes/js/readtheorg.js"></script>
+<style> #content{max-width:1800px;}</style>
+<style> p{max-width:800px;}</style>
+<style> li{max-width:800px;}</style
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">gmailの検索
+<br />
+<span class="subtitle">梨下村塾@令和4（2022）年10月31日</span>
+</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org0c36f61">1. 戦術層: 無理して覚えない</a>
+<ul>
+<li><a href="#org2582ce9">1.1. Gmail で使用できる検索演算子</a></li>
+<li><a href="#orgeeb0dbd">1.2. 無理して覚えなくていい理由</a>
+<ul>
+<li><a href="#org639768e">1.2.1. gmailが演算子を補完してくれる様子</a></li>
+<li><a href="#org80430d8">1.2.2. 定型句を管理するツールを使っている様子</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org2e4c37a">2. 技術層</a>
+<ul>
+<li><a href="#orgc24f880">2.1. 「厳選」された演算子</a></li>
+<li><a href="#orgd9bf7da">2.2. 論理演算</a></li>
+<li><a href="#orgb791b39">2.3. cheatsheet</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org0c36f61" class="outline-2">
+<h2 id="org0c36f61"><span class="section-number-2">1.</span> 戦術層: 無理して覚えない</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org2582ce9" class="outline-3">
+<h3 id="org2582ce9"><span class="section-number-3">1.1.</span> Gmail で使用できる検索演算子</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+たくさんあります。
+</p>
+
+<p>
+<a href="./images/gmail_seaching_operators.png"><img src="./images/thumbnails/gmail_seaching_operators.png"></a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgeeb0dbd" class="outline-3">
+<h3 id="orgeeb0dbd"><span class="section-number-3">1.2.</span> 無理して覚えなくていい理由</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li>まずざっくりと絞り込んで、その後は目で（肉眼で）探せばいいので。</li>
+<li>gmailが演算子を補完してくれるので。
+<ul class="org-ul">
+<li>「うろ覚え」で覚えておけばOK</li>
+</ul></li>
+<li>定型句を管理するツールを使えばいいので。</li>
+</ul>
+</div>
+
+<div id="outline-container-org639768e" class="outline-4">
+<h4 id="org639768e"><span class="section-number-4">1.2.1.</span> gmailが演算子を補完してくれる様子</h4>
+<div class="outline-text-4" id="text-1-2-1">
+<ul class="org-ul">
+<li>"la"と打ったら "label:todo-/undone" などを候補に挙げてくれている様子
+<ul class="org-ul">
+<li><a href="./images/completion_1.png"><img src="./images/thumbnails/completion_1.png"></a></li>
+</ul></li>
+<li>"has"と打ったら "has:attachment" などを候補に挙げてくれている様子
+<ul class="org-ul">
+<li><a href="./images/completion_2.png"><img src="./images/thumbnails/completion_2.png"></a></li>
+</ul></li>
+<li>"ne"と打ったら "newer_than:2d" を候補に挙げてくれている様子
+<ul class="org-ul">
+<li><a href="./images/completion_3.png"><img src="./images/thumbnails/completion_3.png"></a></li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org80430d8" class="outline-4">
+<h4 id="org80430d8"><span class="section-number-4">1.2.2.</span> 定型句を管理するツールを使っている様子</h4>
+<div class="outline-text-4" id="text-1-2-2">
+<ul class="org-ul">
+<li>定型句を管理するツールを使って、日付を動的に計算しつつ、検索演算子をクリップボードに追加する(stack)様子
+<ul class="org-ul">
+<li>例1: inbox内にある、35日以上前（※1） かつ キーワード"株式会社技術評論社" を含むメールを検索したい。
+<ul class="org-ul">
+<li>検索演算子 = <i>in:inbox "株式会社技術評論社" older:2022/09/25</i></li>
+<li>※1. 執筆時点の10/30(日)を基準とする。</li>
+<li><a href="./images/snippet_selecting.png"><img src="./images/thumbnails/snippet_selecting.png"></a></li>
+</ul></li>
+<li>例2: inbox内にある、2日以上前の googleカレンダーの通知メールを検索したい。
+<ul class="org-ul">
+<li>検索演算子 = <i>in:inbox "googleカレンダー" older:2022/10/28</i>
+<ul class="org-ul">
+<li>（実は、older_than を使えば、固定文字列でOK。検索演算子 = /in:inbox "googleカレンダー" older_than:2d/）</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>クリップボードからgmailの検索フォームに貼り付けて、検索を実行した様子
+<ul class="org-ul">
+<li><a href="./images/snippet_pasted.png"><img src="./images/thumbnails/snippet_pasted.png"></a></li>
+</ul></li>
+<li>ツールを使うべき指標
+<ul class="org-ul">
+<li>頻度</li>
+<li>文字数</li>
+<li>（打ち間違えの影響度合い）</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2e4c37a" class="outline-2">
+<h2 id="org2e4c37a"><span class="section-number-2">2.</span> 技術層</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-orgc24f880" class="outline-3">
+<h3 id="orgc24f880"><span class="section-number-3">2.1.</span> 「厳選」された演算子</h3>
+<div class="outline-text-3" id="text-2-1">
+<table border="1" cellspacing="0" cellpadding="6" rules="all" frame="border">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">絞り込み対象</th>
+<th scope="col" class="org-left">演算子</th>
+<th scope="col" class="org-left">例 や 説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">送信者</td>
+<td class="org-left">from:</td>
+<td class="org-left"><b>from:hayakat@fsi.co.jp</b></td>
+</tr>
+
+<tr>
+<td class="org-left">件名に含まれるキーワード</td>
+<td class="org-left">subject:</td>
+<td class="org-left"><b>subject:バナナ</b></td>
+</tr>
+
+<tr>
+<td class="org-left">ラベル</td>
+<td class="org-left">label:</td>
+<td class="org-left"><b>label:p.99.SkyFall</b></td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">含まれるもの</td>
+<td class="org-left"><b>has:attachment</b></td>
+<td class="org-left">ファイルが添付されているメール</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left"><b>has:drive</b></td>
+<td class="org-left">googleドライブへのリングが含まれるメール</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left"><b>has:document</b></td>
+<td class="org-left">googleドキュメントへのリングが含まれるメール</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left"><b>has:spreadsheet</b></td>
+<td class="org-left">googleスプレッドシートへのリングが含まれるメール</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left"><b>has:presentation</b></td>
+<td class="org-left">googleスライドへのリングが含まれるメール</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">特定の添付ファイル（拡張子）</td>
+<td class="org-left">filename:</td>
+<td class="org-left"><b>filename:pdf</b> → pdf が添付されているメール</td>
+</tr>
+
+<tr>
+<td class="org-left">特定の添付ファイル（ファイル名）</td>
+<td class="org-left">filename:</td>
+<td class="org-left"><b>filename:orange.txt</b> → ファイル "orange.txt" が添付されているメール</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">未読なメール</td>
+<td class="org-left"><b>is:unread</b></td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">期間（絶対値）</td>
+<td class="org-left">after: または newer:</td>
+<td class="org-left"><b>after:2022/10/30</b></td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">older: または before:</td>
+<td class="org-left"><b>before:2022/10/31</b></td>
+</tr>
+
+<tr>
+<td class="org-left">期間（相対値）</td>
+<td class="org-left">newer_than: や older_than:</td>
+<td class="org-left"><b>older_than:2d</b> → 今日から2日前よりも古いメール</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left"><b>newer_than:2d</b> → 今日から2日前よりも新しいメール</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-orgd9bf7da" class="outline-3">
+<h3 id="orgd9bf7da"><span class="section-number-3">2.2.</span> 論理演算</h3>
+<div class="outline-text-3" id="text-2-2">
+<table border="1" cellspacing="0" cellpadding="6" rules="all" frame="border">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">絞り込み対象</th>
+<th scope="col" class="org-left">演算子</th>
+<th scope="col" class="org-left">例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">論理和</td>
+<td class="org-left">OR または波カッコ {&#x2026;} で囲む</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">論理積</td>
+<td class="org-left">半角スペース（※2）</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">除外</td>
+<td class="org-left">演算子の前にハイフンを付ける</td>
+<td class="org-left"><b>label:FSI -label:TODO</b> → ラベル"FSI"は付いているが、ラベル"TODO"は付いていないメール</td>
+</tr>
+</tbody>
+</table>
+
+<ul class="org-ul">
+<li>組み合わせが複雑な場合 または 組み合わせを明示したい場合は 丸カッコ (&#x2026;) で囲む。</li>
+<li>※2. つまりは、単純に複数の演算子を記述すると、自動的に論理積になる。
+<ul class="org-ul">
+<li>経験上、AND を明記してもOK。</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgb791b39" class="outline-3">
+<h3 id="orgb791b39"><span class="section-number-3">2.3.</span> cheatsheet</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+<a href="./images/gmail_seaching_operators_cheatsheet.png"><img src="./images/thumbnails/gmail_seaching_operators_cheatsheet.png"></a>
+</p>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
