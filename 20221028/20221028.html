@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja-jp" xml:lang="ja-jp">
+<head>
+<!-- 2022-11-02 水 08:53 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>学び合い@令和4（2022）年10月28日</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="早川 剛(a.k.a. HAYATUYO), hayakawa_tuyosi_work@yahoo.co.jp" />
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="./themes/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="./themes/js/readtheorg.js"></script>
+<style> #content{max-width:1800px;}</style>
+<style> p{max-width:800px;}</style>
+<style> li{max-width:800px;}</style>
+<style> li>ul { display: inline !important;}</style>
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">学び合い@令和4（2022）年10月28日
+<br />
+<span class="subtitle">～立山, 2021, 図解pythonのツボとコツがゼッタイにわかる本、第3回「Chapter 04」～</span>
+</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orge063309">1. 手を動かす面白さの再発見！</a>
+<ul>
+<li><a href="#org265e8f7">1.1. ドーパミン的面白さ</a></li>
+<li><a href="#org8a40a66">1.2. 実験が簡単にできる</a>
+<ul>
+<li><a href="#org12a22d1">1.2.1. 例題; 画像ファイルのパス</a></li>
+<li><a href="#org19bfc77">1.2.2. Image.thumbnail()</a></li>
+</ul>
+</li>
+<li><a href="#org56311be">1.3. 急がば回れ</a></li>
+</ul>
+</li>
+<li><a href="#org909658b">2. 著者と出版社によるサポート</a></li>
+<li><a href="#org4a6c5cb">3. プログラミング要素</a>
+<ul>
+<li><a href="#orga401aeb">3.1. 寄り道: コメントとログの意義の復習</a></li>
+</ul>
+</li>
+<li><a href="#orgac77fc0">4. 書籍の補足</a>
+<ul>
+<li><a href="#org1cc58a0">4.1. 補完機能</a>
+<ul>
+<li><a href="#orga1d3593">4.1.1. 候補が複数ある場合</a></li>
+<li><a href="#orgb67e57e">4.1.2. 候補が唯一の場合</a></li>
+</ul>
+</li>
+<li><a href="#orgf1cae84">4.2. "from PIL import Image" は not only 速度 but also メモリ量の節約</a></li>
+<li><a href="#org8a5d109">4.3. typo（打ち損じ）に気付きやすいフォント</a></li>
+<li><a href="#orgbe92c64">4.4. ショートカットキー</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-orge063309" class="outline-2">
+<h2 id="orge063309"><span class="section-number-2">1.</span> 手を動かす面白さの再発見！</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org265e8f7" class="outline-3">
+<h3 id="org265e8f7"><span class="section-number-3">1.1.</span> ドーパミン的面白さ</h3>
+<div class="outline-text-3" id="text-1-1">
+
+<div id="orgeb1b1fa" class="figure">
+<p><img src="./images/myFirstPillow.png" alt="myFirstPillow.png" />
+</p>
+<p><span class="figure-number">Figure 1: </span>僕の初めてのPillow: すぐに結果が出る! 画像を表示できる!</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8a40a66" class="outline-3">
+<h3 id="org8a40a66"><span class="section-number-3">1.2.</span> 実験が簡単にできる</h3>
+<div class="outline-text-3" id="text-1-2">
+<ol class="org-ol">
+<li>ショートカットキー c でセルをコピーして、</li>
+<li>v でセルを貼り付けて、</li>
+<li>貼り付けられたセルのコードを少し変えてみて、</li>
+<li>実行してみる！！</li>
+</ol>
+</div>
+
+<div id="outline-container-org12a22d1" class="outline-4">
+<h4 id="org12a22d1"><span class="section-number-4">1.2.1.</span> 例題; 画像ファイルのパス</h4>
+<div class="outline-text-4" id="text-1-2-1">
+<ul class="org-ul">
+<li>バックスラッシュ×2個 ではなくスラッシュでもいいらしいけど、本当？</li>
+<li>バックスラッシュ×1個 だとどうなる？</li>
+<li>相対パス で指定できるかな？</li>
+<li>絶対パス で指定できるかな？</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org19bfc77" class="outline-4">
+<h4 id="org19bfc77"><span class="section-number-4">1.2.2.</span> Image.thumbnail()</h4>
+<div class="outline-text-4" id="text-1-2-2">
+<ul class="org-ul">
+<li>数字を1つしか与えなかったら？</li>
+<li>タプルではなかったら？</li>
+<li>幅または高さしか指定したくない場合にはどうする？</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org56311be" class="outline-3">
+<h3 id="org56311be"><span class="section-number-3">1.3.</span> 急がば回れ</h3>
+<div class="outline-text-3" id="text-1-3">
+<ul class="org-ul">
+<li>読むだけでコードを打ち込むことを省略するべからず
+<ul class="org-ul">
+<li>先人たちの経験則</li>
+<li>読むだけで分かったつもりになる…それではナゼか駄目らしい。</li>
+</ul></li>
+<li>身体化には時間が掛かる
+<ul class="org-ul">
+<li>触る → ワクワク → さらに触る → さらにワクワク →→→ 興味の深掘り→→→ 身体化
+<ul class="org-ul">
+<li>身体化 = 無意識に正確な思考と行動が取れること</li>
+<li>（pythonの）文法の身体化</li>
+<li>jupyter notebookの操作の身体化</li>
+<li><span style="background-color: red;color:  white"> 試行錯誤の身体化</span>
+<ul class="org-ul">
+<li>ノートの取り方、図表の書き方、疑問の立て方</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org909658b" class="outline-2">
+<h2 id="org909658b"><span class="section-number-2">2.</span> 著者と出版社によるサポート</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+<a href="https://www.shuwasystem.co.jp/support/7980html/6132.html">https://www.shuwasystem.co.jp/support/7980html/6132.html</a>
+</p>
+<ul class="org-ul">
+<li>サンプル
+<ul class="org-ul">
+<li><a href="https://www.shuwasystem.co.jp/support/download/6132/sample.zip">https://www.shuwasystem.co.jp/support/download/6132/sample.zip</a></li>
+</ul></li>
+<li>正誤表
+<ul class="org-ul">
+<li><a href="https://www.shuwasystem.co.jp/support/download/6132/%E6%AD%A3%E8%AA%A4%E8%A1%A8.pdf">https://www.shuwasystem.co.jp/support/download/6132/%E6%AD%A3%E8%AA%A4%E8%A1%A8.pdf</a></li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org4a6c5cb" class="outline-2">
+<h2 id="org4a6c5cb"><span class="section-number-2">3.</span> プログラミング要素</h2>
+<div class="outline-text-2" id="text-3">
+<table border="1" cellspacing="0" cellpadding="6" rules="all" frame="border">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">コード</td>
+<td class="org-left">コメント</td>
+<td class="org-left">ログ</td>
+<td class="org-left">可視化</td>
+</tr>
+
+<tr>
+<td class="org-left">jupyter notebook を使わない場合</td>
+<td class="org-left">○</td>
+<td class="org-left">○</td>
+<td class="org-left">○</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">jupyter notebook を使う場合</td>
+<td class="org-left">○</td>
+<td class="org-left">○(※1)</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">★(※2)</td>
+</tr>
+</tbody>
+</table>
+
+<ul class="org-ul">
+<li>※1. markdown による構造化が可能</li>
+<li>※2. 画像だけではなく、グラフも表示できる。</li>
+</ul>
+
+<p>
+コードと実行結果が一つに完結している。まさに NOTEBOOK !!!
+</p>
+</div>
+
+
+<div id="outline-container-orga401aeb" class="outline-3">
+<h3 id="orga401aeb"><span class="section-number-3">3.1.</span> 寄り道: コメントとログの意義の復習</h3>
+<div class="outline-text-3" id="text-3-1">
+<ul class="org-ul">
+<li>物理現象としてはコードだけで十分。</li>
+<li>しかし、エンジニアリング（商売）を行うには、仲間との協力が必要。
+<ul class="org-ul">
+<li>協力のためにはコードの意義・注意点などを共有する必要がある。</li>
+<li>それはコメントにほかならない。</li>
+</ul></li>
+<li>エンジニアリング（商売）はより良いものを目指さなければならない。
+<ul class="org-ul">
+<li>さもなければ客が離れてしまう。</li>
+<li>ログはより良くするための材料として必要。</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgac77fc0" class="outline-2">
+<h2 id="orgac77fc0"><span class="section-number-2">4.</span> 書籍の補足</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-org1cc58a0" class="outline-3">
+<h3 id="org1cc58a0"><span class="section-number-3">4.1.</span> 補完機能</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+vscodeでもおなじみの 便利な機能
+</p>
+</div>
+
+<div id="outline-container-orga1d3593" class="outline-4">
+<h4 id="orga1d3593"><span class="section-number-4">4.1.1.</span> 候補が複数ある場合</h4>
+<div class="outline-text-4" id="text-4-1-1">
+<p>
+例えば、"im" まで打った時点でタブを打つと… → いくつかの候補が表示される。
+</p>
+
+
+<div id="org4c86326" class="figure">
+<p><img src="./images/タブによる補完_1.png" alt="タブによる補完_1.png" />
+</p>
+<p><span class="figure-number">Figure 2: </span>タブによる補完/候補が複数ある場合</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb67e57e" class="outline-4">
+<h4 id="orgb67e57e"><span class="section-number-4">4.1.2.</span> 候補が唯一の場合</h4>
+<div class="outline-text-4" id="text-4-1-2">
+<p>
+例えば、"img.si"まで打った時点でタブを打つと… → "img.size" と入力される。
+</p>
+
+
+<div id="org5c550d2" class="figure">
+<p><img src="./images/タブによる補完_2.png" alt="タブによる補完_2.png" />
+</p>
+<p><span class="figure-number">Figure 3: </span>タブによる補完/候補が唯一の場合</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf1cae84" class="outline-3">
+<h3 id="orgf1cae84"><span class="section-number-3">4.2.</span> "from PIL import Image" は not only 速度 but also メモリ量の節約</h3>
+<div class="outline-text-3" id="text-4-2">
+<p>
+p.82 では
+<code class="src src-python"><span style="color: #00ffff;">import</span> PIL</code> ではなく、
+<code class="src src-python"><span style="color: #00ffff;">from</span> PIL <span style="color: #00ffff;">import</span> Image</code> と記述することが勧められており、
+その理由として打鍵量を少なくできることが挙げられていますが、
+メモリを節約できることも重要な点です。
+</p>
+
+<p>
+<code class="src src-python"><span style="color: #00ffff;">import</span> PIL</code> と Pillow の全ての機能を読み込むよりも、
+使う機能である PIL.Image だけを <code class="src src-python"><span style="color: #00ffff;">from</span> PIL <span style="color: #00ffff;">import</span> Image</code> と読み込めば、
+使わない機能を読み込まずに済み、メモリの使用量を抑えられます。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8a5d109" class="outline-3">
+<h3 id="org8a5d109"><span class="section-number-3">4.3.</span> typo（打ち損じ）に気付きやすいフォント</h3>
+<div class="outline-text-3" id="text-4-3">
+<p>
+p.85では大文字の「I」（アイ）と小文字の「l」（エル）が見間違えやすい文字の典型例として挙げられています。
+他にも、アラビア数字の「0」（ゼロ）と大文字の「O」（オゥ）も見間違えやすい文字と言われています。
+</p>
+
+<p>
+コードは一文字でも間違ってしまうと動かなくなりますので、
+プログラミング時に文字が判別しやすいフォントを使うことは、
+消極的ですが、導入しやすいバグ防止策と言えます。
+</p>
+
+<p>
+いくつかオススメのフォントを挙げておきます。
+</p>
+
+<ul class="org-ul">
+<li>Cascadia Code
+<ul class="org-ul">
+<li><a href="https://learn.microsoft.com/ja-jp/windows/terminal/cascadia-code">https://learn.microsoft.com/ja-jp/windows/terminal/cascadia-code</a></li>
+<li>by Microsoft</li>
+<li>window10 に インストール済み</li>
+</ul></li>
+<li>PlemolJP
+<ul class="org-ul">
+<li><a href="https://github.com/yuru7/PlemolJP/releases">https://github.com/yuru7/PlemolJP/releases</a></li>
+<li>個人制作 by
+<ul class="org-ul">
+<li><a href="https://qiita.com/tawara_/items/0a7b8c50a48ea86b2d91">https://qiita.com/tawara_/items/0a7b8c50a48ea86b2d91</a></li>
+</ul></li>
+<li>IBM の IBM Plex 由来</li>
+</ul></li>
+<li>Source Han Code JP（源の角ゴシック Code JP）
+<ul class="org-ul">
+<li><a href="https://github.com/adobe-fonts/source-han-code-jp/releases">https://github.com/adobe-fonts/source-han-code-jp/releases</a></li>
+<li>by Adobe</li>
+</ul></li>
+<li>IPAフォント
+<ul class="org-ul">
+<li><a href="https://moji.or.jp/ipafont/ipafontdownload/">https://moji.or.jp/ipafont/ipafontdownload/</a></li>
+<li>by 一般社団法人文字情報技術促進協議会会長
+<ul class="org-ul">
+<li>情報処理推進機構（IPA）から民間に移行された一般社団法人
+<ul class="org-ul">
+<li>参画企業はアドビ株式会社・凸版印刷株式会社・日本マイクロソフト株式会社・株式会社モリサワ・大日本印刷株式会社・富士フィルムシステムサービス株式会社・日本電気株式会社（NEC）・株式会社日立製作所・富士通株式会社 などなど多数</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+
+
+<div id="orgf14738f" class="figure">
+<p><img src="./images/PlemolJP.jpg" alt="PlemolJP.jpg" />
+</p>
+<p><span class="figure-number">Figure 4: </span>PlemolJPの文字の一例</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgbe92c64" class="outline-3">
+<h3 id="orgbe92c64"><span class="section-number-3">4.4.</span> ショートカットキー</h3>
+<div class="outline-text-3" id="text-4-4">
+<table border="1" cellspacing="0" cellpadding="6" rules="all" frame="border">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">セルの移動</td>
+<td class="org-left">上へ</td>
+<td class="org-left">k</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">セルの移動</td>
+<td class="org-left">下へ</td>
+<td class="org-left">j</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">セルの実行</td>
+<td class="org-left">実行のみ</td>
+<td class="org-left">Ctrl-Enter</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">セルの実行</td>
+<td class="org-left">実行後、下のセルへ移動する</td>
+<td class="org-left">Shift-Enter</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">セルの挿入</td>
+<td class="org-left">上へ</td>
+<td class="org-left">a</td>
+<td class="org-left">Above の a</td>
+</tr>
+
+<tr>
+<td class="org-left">セルの挿入</td>
+<td class="org-left">下へ</td>
+<td class="org-left">b</td>
+<td class="org-left">Below の b</td>
+</tr>
+
+<tr>
+<td class="org-left">コピペ</td>
+<td class="org-left">コピー</td>
+<td class="org-left">c</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">コピペ</td>
+<td class="org-left">ペースト</td>
+<td class="org-left">p</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">コピペ</td>
+<td class="org-left">カット</td>
+<td class="org-left">x</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">セルの削除</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">d,d</td>
+<td class="org-left">dを2発</td>
+</tr>
+
+<tr>
+<td class="org-left">UNDO</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">z</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: 早川 剛(a.k.a. HAYATUYO), hayakawa_tuyosi_work@yahoo.co.jp</p>
+<p class="date">Created: 2022-11-02 水 08:53</p>
+</div>
+</body>
+</html>
