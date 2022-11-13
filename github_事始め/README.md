@@ -1,17 +1,17 @@
 
 # Table of Contents
 
-1.  [大まかな手順](#org82f425f)
-2.  [リモートリポジトリの作成](#org5144692)
-3.  [IME辞書の登録](#org21bb91e)
-4.  [辞書のエクスポート](#org3b232ac)
-5.  [ローカルリポジトリの作成](#org9d4ddda)
-6.  [プッシュ](#org35a786a)
-7.  [クローン](#orga32736a)
-8.  [IME辞書のインポート](#org2062409)
+1.  [大まかな手順](#org67fcdb7)
+2.  [リモートリポジトリの作成](#org45c5960)
+3.  [IME辞書の登録](#org9b46174)
+4.  [辞書のエクスポート](#orgc4d6715)
+5.  [ローカルリポジトリの作成](#org1d28af9)
+6.  [プッシュ](#org288740f)
+7.  [クローン](#org5480df7)
+8.  [IME辞書のインポート](#org9d50cae)
 
 
-<a id="org82f425f"></a>
+<a id="org67fcdb7"></a>
 
 # 大まかな手順
 
@@ -94,26 +94,26 @@
 </table>
 
 
-<a id="org5144692"></a>
+<a id="org45c5960"></a>
 
 # リモートリポジトリの作成
 
 github.com上にリモートリポジトリを作ります。
 
 1.  github.com を開き、右上のメニューから"New repository"を選択します。
-    - ![dumm](./images/01-GITHUB_create-new-repository_1-starting.png)
+    -   <a href="./images/01-GITHUB_create-new-repository_1-starting.png"><img src="./images/thumbnails/01-GITHUB_create-new-repository_1-starting.png"></a>
 2.  リポジトリ名を入力し、"Private"を選択します。下の方の設定はお好みで。
     -   <a href="./images/02-GITHUB_create-new-repository_2-editing.png"><img src="./images/thumbnails/02-GITHUB_create-new-repository_2-editing.png"></a>
 3.  "Create repository"をクリックするとリポジトリが作成され、セットアップ方法の画面へ遷移します。
     -   <a href="./images/03-GITHUB_create-new-repository_3-created.png"><img src="./images/thumbnails/03-GITHUB_create-new-repository_3-created.png"></a>
 
 
-<a id="org21bb91e"></a>
+<a id="org9b46174"></a>
 
 # IME辞書の登録
 
 -   もしIMEの辞書がまだ登録されていなければ、短縮よみなどを、何か登録してみてください。
-    -   なにかしら登録してあれば、[次の辞書のエクスポート](#org3b232ac)までスキップしてください。
+    -   なにかしら登録してあれば、[次の辞書のエクスポート](#orgc4d6715)までスキップしてください。
 -   gitで扱うファイルはIMEの辞書でなくても構いません。その場合には、以降の手順を適宜読み替えてください。
 
 -   『Microsoft IME ユーザー辞書ツール』の ツールバーから 編集(E) &#x2013;> 新規登録(A) と選択してください。
@@ -124,7 +124,7 @@ github.com上にリモートリポジトリを作ります。
     -   <a href="./images/06-IME_add-new-item-to-dictionary_3-added.png"><img src="./images/thumbnails/06-IME_add-new-item-to-dictionary_3-added.png"></a>
 
 
-<a id="org3b232ac"></a>
+<a id="orgc4d6715"></a>
 
 # 辞書のエクスポート
 
@@ -141,7 +141,7 @@ IMEの辞書をエクスポートします。
     -   <a href="./images/09-IME_export-dictionary_3-exported.png"><img src="./images/thumbnails/09-IME_export-dictionary_3-exported.png"></a>
 
 
-<a id="org9d4ddda"></a>
+<a id="org1d28af9"></a>
 
 # ローカルリポジトリの作成
 
@@ -158,7 +158,7 @@ IMEの辞書をエクスポートした先のフォルダを
     -   <a href="./images/11-GIT_initialize-local-repository-2-initializing.png"><img src="./images/thumbnails/11-GIT_initialize-local-repository-2-initializing.png"></a>
 
 
-<a id="org35a786a"></a>
+<a id="org288740f"></a>
 
 # プッシュ
 
@@ -188,7 +188,7 @@ IMEの辞書をエクスポートした先のフォルダを
     -   <a href="./images/14-GIT_push-exported-dictionary_3-history-of-commits.png"><img src="./images/thumbnails/14-GIT_push-exported-dictionary_3-history-of-commits.png"></a>
 
 
-<a id="orga32736a"></a>
+<a id="org5480df7"></a>
 
 # クローン
 
@@ -269,7 +269,7 @@ IMEの辞書ファイルをクローンします。
     -   <a href="./images/16-GIT_clone-another-local-repository_2-cloning.png"><img src="./images/thumbnails/16-GIT_clone-another-local-repository_2-cloning.png"></a>
 
 
-<a id="org2062409"></a>
+<a id="org9d50cae"></a>
 
 # IME辞書のインポート
 
