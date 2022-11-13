@@ -1,0 +1,173 @@
+#+TITLE: 梨下村塾@令和4（2022）年11月14日
+#+SUBTITLE: ～githubにIMEの辞書をプッシュしてみよう～
+#+EMAIL: hayakawa_tuyosi_work@yahoo.co.jp
+#+AUTHOR: 早川 剛(a.k.a. HAYATUYO), {{{email}}}
+#+LANGUAGE: ja-jp
+
+#+OPTIONS:   H:3 num:t toc:3 ^:nil
+
+# (setq org-html-validation-link nil)
+
+# (hayatuyo-org-global-cycle-1)
+# (hayatuyo-org-global-cycle-2)
+# (hayatuyo-org-global-cycle-3)
+# (hayatuyo-org-global-cycle-4)
+
+# ################################################################
+# html へのエクスポートの設定
+# ################################################################
+
+# ################
+# 全体的なtheme
+# ################
+#+SETUPFILE: ./themes/theme-readtheorg.setup
+
+# ################
+# html にエクスポートする際のマクロ
+# ################
+#+MACRO: changeColor @@html:<span style="background-color: $1;color: $2">$3</span>@@
+#+MACRO: linkImage @@html:<a href="./images/$1"><img src="./images/thumbnails/$1"></a>@@
+
+# ################
+# html にエクスポートする際の theme のカスタマイズ
+# ################
+#+HTML_HEAD: <style> #content{max-width:1800px;}</style>
+#+HTML_HEAD: <style> p{max-width:800px;}</style>
+#+HTML_HEAD: <style> li{max-width:800px;}</style>
+#+HTML_HEAD: <style> li>ul { display: inline !important;}</style>
+
+# mogrify -path ./thumbnails -thumbnail 300x ./4.withShadow/*.{jpg,png}
+
+* 大まかな手順
+
+| 順番 | 操作対象   | 操作の概要               | 操作の詳細                                                                    |
+|    1 | github.com | リモートリポジトリの作成 | github.com上にリモートリポジトリを作る。                                      |
+|    2 | 手元のPCて | IME辞書の登録            | IMEの辞書に短縮よみなどを登録する。                                           |
+|    3 | 手元のPC   | 辞書のエクスポート       | IMEの辞書をエクスポートする。                                                 |
+|    4 | 手元のPC   | ローカルリポジトリの作成 | IMEの辞書をエクスポートした宛て先のフォルダをgitのローカルリポジトリにする。  |
+|    5 | 手元のPC   | プッシュ                 | エクスポートされたIMEの辞書をgithub.com（リモートレポジトリ）へプッシュする。 |
+|    6 | 別のPC     | クローン                 | リモートリポジトリからローカルリポジトリへクローンする。                      |
+|    7 | 別のPC     | IME辞書のインポート      | IMEの辞書をインポートする。                                                   |
+
+
+* リモートリポジトリの作成
+
+github.com上にリモートリポジトリを作ります。
+
+1. github.com を開き、右上のメニューから"New repository"を選択します。
+   - {{{linkImage(01-GITHUB_create-new-repository_1-starting.png)}}}
+2. リポジトリ名を入力し、"Private"を選択します。下の方の設定はお好みで。
+   - {{{linkImage(02-GITHUB_create-new-repository_2-editing.png)}}}
+3. "Create repository"をクリックするとリポジトリが作成され、セットアップ方法の画面へ遷移します。
+   - {{{linkImage(03-GITHUB_create-new-repository_3-created.png)}}}
+
+* IME辞書の登録
+- もしIMEの辞書がまだ登録されていなければ、短縮よみなどを、何か登録してみてください。
+  - なにかしら登録してあれば、[[辞書のエクスポート][次の辞書のエクスポート]]までスキップしてください。
+- gitで扱うファイルはIMEの辞書でなくても構いません。その場合には、以降の手順を適宜読み替えてください。
+
+- 『Microsoft IME ユーザー辞書ツール』の ツールバーから 編集(E) --> 新規登録(A) と選択してください。
+  - {{{linkImage(04-IME_add-new-item-to-dictionary_1-starting.png)}}}
+- 短縮よみなどを、何か登録してみてください。
+  - {{{linkImage(05-IME_add-new-item-to-dictionary_2-editing.png)}}}
+- 追加されたアイテムが上から2行目に表示されています。
+  - {{{linkImage(06-IME_add-new-item-to-dictionary_3-added.png)}}}
+
+* 辞書のエクスポート
+IMEの辞書をエクスポートします。
+
+1. 『Microsoft IME ユーザー辞書ツール』の ツールバーから ツール(T) --> 一覧の出力(P) と選択してください。
+   - {{{linkImage(07-IME_export-dictionary_1-starting.png)}}}
+2. 出力先のパス（フォルダ および ファイル名）を指定します。
+   - 出力先のフォルダ も ファイル名も、デフォルト値から変えてしまっても全く問題ありません。
+   - 僕は以下のパスにしました。
+     - c:\work\tools\IME_microsoft\dict.txt
+   - {{{linkImage(08-IME_export-dictionary_2-exporting.png)}}}
+3. エクスポートが完了するとポップアップが出ますので、"終了"をクリックして閉じます。
+   - {{{linkImage(09-IME_export-dictionary_3-exported.png)}}}
+
+* ローカルリポジトリの作成
+IMEの辞書をエクスポートした先のフォルダを
+最初の手順で作ったリモートリポジトリに紐づけることで、
+そのフォルダをローカルリポジトリにします。
+
+1. リモートリポジトリ作成後に遷移した画面の "...or create a new repository on the command line" の部分に記されているコマンド群をコピーします。
+   - "echo" から "git push ..." までの7つコマンドを全てコピーします。
+   - 画像下部の右端に描画されている、正方形が2つ重なっているアイコンをクリックすると、7つコマンドが全てコピーされます。
+   - {{{linkImage(10-GIT_initialize-local-repository-1-copying-commands.png)}}}
+2. コピーされたコマンドを順に実行します。
+   - 以下のスクリーンショットでは、お行儀よく、1行ずつ貼り付けて実行していますが、一括して貼り付けてしまっても、シェルが、順次、実行してくれるはずです。
+   - {{{linkImage(11-GIT_initialize-local-repository-2-initializing.png)}}}
+
+* プッシュ
+エクスポートされたIMEの辞書をgithub.com上のリモートリポジトリへプッシュします。
+
+
+1. 上の直近のコマンドだけでは、IMEの辞書はリモートレポジトリにまだプッシュされていませんので、ローカルレポジトリ および リモートレポジトリの操作をして、プッシュしていきます。
+   - コマンドは以下の通り
+     1. エクスポート先のフォルダに移動する。
+     2. git add ./dict.txt
+        - 必須
+     3. git status
+        - オプション
+        - IMEの辞書が staged されていることを確認します。
+     4. git commit -m "..."
+        - 必須
+        - IMEの辞書をローカルリポジトリにコミットします。
+     5. git push
+        - 必須
+        - IMEの辞書をリモートリポジトリにプッシュします。
+     6. git status
+        - オプション
+        - IMEの辞書がプッシュされたので、ローカルリポジトリがリモートリポジトリの最新状況と同期していることを確認します。
+   - {{{linkImage(12-GIT_push-exported-dictionary_1-adding-and-pushing.png)}}}
+2. リモートリポジトリにプッシュされた様子
+   - {{{linkImage(13-GIT_push-exported-dictionary_2-on-github-after-pushed.png)}}}
+3. コミット履歴にも反映されています。
+   - {{{linkImage(14-GIT_push-exported-dictionary_3-history-of-commits.png)}}}
+
+* クローン
+
+github.com上のリモートリポジトリからローカルリポジトリへ、
+IMEの辞書ファイルをクローンします。
+
+#+begin_verse
+ここまでの操作を会社で行ったならば、以後の操作はご自宅で行ってください。
+または逆に、ここまでがご自宅でならば、以後は会社にて。
+
+掲載されているスクリーンショットは、資料作成の便益のために、ここまでの操作も以後の操作も、両方とも、拙宅で行った様子です。
+そのため、以下のどちらかの状況だと読み替えながら、お読みください。
+#+end_verse
+
+| パス                                   | ローカルリポジトリの所在地 |
+| /mnt/c/work/tools/IME_microsoft/       | 会社                       |
+| /mnt/c/work/junk/IME_microsoft_CLONED/ | 自宅                       |
+
+| パス                                   | ローカルリポジトリの所在地 |
+| /mnt/c/work/tools/IME_microsoft/       | 自宅                       |
+| /mnt/c/work/junk/IME_microsoft_CLONED/ | 会社                       |
+
+
+1. github.com の リポートリポジトリからURLをコピーします。
+   - {{{linkImage(15-GIT_clone-another-local-repository_1-copying-URL.png)}}}
+2. クローン先となるフォルダにて以下のコマンドを実行します。
+   #+begin_src bash
+   git clone 【コピーしたURL】 ./
+   #+end_src
+   - 空（から）フォルダにて実行することをおすすめします。
+   - {{{linkImage(16-GIT_clone-another-local-repository_2-cloning.png)}}}
+* IME辞書のインポート
+- github.com の リモートリポジトリからクローンされたIMEの辞書ファイルを『Microsoft IME ユーザー辞書ツール』へインポートしてみます。
+- ここでは分かり易くするために、アイテムが一つも登録されていない状態に辞書をインポートしてみます。
+
+
+1. ツールバーから ツール(T) --> テキストファイルからの登録(T) と選択してください。
+   - {{{changeColor(black, red, 注意: このとき誤って最下段の "テキストファイルで削除(D)" を選択してしまうと、『Microsoft IME ユーザー辞書ツール』に登録済みのアイテムが削除されてしまうので、お気を付けください。)}}}
+   - {{{linkImage(17-IME_import-dictionary_1-starting.png)}}}
+2. github.comからクローンしたファイルを選択します。
+   - {{{linkImage(18-IME_import-dictionary_2-selecting-exported-file.png)}}}
+3. インポート完了するとポップアップが出ますので、"終了"をクリックして閉じます。
+   - {{{linkImage(19-IME_import-dictionary_3-popup-after-importing.png)}}}
+4. 無事に20個のアイテムがインポートされました。
+   - もちろん、始めのほうの手順で登録した"いじしつ"の短縮よみもインポートされています。
+   - {{{linkImage(20-IME_import-dictionary_4-imported.png)}}}
