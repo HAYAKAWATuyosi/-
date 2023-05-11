@@ -1,4 +1,4 @@
-#+OPTIONS: toc:nil num:nil author:nil creator:nil ^:nil timestamp:nil
+#+OPTIONS: toc:t num:nil author:nil creator:nil ^:nil timestamp:nil
 
 * 今後の方針
 ** 中長期的
@@ -23,6 +23,8 @@
     - Ｕ（Uncertainty：不確実性）
     - Ｃ（Complexity：複雑性）
     - Ａ（Ambiguity：曖昧性）
+
+* 令和5（2023）年夏季
 
 ** えいやーっ!! とにかく動く。学ぶは真似る。
 
@@ -53,6 +55,7 @@
 - 安宅和人, 2010/11/24, イシューからはじめよ - 知的生産の「シンプルな本質」, 英治出版
   - http://www.eijipress.co.jp/book/book.php?epcode=2085
   - https://amzn.asia/d/hEPR3KQ
+
 
 * Webアプリケーション概要
 
