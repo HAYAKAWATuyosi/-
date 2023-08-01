@@ -1,4 +1,4 @@
-#+OPTIONS: toc:nil num:t H:2
+#+OPTIONS: toc:nil num:1 H:2
 
 * webを実現するコンピューターネットワーク
 
