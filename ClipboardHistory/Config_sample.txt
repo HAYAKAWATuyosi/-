@@ -1,0 +1,1804 @@
+;Hi-lock: (("(?&[[:upper:]])?" (0 (quote my-face-1) prepend)))
+;|| <#title,,#clip> || RegExReplace | ^\(\&[[:alpha:]]\) || AddHistory
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; エスケープ の仕方
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; - パイプはバッククォートで囲む必要がある。
+;   - 『|』→『`|`』
+; - バックスラッシュはそのまま書ける。エスケープの必要はない。
+;   - 『\』→『\』
+
+
+;===================定型文メニュー１===================
+;テンプレートとなっていますので、カスタマイズしてお使いください。詳細は Help.html の【定型文の編集】をご覧ください
+;■で始まる項目は、選択されているテキスト（非選択時はクリップボードの文字列）に対して実行する項目です
+
+@NoteHotkey=定型文1(&T)||Shift,200
++(&Q)旧暦の月
+     1月 睦月（むつき）               ;正月に親類一同が集まる、睦び（親しくする）の月。
+     2月 如月（きさらぎ）             ;衣更着（きさらぎ）とも言う。まだ寒さが残っていて、衣を重ね着する（更に着る）月。
+     3月 弥生（やよい）               ;木草弥生い茂る（きくさいやおいしげる、草木が生い茂る）月。
+     4月 卯月（うづき）               ;卯の花の月。
+     5月 皐月（さつき）               ;早月（さつき）とも言う。早苗（さなえ）を植える月。
+     6月 水無月（みなづき、みなつき） ;水の月（「無」は「の」を意味する）で、田に水を引く月の意と言われる。
+     7月 文月（ふみづき、ふづき）     ;稲の穂が実る月（穂含月：ほふみづき）
+     8月 葉月（はづき、はつき）       ;木々の葉落ち月（はおちづき）。
+     9月 長月（ながつき、ながづき）   ;夜長月（よながづき）。
+    10月 神無月（かんなづき）         ;神の月（「無」は「の」を意味する）の意味。全国の神々が出雲大社に集まり、各地の神々が留守になる月という説などもある。
+    11月 霜月（しもつき）             ;霜の降る月。
+    12月 師走（しわす）               ;師匠といえども趨走（すうそう、走り回る）する月。
+..
++(&S)祝日
+    元日          1月1日
+    成人の日      1月8日
+    建国記念の日  2月11日
+    休日          2月12日
+    天皇誕生日    2月23日
+    春分の日      3月20日
+    昭和の日      4月29日
+    憲法記念日    5月3日
+    みどりの日    5月4日
+    こどもの日    5月5日
+    休日          5月6日
+    海の日        7月15日
+    山の日        8月11日
+    休日          8月12日
+    敬老の日      9月16日
+    秋分の日      9月22日
+    休日          9月23日
+    スポーツの日  10月14日
+    文化の日      11月3日
+    休日          11月4日
+    勤労感謝の日  11月23日
+..
+5W1H|
+    - Who
+    - Where
+    - When
+    - What
+    - Why
+    - How
+    - How much
+    /E
+BugReport|
+			- 環境
+				- 開発? 検証? 本番?
+				- アプリのver（git の commit ID）
+			- 発生時刻
+			- 発生手順
+			- 現象
+			- 影響範囲
+			/E
++学び(&M)
+	+日本語の作文技術
+		原則|
+			◆第２章; 修飾関係の明瞭性
+				入れ子、蓋飛び、底抜け、離れすぎ
+			◆第3章; 修飾の順序（p.86）
+				1. 節 → 句
+				2. 長 → 短
+				3. 状況の規模の順・重要度の順
+				4. 親和度（なじみ）の考慮（配置転換）
+			◆第4章; 読点の打ち方（p.130）
+				1. 長い修飾語の境界
+				2. 逆順
+				- 思想の最小単位
+		/E
+	..
+..
++個人情報(&I)
+	hayakat@fsi.co.jp
+	hayakawa.tuyosi@gmail.com
+	090-5339-7077旧|090-5339-7077
+	080-6723-2459
+	ピアソンVUE ID=MS0990754962|MS0990754962
+	71755
+	早川  剛
+	HAYAKAWA Tuyosi
+	〒231-8008
+	神奈川県横浜市中区桜木町1-1
+	050-3000-2787
+	富士ソフト株式会社
+	富士ソフト株式会社
+	システム事業本部
+	ネットワークサービス事業部
+	第1技術部
+	第6技術グループ
+	〒231-8008	神奈川県横浜市中区桜木町1-1
+	Tel: 050-3000-2787
+..
++path(&J)
+	+WSL(&W)
+		(&W)hayatuyoのホーム ▶▶▶ //wsl.localhost/Ubuntu-22.04/home/hayatuyo || <#title,,#clip> || RegExReplace | (^.+▶▶▶ ) || AddHistory
+		(&W)Ubuntu-22.04     ▶▶▶ //wsl.localhost/Ubuntu-22.04/              || <#title,,#clip> || RegExReplace | (^.+▶▶▶ ) || AddHistory
+		(&W)WSL全体          ▶▶▶ //wsl.localhost/                           || <#title,,#clip> || RegExReplace | (^.+▶▶▶ ) || AddHistory
+	..
+	+study(&S)
+		; ↓このスニペットを履歴にも追加するために、「▶▶▶ 」（末尾に空白あり）を目印として、RegExReplace によって「▶▶▶ 」および「▶▶▶ 」よりも前方の文字列を削除している。
+		(&S)学び合い（srv）  ▶▶▶ \\Fuji-srv\事業本部\システムインテグレーション事業本部\個別サーバーディレクトリ\【792-002】MN2S_Portal\04_全員\02_2G\99.作業用\早川(hayakat)\study\学び合い\ || <#title,,#clip> || RegExReplace | (^.+▶▶▶ ) || AddHistory
+		(&S)学び合い（local）▶▶▶ C:\work\study\学び合い\ || <#title,,#clip> || RegExReplace | (^.+▶▶▶ ) || AddHistory
+	..
+	tools (&t)          |c:\work\tools\
+	downloads (&d)      |c:\work\downloads\
+	org (&o)            |c:\work\org\
+	junk (&j)           |c:\work\junk\
+	ユーザーホーム (&U) |C:\Users\hayakat\
+	+Anki
+		(&A)画像の置き場所 ▶▶▶ c:\Users\hayakat\AppData\Roaming\Anki2\main\collection.media\       || <#title,,#clip> || RegExReplace | (^.+▶▶▶ ) || AddHistory
+		(&A)画像の置き場所を開く ▶▶▶ c:\Users\hayakat\AppData\Roaming\Anki2\main\collection.media\ || <#title,,#clip> || RegExReplace | (^.+▶▶▶ ) || AddHistory || Run
+		;; ↑注意: path / Anki / にも同じ定型句があるので、ここを変更したら、同時にそこも変更すること。
+	..
+..
++Mail(&M)
+	+定型句(&P)
+		ご質問にインラインで回答いたします。(&P)|ご質問にインラインで回答いたします。
+	..
+	+Address(&M)
+		hayakat@fsi.co.jp(&M)|hayakat@fsi.co.jp
+		hayakat(&j)|hayakat
+		fsi.co.jp(&k)|fsi.co.jp
+		hayakawa.tuyosi@gmail.com(&L)|hayakawa.tuyosi@gmail.com
+		hayakawa_tuyosi_work@yahoo.co.jp(&L)|hayakawa_tuyosi_work@yahoo.co.jp
+	..
+	+Search
+		+(&G)Google カレンダー
+			(&G)googleカレンダー					   |"Google カレンダー"
+			(&G)googleカレンダー in:inbox			   |"Google カレンダー" in:inbox
+			;googleカレンダー in:inbox ＜昨日まで＞	   |"Google カレンダー" in:inbox before:~yyyy/MM/dd~ | Date |+D-1 ;; googleメールの演算子の問題で、beforeの比較演算子は<であり、等号を含まない。ゆえに、『|+D-1』は不要。
+			;(&G)googleカレンダー in:inbox ＜昨日まで＞ |"Google カレンダー" in:inbox before:~yyyy/MM/dd~ | Date
+			(&G)googleカレンダー in:inbox ＜一昨日まで＞ |"Google カレンダー" in:inbox before:~yyyy/MM/dd~ | Date | +D-2
+			(&S)（書式の例として）古いカレンダー 'older:'yyyy/MM/dd || Date | +D-10 || Strreplace | `(&S)（書式の例として）古いカレンダー | in:inbox "Googleカレンダー"
+		..
+		プロジェクトレポート in:inbox(&P)|プロジェクトレポート in:inbox
+		+演算子(&S)
+			in:inbox
+			is:sent
+			in:spam
+			is:unread
+		..
+	..
+	+Signature(&J)
+		short 日本語(&S)|
+			================
+			NS1(シス)6G 早川
+			hayakat@fsi.co.jp
+			================
+			/E
+		long 日本語(&L)|
+			/-----------------------------------------------------/
+			富士ソフト株式会社 システム事業本部
+			ネットワークサービス事業部 第1技術部 第6技術グループ
+
+			〒231-8008	神奈川県横浜市中区桜木町1-1
+			Tel: 050-3000-2787
+
+			早川  剛 HAYAKAWA Tuyosi
+			hayakat@fsi.co.jp
+			/-----------------------------------------------------/
+
+			/E
+		english(&E)|
+			/-----------------------------------------------------/
+			HAYAKAWA Tuyosi
+			hayakat@fsi.co.jp
+
+			FUJISOFT INCORPORATED,
+			System Integration Business Division,
+			Net Service Business Department,
+			Technology Department 1,
+			Technology Group 6
+
+			1-1 SAKURAGI-CHO, NAKA-KU, YOKOHAMA-SHI,
+			KANAGAWA 231-8008, JAPAN
+
+			Tel: +81-50-3000-2787
+			/-----------------------------------------------------/
+
+			/E
+	..
+;	+NTT DATA(&N)
+;		hayakawaty@pm.nttdata.co.jp(&a)|hayakawaty@pm.nttdata.co.jp
+;		hayakawaty(&s)|hayakawaty
+;		pm.nttdata.co.jp(&d)|pm.nttdata.co.jp
+;	..
+..
++日付・時刻(&D)
+	+日付(&D)
+		(&D)ISO8601 基本形式『yyyyMMdd』  ▶ ~yyyyMMdd_~   || <#title,,#clip> || Date || RegExReplace | (^.+▶ )  || AddHistory
+		(&J)ISO8601 拡張形式『yyyy-MM-dd』▶ ~yyyy-MM-dd_~ || <#title,,#clip> || Date || RegExReplace | (^.+▶ )  || AddHistory
+		(&K)スラッシュ区切り『yyyy/MM/dd』▶ ~yyyy/MM/dd_~ || <#title,,#clip> || Date || RegExReplace | (^.+▶ )  || AddHistory
+		-
+		+(&Y)曜日付き『MM/dd（曜日）』
+			(&Y)今日              ▶ MM/dd(ddd) || <#title,,#clip> || Date |+D0 || RegExReplace | (^.+▶ )  || AddHistory
+			-
+			(&J)明日              ▶ MM/dd(ddd) || <#title,,#clip> || Date |+D1 || RegExReplace | (^.+▶ )  || AddHistory
+			(&J)明後日            ▶ MM/dd(ddd) || <#title,,#clip> || Date |+D2 || RegExReplace | (^.+▶ )  || AddHistory
+			(&J)先明後日（3日後） ▶ MM/dd(ddd) || <#title,,#clip> || Date |+D3 || RegExReplace | (^.+▶ )  || AddHistory
+			-
+			(&K)昨日              ▶ MM/dd(ddd) || <#title,,#clip> || Date |+D-1 || RegExReplace | (^.+▶ ) || AddHistory
+			(&K)一昨日            ▶ MM/dd(ddd) || <#title,,#clip> || Date |+D-2 || RegExReplace | (^.+▶ ) || AddHistory
+			(&K)先一昨日（3日前） ▶ MM/dd(ddd) || <#title,,#clip> || Date |+D-3 || RegExReplace | (^.+▶ ) || AddHistory
+			---
+			(&N)  1 日後 ▶ MM/dd(ddd) || <#title,,#clip> || Date |+D1  || RegExReplace | (^.+▶ ) || AddHistory
+			(&N)  2 日後 ▶ MM/dd(ddd) || <#title,,#clip> || Date |+D2  || RegExReplace | (^.+▶ ) || AddHistory
+			(&N)  3 日後 ▶ MM/dd(ddd) || <#title,,#clip> || Date |+D3  || RegExReplace | (^.+▶ ) || AddHistory
+			(&N)  4 日後 ▶ MM/dd(ddd) || <#title,,#clip> || Date |+D4  || RegExReplace | (^.+▶ ) || AddHistory
+			(&N)  5 日後 ▶ MM/dd(ddd) || <#title,,#clip> || Date |+D5  || RegExReplace | (^.+▶ ) || AddHistory
+			(&N)  6 日後 ▶ MM/dd(ddd) || <#title,,#clip> || Date |+D6  || RegExReplace | (^.+▶ ) || AddHistory
+			(&N)  7 日後 ▶ MM/dd(ddd) || <#title,,#clip> || Date |+D7  || RegExReplace | (^.+▶ ) || AddHistory
+			(&N)  8 日後 ▶ MM/dd(ddd) || <#title,,#clip> || Date |+D8  || RegExReplace | (^.+▶ ) || AddHistory
+			(&N)  9 日後 ▶ MM/dd(ddd) || <#title,,#clip> || Date |+D9  || RegExReplace | (^.+▶ ) || AddHistory
+			(&N) 10 日後 ▶ MM/dd(ddd) || <#title,,#clip> || Date |+D10 || RegExReplace | (^.+▶ ) || AddHistory
+			(&N) 11 日後 ▶ MM/dd(ddd) || <#title,,#clip> || Date |+D11 || RegExReplace | (^.+▶ ) || AddHistory
+			(&N) 12 日後 ▶ MM/dd(ddd) || <#title,,#clip> || Date |+D12 || RegExReplace | (^.+▶ ) || AddHistory
+			(&N) 13 日後 ▶ MM/dd(ddd) || <#title,,#clip> || Date |+D13 || RegExReplace | (^.+▶ ) || AddHistory
+			(&N) 14 日後 ▶ MM/dd(ddd) || <#title,,#clip> || Date |+D14 || RegExReplace | (^.+▶ ) || AddHistory
+			---
+			(&P)  1 日前 ▶ MM/dd(ddd) || <#title,,#clip> || Date |+D-1  || RegExReplace | (^.+▶ ) || AddHistory
+			(&P)  2 日前 ▶ MM/dd(ddd) || <#title,,#clip> || Date |+D-2  || RegExReplace | (^.+▶ ) || AddHistory
+			(&P)  3 日前 ▶ MM/dd(ddd) || <#title,,#clip> || Date |+D-3  || RegExReplace | (^.+▶ ) || AddHistory
+			(&P)  4 日前 ▶ MM/dd(ddd) || <#title,,#clip> || Date |+D-4  || RegExReplace | (^.+▶ ) || AddHistory
+			(&P)  5 日前 ▶ MM/dd(ddd) || <#title,,#clip> || Date |+D-5  || RegExReplace | (^.+▶ ) || AddHistory
+			(&P)  6 日前 ▶ MM/dd(ddd) || <#title,,#clip> || Date |+D-6  || RegExReplace | (^.+▶ ) || AddHistory
+			(&P)  7 日前 ▶ MM/dd(ddd) || <#title,,#clip> || Date |+D-7  || RegExReplace | (^.+▶ ) || AddHistory
+			(&P)  8 日前 ▶ MM/dd(ddd) || <#title,,#clip> || Date |+D-8  || RegExReplace | (^.+▶ ) || AddHistory
+			(&P)  9 日前 ▶ MM/dd(ddd) || <#title,,#clip> || Date |+D-9  || RegExReplace | (^.+▶ ) || AddHistory
+			(&P) 10 日前 ▶ MM/dd(ddd) || <#title,,#clip> || Date |+D-10 || RegExReplace | (^.+▶ ) || AddHistory
+			(&P) 11 日前 ▶ MM/dd(ddd) || <#title,,#clip> || Date |+D-11 || RegExReplace | (^.+▶ ) || AddHistory
+			(&P) 12 日前 ▶ MM/dd(ddd) || <#title,,#clip> || Date |+D-12 || RegExReplace | (^.+▶ ) || AddHistory
+			(&P) 13 日前 ▶ MM/dd(ddd) || <#title,,#clip> || Date |+D-13 || RegExReplace | (^.+▶ ) || AddHistory
+			(&P) 14 日前 ▶ MM/dd(ddd) || <#title,,#clip> || Date |+D-14 || RegExReplace | (^.+▶ ) || AddHistory
+			---
+			(&F)1 週間後 ▶ MM/dd(ddd) || <#title,,#clip> || Date |+D7   || RegExReplace | (^.+▶ ) || AddHistory
+			(&F)2 週間後 ▶ MM/dd(ddd) || <#title,,#clip> || Date |+D14  || RegExReplace | (^.+▶ ) || AddHistory
+			(&F)3 週間後 ▶ MM/dd(ddd) || <#title,,#clip> || Date |+D21  || RegExReplace | (^.+▶ ) || AddHistory
+			(&F)4 週間後 ▶ MM/dd(ddd) || <#title,,#clip> || Date |+D28  || RegExReplace | (^.+▶ ) || AddHistory
+			(&B)1 週間前 ▶ MM/dd(ddd) || <#title,,#clip> || Date |+D-7  || RegExReplace | (^.+▶ ) || AddHistory
+			(&B)2 週間前 ▶ MM/dd(ddd) || <#title,,#clip> || Date |+D-14 || RegExReplace | (^.+▶ ) || AddHistory
+			(&B)3 週間前 ▶ MM/dd(ddd) || <#title,,#clip> || Date |+D-21 || RegExReplace | (^.+▶ ) || AddHistory
+			(&B)4 週間前 ▶ MM/dd(ddd) || <#title,,#clip> || Date |+D-28 || RegExReplace | (^.+▶ ) || AddHistory
+		..
+		+(&X)曜日付き、西暦付き『yyyy/MM/dd（曜日）』
+			(&Y)今日              ▶ yyyy/MM/dd(ddd) || <#title,,#clip> || Date |+D0 || RegExReplace | (^.+▶ )  || AddHistory
+			-
+			(&J)明日              ▶ yyyy/MM/dd(ddd) || <#title,,#clip> || Date |+D1 || RegExReplace | (^.+▶ )  || AddHistory
+			(&J)明後日            ▶ yyyy/MM/dd(ddd) || <#title,,#clip> || Date |+D2 || RegExReplace | (^.+▶ )  || AddHistory
+			(&J)先明後日（3日後） ▶ yyyy/MM/dd(ddd) || <#title,,#clip> || Date |+D3 || RegExReplace | (^.+▶ )  || AddHistory
+			-
+			(&K)昨日              ▶ yyyy/MM/dd(ddd) || <#title,,#clip> || Date |+D-1 || RegExReplace | (^.+▶ ) || AddHistory
+			(&K)一昨日            ▶ yyyy/MM/dd(ddd) || <#title,,#clip> || Date |+D-2 || RegExReplace | (^.+▶ ) || AddHistory
+			(&K)先一昨日（3日前） ▶ yyyy/MM/dd(ddd) || <#title,,#clip> || Date |+D-3 || RegExReplace | (^.+▶ ) || AddHistory
+			---
+			(&N)  4 日後 ▶ yyyy/MM/dd(ddd) || <#title,,#clip> || Date |+D4  || RegExReplace | (^.+▶ ) || AddHistory
+			(&N)  5 日後 ▶ yyyy/MM/dd(ddd) || <#title,,#clip> || Date |+D5  || RegExReplace | (^.+▶ ) || AddHistory
+			(&N)  6 日後 ▶ yyyy/MM/dd(ddd) || <#title,,#clip> || Date |+D6  || RegExReplace | (^.+▶ ) || AddHistory
+			(&N)  7 日後 ▶ yyyy/MM/dd(ddd) || <#title,,#clip> || Date |+D7  || RegExReplace | (^.+▶ ) || AddHistory
+			(&N)  8 日後 ▶ yyyy/MM/dd(ddd) || <#title,,#clip> || Date |+D8  || RegExReplace | (^.+▶ ) || AddHistory
+			(&N)  9 日後 ▶ yyyy/MM/dd(ddd) || <#title,,#clip> || Date |+D9  || RegExReplace | (^.+▶ ) || AddHistory
+			(&N) 10 日後 ▶ yyyy/MM/dd(ddd) || <#title,,#clip> || Date |+D10 || RegExReplace | (^.+▶ ) || AddHistory
+			(&N) 11 日後 ▶ yyyy/MM/dd(ddd) || <#title,,#clip> || Date |+D11 || RegExReplace | (^.+▶ ) || AddHistory
+			(&N) 12 日後 ▶ yyyy/MM/dd(ddd) || <#title,,#clip> || Date |+D12 || RegExReplace | (^.+▶ ) || AddHistory
+			(&N) 13 日後 ▶ yyyy/MM/dd(ddd) || <#title,,#clip> || Date |+D13 || RegExReplace | (^.+▶ ) || AddHistory
+			(&N) 14 日後 ▶ yyyy/MM/dd(ddd) || <#title,,#clip> || Date |+D14 || RegExReplace | (^.+▶ ) || AddHistory
+			---
+			(&P)  4 日前 ▶ yyyy/MM/dd(ddd) || <#title,,#clip> || Date |+D-4  || RegExReplace | (^.+▶ ) || AddHistory
+			(&P)  5 日前 ▶ yyyy/MM/dd(ddd) || <#title,,#clip> || Date |+D-5  || RegExReplace | (^.+▶ ) || AddHistory
+			(&P)  6 日前 ▶ yyyy/MM/dd(ddd) || <#title,,#clip> || Date |+D-6  || RegExReplace | (^.+▶ ) || AddHistory
+			(&P)  7 日前 ▶ yyyy/MM/dd(ddd) || <#title,,#clip> || Date |+D-7  || RegExReplace | (^.+▶ ) || AddHistory
+			(&P)  8 日前 ▶ yyyy/MM/dd(ddd) || <#title,,#clip> || Date |+D-8  || RegExReplace | (^.+▶ ) || AddHistory
+			(&P)  9 日前 ▶ yyyy/MM/dd(ddd) || <#title,,#clip> || Date |+D-9  || RegExReplace | (^.+▶ ) || AddHistory
+			(&P) 10 日前 ▶ yyyy/MM/dd(ddd) || <#title,,#clip> || Date |+D-10 || RegExReplace | (^.+▶ ) || AddHistory
+			(&P) 11 日前 ▶ yyyy/MM/dd(ddd) || <#title,,#clip> || Date |+D-11 || RegExReplace | (^.+▶ ) || AddHistory
+			(&P) 12 日前 ▶ yyyy/MM/dd(ddd) || <#title,,#clip> || Date |+D-12 || RegExReplace | (^.+▶ ) || AddHistory
+			(&P) 13 日前 ▶ yyyy/MM/dd(ddd) || <#title,,#clip> || Date |+D-13 || RegExReplace | (^.+▶ ) || AddHistory
+			(&P) 14 日前 ▶ yyyy/MM/dd(ddd) || <#title,,#clip> || Date |+D-14 || RegExReplace | (^.+▶ ) || AddHistory
+			---
+			(&F)1 週間後 ▶ yyyy/MM/dd(ddd) || <#title,,#clip> || Date |+D7   || RegExReplace | (^.+▶ ) || AddHistory
+			(&F)2 週間後 ▶ yyyy/MM/dd(ddd) || <#title,,#clip> || Date |+D14  || RegExReplace | (^.+▶ ) || AddHistory
+			(&F)3 週間後 ▶ yyyy/MM/dd(ddd) || <#title,,#clip> || Date |+D21  || RegExReplace | (^.+▶ ) || AddHistory
+			(&F)4 週間後 ▶ yyyy/MM/dd(ddd) || <#title,,#clip> || Date |+D28  || RegExReplace | (^.+▶ ) || AddHistory
+			(&B)1 週間前 ▶ yyyy/MM/dd(ddd) || <#title,,#clip> || Date |+D-7  || RegExReplace | (^.+▶ ) || AddHistory
+			(&B)2 週間前 ▶ yyyy/MM/dd(ddd) || <#title,,#clip> || Date |+D-14 || RegExReplace | (^.+▶ ) || AddHistory
+			(&B)3 週間前 ▶ yyyy/MM/dd(ddd) || <#title,,#clip> || Date |+D-21 || RegExReplace | (^.+▶ ) || AddHistory
+			(&B)4 週間前 ▶ yyyy/MM/dd(ddd) || <#title,,#clip> || Date |+D-28 || RegExReplace | (^.+▶ ) || AddHistory
+		..
+	..
+	+時刻(&T)
+		(&T)独自の数字の羅列『HHmmss』               ▶ ~HHmmss_~        || <#title,,#clip> || Date || RegExReplace | (^.+▶ )  || AddHistory
+		(&A)ISO8601『HH:mm:ss』                      ▶ ~HH:mm:ss_~      || <#title,,#clip> || Date || RegExReplace | (^.+▶ )  || AddHistory
+		(&S)ISO8601タイムゾーン付き『HH:mm:ss+0900』 ▶ ~HH:mm:ss+0900_~ || <#title,,#clip> || Date || RegExReplace | (^.+▶ )  || AddHistory
+		+切れが良い時刻（&J）
+			+未来（&J）
+				(&0)いまの     HH:00 ▶ ~HH:00~ || <#title,,#clip> || Date || RegExReplace | (^.+▶ )  || AddHistory
+				(&0)いまの     HH:30 ▶ ~HH:30~ || <#title,,#clip> || Date || RegExReplace | (^.+▶ )  || AddHistory
+				-
+				(&1)1時間後の  HH:00 ▶ ~HH:00~ || <#title,,#clip> || Date | +H1 || RegExReplace | (^.+▶ )  || AddHistory
+				(&1)1時間後の  HH:30 ▶ ~HH:30~ || <#title,,#clip> || Date | +H1 || RegExReplace | (^.+▶ )  || AddHistory
+				-
+				(&2)2時間後の  HH:00 ▶ ~HH:00~ || <#title,,#clip> || Date | +H2 || RegExReplace | (^.+▶ )  || AddHistory
+				(&2)2時間後の  HH:30 ▶ ~HH:30~ || <#title,,#clip> || Date | +H2 || RegExReplace | (^.+▶ )  || AddHistory
+				-
+				(&3)3時間後の  HH:00 ▶ ~HH:00~ || <#title,,#clip> || Date | +H3 || RegExReplace | (^.+▶ )  || AddHistory
+				(&3)3時間後の  HH:30 ▶ ~HH:30~ || <#title,,#clip> || Date | +H3 || RegExReplace | (^.+▶ )  || AddHistory
+				-
+				(&4)4時間後の  HH:00 ▶ ~HH:00~ || <#title,,#clip> || Date | +H4 || RegExReplace | (^.+▶ )  || AddHistory
+				(&4)4時間後の  HH:30 ▶ ~HH:30~ || <#title,,#clip> || Date | +H4 || RegExReplace | (^.+▶ )  || AddHistory
+				-
+				(&5)5時間後の  HH:00 ▶ ~HH:00~ || <#title,,#clip> || Date | +H5 || RegExReplace | (^.+▶ )  || AddHistory
+				(&5)5時間後の  HH:30 ▶ ~HH:30~ || <#title,,#clip> || Date | +H5 || RegExReplace | (^.+▶ )  || AddHistory
+				-
+				(&6)6時間後の  HH:00 ▶ ~HH:00~ || <#title,,#clip> || Date | +H6 || RegExReplace | (^.+▶ )  || AddHistory
+				(&6)6時間後の  HH:30 ▶ ~HH:30~ || <#title,,#clip> || Date | +H6 || RegExReplace | (^.+▶ )  || AddHistory
+				-
+				(&7)7時間後の  HH:00 ▶ ~HH:00~ || <#title,,#clip> || Date | +H7 || RegExReplace | (^.+▶ )  || AddHistory
+				(&7)7時間後の  HH:30 ▶ ~HH:30~ || <#title,,#clip> || Date | +H7 || RegExReplace | (^.+▶ )  || AddHistory
+				-
+				(&8)8時間後の  HH:00 ▶ ~HH:00~ || <#title,,#clip> || Date | +H8 || RegExReplace | (^.+▶ )  || AddHistory
+				(&8)8時間後の  HH:30 ▶ ~HH:30~ || <#title,,#clip> || Date | +H8 || RegExReplace | (^.+▶ )  || AddHistory
+				-
+				(&9)9時間後の  HH:00 ▶ ~HH:00~ || <#title,,#clip> || Date | +H9 || RegExReplace | (^.+▶ )  || AddHistory
+				(&9)9時間後の  HH:30 ▶ ~HH:30~ || <#title,,#clip> || Date | +H9 || RegExReplace | (^.+▶ )  || AddHistory
+				-
+				(&A)10時間後の HH:00 ▶ ~HH:00~ || <#title,,#clip> || Date | +H10 || RegExReplace | (^.+▶ )  || AddHistory
+				(&A)10時間後の HH:30 ▶ ~HH:30~ || <#title,,#clip> || Date | +H10 || RegExReplace | (^.+▶ )  || AddHistory
+			..
+			+過去（&K）
+				(&0)いまの     HH:00 ▶ ~HH:00~ || <#title,,#clip> || Date || RegExReplace | (^.+▶ )  || AddHistory
+				(&0)いまの     HH:30 ▶ ~HH:30~ || <#title,,#clip> || Date || RegExReplace | (^.+▶ )  || AddHistory
+				-
+				(&1)1時間前の  HH:00 ▶ ~HH:00~ || <#title,,#clip> || Date | +H-1 || RegExReplace | (^.+▶ )  || AddHistory
+				(&1)1時間前の  HH:30 ▶ ~HH:30~ || <#title,,#clip> || Date | +H-1 || RegExReplace | (^.+▶ )  || AddHistory
+				-
+				(&2)2時間前の  HH:00 ▶ ~HH:00~ || <#title,,#clip> || Date | +H-2 || RegExReplace | (^.+▶ )  || AddHistory
+				(&2)2時間前の  HH:30 ▶ ~HH:30~ || <#title,,#clip> || Date | +H-2 || RegExReplace | (^.+▶ )  || AddHistory
+				-
+				(&3)3時間前の  HH:00 ▶ ~HH:00~ || <#title,,#clip> || Date | +H-3 || RegExReplace | (^.+▶ )  || AddHistory
+				(&3)3時間前の  HH:30 ▶ ~HH:30~ || <#title,,#clip> || Date | +H-3 || RegExReplace | (^.+▶ )  || AddHistory
+				-
+				(&4)4時間前の  HH:00 ▶ ~HH:00~ || <#title,,#clip> || Date | +H-4 || RegExReplace | (^.+▶ )  || AddHistory
+				(&4)4時間前の  HH:30 ▶ ~HH:30~ || <#title,,#clip> || Date | +H-4 || RegExReplace | (^.+▶ )  || AddHistory
+				-
+				(&5)5時間前の  HH:00 ▶ ~HH:00~ || <#title,,#clip> || Date | +H-5 || RegExReplace | (^.+▶ )  || AddHistory
+				(&5)5時間前の  HH:30 ▶ ~HH:30~ || <#title,,#clip> || Date | +H-5 || RegExReplace | (^.+▶ )  || AddHistory
+				-
+				(&6)6時間前の  HH:00 ▶ ~HH:00~ || <#title,,#clip> || Date | +H-6 || RegExReplace | (^.+▶ )  || AddHistory
+				(&6)6時間前の  HH:30 ▶ ~HH:30~ || <#title,,#clip> || Date | +H-6 || RegExReplace | (^.+▶ )  || AddHistory
+				-
+				(&7)7時間前の  HH:00 ▶ ~HH:00~ || <#title,,#clip> || Date | +H-7 || RegExReplace | (^.+▶ )  || AddHistory
+				(&7)7時間前の  HH:30 ▶ ~HH:30~ || <#title,,#clip> || Date | +H-7 || RegExReplace | (^.+▶ )  || AddHistory
+				-
+				(&8)8時間前の  HH:00 ▶ ~HH:00~ || <#title,,#clip> || Date | +H-8 || RegExReplace | (^.+▶ )  || AddHistory
+				(&8)8時間前の  HH:30 ▶ ~HH:30~ || <#title,,#clip> || Date | +H-8 || RegExReplace | (^.+▶ )  || AddHistory
+				-
+				(&9)9時間前の  HH:00 ▶ ~HH:00~ || <#title,,#clip> || Date | +H-9 || RegExReplace | (^.+▶ )  || AddHistory
+				(&9)9時間前の  HH:30 ▶ ~HH:30~ || <#title,,#clip> || Date | +H-9 || RegExReplace | (^.+▶ )  || AddHistory
+				-
+				(&A)10時間前の HH:00 ▶ ~HH:00~ || <#title,,#clip> || Date | +H-10 || RegExReplace | (^.+▶ )  || AddHistory
+				(&A)10時間前の HH:30 ▶ ~HH:30~ || <#title,,#clip> || Date | +H-10 || RegExReplace | (^.+▶ )  || AddHistory
+			..
+		..
+	..
+	+日付および時刻(&B)
+		(&B)独自『yyyyMMdd_HHmmss』                                        ▶ ~yyyyMMdd_HHmmss_~          || <#title,,#clip> || Date || RegExReplace | (^.+▶ )  || AddHistory
+		-
+		(&J)ISO8601 基本形式『yyyyMMddTHHmmss』                            ▶ ~yyyyMMddTHHmmss_~          || <#title,,#clip> || Date || RegExReplace | (^.+▶ )  || AddHistory
+		(&J)ISO8601 拡張形式『yyyy-MM-ddTHH:mm:ss』                        ▶ ~yyyy-MM-ddTHH:mm:ss_~      || <#title,,#clip> || Date || RegExReplace | (^.+▶ )  || AddHistory
+		-
+		(&K)ISO8601 基本形式、タイムゾーン付き『yyyyMMddTHHmmss+0900』     ▶ ~yyyyMMddTHHmmss+0900_~     || <#title,,#clip> || Date || RegExReplace | (^.+▶ )  || AddHistory
+		(&K)ISO8601 拡張形式、タイムゾーン付き『yyyy-MM-ddTHH:mm:ss+0900』 ▶ ~yyyy-MM-ddTHH:mm:ss+0900_~ || <#title,,#clip> || Date || RegExReplace | (^.+▶ )  || AddHistory
+		-
+		(&L)世間の『yyyy/MM/dd HH:mm:ss』
+	..
+	+Samples
+		曜日付き かつ "曜日"付き yyyy年M月d日(dddd)		|| Date
+		Today is "~MM/dd~" ~~~HH:mm~~~	|| Date
+		ddd, dd MMM yyyy HH:mm:ss +0900	|| Date | o
+		yyyy/MM/dd(和暦)		|| Date || StrReplace | 和暦 | 令和~yyyy~ || Date | D4
+		MM/dd HH:mm:ss (１週間と６時間後の５分４秒前) || Date | +D7 +H6 +M-5 +S-4 || StrReplace | ` (１週間と６時間後の５分４秒前)
+		複数行の日付...			|
+						Y:~yyyy~
+						M:~MM~
+						D:~dd~
+						/E
+						| Date
+	..
+..
++emacs(&E)
+	+&general use
+		(key-chord-mode 1)
+		(yas-global-mode t)
+		hayatuyo-toggle-font-lock-keywords-case-fold-search
+		menu-bar--display-line-numbers-mode-relative
+	..
+	+org-mode(&O)
+		myHeaders2|
+		*** communications
+		*** git commands
+		*** branches
+		/E
+		+&Table
+			orgtbl-create-or-convert-from-region
+			(setq org-table-copy-increment nil)
+			(&C)コミットの情報|
+				以下のコミットにて変更が完了いたしました。ご確認ください。
+
+				`|` コミットID	   `|`	 `|`
+				`|` コミット日時   `|`	 `|`
+				`|` 差分へのリンク `|`	 `|`
+				/E
+		..
+
+		+ソースブロック(&B)
+			引用(&F)|
+			#+BEGIN_QUOTE
+			#+END_QUOTE
+
+			/E
+			&markdown|
+			#+BEGIN_SRC markdown
+			#+END_SRC
+
+			/E
+			&YAML|
+			#+BEGIN_SRC yaml
+			#+END_SRC
+
+			/E
+			json(&J)|
+			#+BEGIN_SRC json
+			#+END_SRC
+
+			/E
+			java(&J)|
+			#+BEGIN_SRC java
+			#+END_SRC
+
+			/E
+			kotlin(&K)|
+			#+BEGIN_SRC kotlin
+			#+END_SRC
+
+			/E
+			csharp(&C)|
+			#+BEGIN_SRC csharp
+			#+END_SRC
+
+			/E
+			bash(&B)|
+			#+BEGIN_SRC bash
+			#+END_SRC
+
+			/E
+			python(&P)|
+			#+BEGIN_SRC python
+			#+END_SRC
+
+			/E
+			php(&P)|
+			#+BEGIN_SRC php
+			#+END_SRC
+
+			/E
+			python(&S)|
+			#+BEGIN_SRC sql
+			#+END_SRC
+
+			/E
+			警告(&W)|
+			#+HTML: <div class="notice notice-warning">
+			#+HTML: </div>
+			/E
+			情報(&I)|
+			#+HTML: <div class="notice notice-info">
+			#+HTML: </div>
+			/E
+			例(&E)|
+			#+HTML: <div class="notice notice-example">
+			#+HTML: </div>
+			/E
+		..
+		org-to-textile(&O)|org-textile-export-as-textile
+		org-to-textile後のhead番号の修正|
+		^h\([0-9]\)\.
+		h\,(- (string-to-number \1) 1).
+		/E
+		リンクの挿入(&L)|[[][]]
+		options|
+		#+OPTIONS: ^:{} author:nil email:nil creator:nil timestamp:nil html-postamble:nil \n:t toc:nil
+		# html-postamble:nil --> エクスポートされたhtmlに [[http://validator.w3.org/check?uri=referer][Validate]] のリンクを埋め込むのを止める
+		# (org-global-cycle 1)
+		# (org-global-cycle 2)
+		# (org-global-cycle 3)
+		# (org-global-cycle 4)
+		# (org-global-cycle 5)
+		#+TODO: 着手済み 委任済み 確認待ち `|` 完了 放置
+		/E
+		+(&J)Backlogへの変換
+			&List|
+			^\([[:blank:]]+\)\(-.*\)
+			\,(format "%s%s" (make-string (* 4 (/ (length \1) 2)) ? ) \2)
+			/E
+			&Header|
+			^\(\*+\)[[:blank:]]+
+			\,(format "%s " (make-string (length \1) ?#))
+			/E
+			&Table|
+			/* orgtbl-mode */
+			#+ORGTBL: SEND new-table-name hayatuyo-orgtbl-to-backlog :skipcols () :skip 0
+			/* */
+
+			/* BEGIN RECEIVE ORGTBL new-table-name */
+			/* END	 RECEIVE ORGTBL new-table-name */
+			/E
+		..
+	..
+	+markup
+		+&Yaml
+			# Hi-lock: (("\\(!\\`|Fn::\\)[[:alnum:]]+" (0 (quote my-face-gray-NEUTRAL) prepend)))
+			Type:\s-*AWS:: \.ya?ml
+			yafolding-show-all
+			yafolding-toggle-all（レベル指定）|
+			# (yafolding-toggle-all 0)
+			# (yafolding-toggle-all 1)
+			# (yafolding-toggle-all 2)
+			# (yafolding-toggle-all 3)
+			# (yafolding-toggle-all 4)
+			/E
+			+&AWS
+				+&cloudformation
+					!&Ref|!Ref
+					!&GetAtt|!GetAtt
+					(&R)動的なリージョンとアカウント|${AWS::Region}:${AWS::AccountId}
+					(&S)Type: String  |	   Type: String
+					(&B)Type: Boolean |	   Type: Boolean
+					(&D)Default:	  |	   Default:
+					&Functions|
+					# Hi-lock: (("!Sub"	   (0 (quote my-face-12) prepend)))
+					# Hi-lock: (("!GetAtt" (0 (quote my-face-14) prepend)))
+					# Hi-lock: (("!Ref"	   (0 (quote my-face-13) prepend)))
+					/E
+					条件 if 値あり|cHasXXXX : !Not [ !Equals ["", !Ref pXXXX]]
+					条件 複合条件(or)|
+					cHasAAAA: !Not [ !Equals ["", !Ref pAAAA]]
+					cHasBBBB: !Not [ !Equals ["", !Ref pBBBB]]
+					cHasAny: !Or
+					  - Condition: cHasAAAA
+					  - Condition: cHasBBBB
+					/E
+					条件の使用例|
+					#Conditions:
+					#  AlwaysTrue: !Equals [true, true]
+					#  AlwaysFalse: !Equals [true, false]
+					#Resources:
+					#  Lb:
+					#	 Type: AWS::ElasticLoadBalancingV2::LoadBalancer
+					#	 Properties:
+					#	   Name: MyLb
+					#	   Scheme: internal
+					#	   Subnets: !Ref Subnets
+					#	   Tags:
+					#		 - Key: TagA
+					#		   Value: Unconditionally present
+					#		 - !If
+					#		   - AlwaysTrue
+					#		   - Key: TagB
+					#			 Value: Always present
+					#		   - !Ref 'AWS::NoValue'
+					#		 - !If
+					#		   - AlwaysFalse
+					#		   - Key: TagC
+					#			 Value: Never present
+					#		   - !Ref 'AWS::NoValue'
+					/E
+				..
+			..
+		..
+		+markdonw(&M)
+			TODO in red <span style="background:red">**TODO:**	</span> || <#title,,#clip> || RegExReplace | ^[^<]+ || AddHistory
+			+画像(&I)
+				(&I)見出し1の罫線 | ![見出し1の罫線](line_1.png)
+				(&I)見出し2の罫線 | ![見出し2の罫線](line_2.png)
+				(&I)見出し3の罫線 | ![見出し3の罫線](line_3.png)
+				挿入(&I)|![caption](path){#fig:tag width=25%}
+				参照(&R)|[[@fig:tag]](#fig:tag)
+			..
+			+ソースブロック(&B)
+				python(&P)|
+				``````python
+				``````
+				/E
+				json(&J)|
+				``````json
+				``````
+				/E
+				bash(&B)|
+				``````bash
+				``````
+				/E
+				csharp(&C)|
+				``````csharp
+				``````
+				/E
+				plantuml(&P)|
+				``````plantuml
+				``````
+				/E
+			..
+		..
+		+textile(&T)
+			画像(&I)|!{width:25%}ImageName!
+			サムネイル(&I)|{{thumbnail(01-cloning_1.png, size=200)}}
+			サムネイル(&I)|{{thumbnail(01-cloning_2.png, width=30%)}}
+			リンク(&L)|"表示する文言":url
+			リンク（同じページ内）(&L)|[[NameOfPage#Heading`|DisplayedTitle]]
+			添付ファイルへのリンク(&A)|attachment:ファイル名
+			展開(&E)|
+			{{collapse(詳細を表示...)
+			}}
+			/E
+			+code(&C)
+				引用(&Q)|
+				<pre>
+				</pre>
+				/E
+				bash(&B)|
+				<pre><code class="bash">
+				</code></pre>
+				/E
+				yaml(&Y)|
+				<pre><code class="yaml">
+				</code></pre>
+				/E
+			..
+		..
+	..
+	+clipper(&C)
+		(&C)Q&A|
+		@@
+		Q.
+		@@
+		A.
+		/E
+	..
+	+Lisp(&L)
+		hayatuyo-toggle-font-lock-keywords-case-fold-search
+		手元で計算(&L)|(insert (format "%f" 9.9))
+		ループ（整数）(&a)|(loop for i from 1 to 9 do (insert (format "\n%03d" i )))
+		ループ（アルファベット）(&a)|(loop for i from 1 to 24 do (insert (format "%c" (+ 64 i) )))
+		ループ（リスト）(&s)|
+		(progn
+		  (setq urls (list "apple" "orange" "pine" ))
+		  (require 'cl)
+		  (dotimes (i (length urls))
+			(setq url (nth i urls))
+			(insert (format "\n%s" url))
+			)
+		  )
+		/E
+		接頭辞 on open-line のnil化|
+		#+BEGIN_SRC list
+		(setq fill-prefix nil)
+		#+END_SRC
+		/E
+	..
+	+日時(&D)
+		(&D)gmailの検索で時刻まで指定する|
+		(progn
+		 (let
+			 (
+			  (target-query	 "")
+			  (target-after	 "2021-04-19 23:00 JST")
+			  (target-before "2021-04-19 23:00 JST")
+			  )
+
+		   (setq target-query
+				 (format "after:%s before:%s"
+						   (format-time-string "%s" (date-to-time target-after))
+						   (format-time-string "%s" (date-to-time target-before))
+						   )
+				   );;setq
+		   (kill-new target-query)
+		   );;let
+		 );;progn
+		/E
+	..
+	+正規表現(&R)
+		+(&E)拡張子
+			;↓ - パイプはバッククォートでエスケープする必要がある。
+			;↓   - 『|』→『`\』
+			;↓ - バックスラッシュはそのまま書ける。エスケープの必要はない。
+			;↓   - 『\』→『\』
+			(&E)AWS CloudFormation のテンプレート | \.\(sh\`|yaml\)
+		..
+		+(&R)class
+			(&d)[:digit:]	  a digit, same as [0-9]																									| [[:digit:]]
+			(&a)[:alpha:]	  a letter (an alphabetic character)																						| [[:alpha:]]
+			(&a)[:alnum:]	  a letter or a digit (an alphanumeric character)																			| [[:alnum:]]
+			(&u)[:upper:]	  a letter in uppercase																										| [[:upper:]]
+			(&l)[:lower:]	  a letter in lowercase																										| [[:lower:]]
+			(&s)[:space:]	  a whitespace character, as defined by the syntax table, but typically[ \t\r\n\v\f ], which includes the newline character | [[:space:]]
+			(&b)[:blank:]	  a space or tab character																									| [[:blank:]]
+			(&n)[:nonascii:]  any non ascii character																									| [[:nonascii:]]
+			(&x)[:xdigit:]	  an hexadecimal digit																										| [[:xdigit:]]
+			(&c)[:cntrl:]	  a control character（ascii の 10進数の1から31の範囲にあるすべての文字にマッチする。）										| [[:cntrl:]]
+			(&a)[:ascii:]	  an ascii character																										| [[:ascii:]]
+			(&g)[:graph:]	  a visible character																										| [[:graph:]]
+			(&p)[:print:]	  a visible character plus the space character																				| [[:print:]]
+		..
+		カンマと空白の入れ変え|
+		\([[:blank:]]+\),
+		,\1
+		/E
+
+	..
+	+変換(&T)
+		整数のゼロ埋め(&I)|
+			\([0-9]+\)
+			\,(format "%04d" (string-to-number \1)))
+			/E
+		+URL(&U)
+			エンコード(&E) || RegExReplace | s).+ | (insert (format "\n%s" (url-encode-url "$0")))
+			デコード(&D)   || RegExReplace | s).+ | (insert (format "\n%s" (decode-coding-string (url-unhex-string "$0") 'utf-8)))
+			-
+			エンコード（例文）(&E)|(insert (format "\n%s" (url-encode-url "https://abc.com/松竹梅.jpg")))
+			デコード（例文）(&D)|(insert (format "\n%s" (decode-coding-string (url-unhex-string "https://abc.com/%E6%9D%BE%E7%AB%B9%E6%A2%85.jpg") 'utf-8)))
+			-
+			エンコード（by clipboard history）(&E)		|| EncodeURL
+			デコード（by clipboard history）(&D)		|| EncodeURL | 1
+			-
+		..
+	..
+	+VS Code
+		c:\Users\hayakat\AppData\Roaming\Code\User\settings.json
+	..
+	+scrum
+		デイリースクラム|
+		●やったこと
+		●やること
+		●困っていること
+		/E
+	..
+	+settings
+		(setq fill-prefix nil)
+		(setq line-move-visual t)
+		(set-input-method "W32-IME")
+	..
+..
++(&T)TOOLS
+	keyhac(&J)|C:\work\tools\keyhac\config.py
+	+Anki
+		+Tags
+			佐藤正遠
+			樺沢紫苑
+		..
+		(&A)画像の置き場所 ▶▶▶ c:\Users\hayakat\AppData\Roaming\Anki2\main\collection.media\ || <#title,,#clip> || RegExReplace | (^.+▶▶▶ ) || AddHistory
+		(&A)画像の置き場所を開く ▶▶▶ c:\Users\hayakat\AppData\Roaming\Anki2\main\collection.media\ || <#title,,#clip> || RegExReplace | (^.+▶▶▶ ) || AddHistory || Run
+		;; ↑注意: path / Anki / にも同じ定型句があるので、ここを変更したら、同時にそこも変更すること。
+	..
+..
++挨拶・声掛け(&A)
+	(&A)▶▶▶ 試験中であるなど、何らかの不都合がありましたら、それまでにご連絡ください。|| <#title,,#clip> || RegExReplace | (^.+▶▶▶ ) || AddHistory
+..
++記号(&K)
+	+よく使う記号(&A)
+		(&A)『』|『』
+		(&A)【】|【】
+	..
+	*記号(&J) | -1
+	◆|■|▲|▼|★|●||◇|□|△|▽|☆|○
+	---
+	←|→|↑|↓||…|‥|―|～|／|＼|￣|＿
+	---
+	【】|『』|〈〉|《》|〔〕|［］|‘’|“”||㍾|㍽|㍼|㍻
+	---
+	㈱|㈲|㈹||㊤|㊥|㊦|㊧|㊨||№|℡|㏍
+	---
+	〒|※|§|¶|♭|♪|〆|仝|♂|♀|⇒|⇔
+	---
+	①|②|③|④|⑤|⑥|⑦|⑧|⑨|⑩|--|Ⅰ|Ⅱ|Ⅲ|Ⅳ|Ⅴ|Ⅵ|Ⅶ|Ⅷ|Ⅸ|Ⅹ
+	..
+..
++検索(&2)
+	+google(&G)
+		site:microsoft.com(&S)|site:microsoft.com
+		site:docs.python.org/3(&P)|site:docs.python.org/3
+	..
+..
+-
++Programming(&P)
+	+general
+		# pushするときは 削除すべき DO NOT LEFT AS PUSHED
+	..
+	+Python
+		(&m)if __name__ == '__main__': || <#title,,#clip> || RegExReplace | ^\(\&[[:alpha:]]\) || AddHistory
+		+pandas
+			pd.set_option('display.max_rows',	 10 )
+			pd.set_option('display.max_columns', 10 )
+			pd.DataFrame
+			pd.Series
+			特定の期間、特定の条件、特定の属性の、特定の周期ごとの最大値を取得する方法|
+				datetime_start	  = "2022/6/6 00:00"
+				datetime_end	  = "2022/6/13 00:00"
+				larger_area_index = 3 # 条件文全体は f"largerAreaIndex=={larger_area_index}" である。
+				target_attribute  = "エリア供給力(MW)"
+				statics_interval  = "D"
+
+				df[datetime_start : datetime_end].query(f"largerAreaIndex=={larger_area_index}").resample(statics_interval)[target_attribute].max()
+				/E
+			+searching
+				python pandas DataFrame
+				python pandas Series
+			..
+		..
+		+jupyter
+			(&j)run all cells|| <#title,,#clip> || RegExReplace | ^\(\&[[:alpha:]]\) || AddHistory
+			jupyter notebook --no-browser
+			+DESTRUCTIVE
+				clear all cells output
+				+DANGER ZONE
+					restart kernel and run all cells
+				..
+			..
+		..
+		+logger
+			LogRecord 属性|
+				--	asctime
+				  - %(asctime)s
+				  - LogRecord が生成された時刻を人間が読める書式で表したもの。デフォルトでは "2003-07-08 16:49:45,896" 形式 (コンマ以降の数字は時刻のミリ秒部分) です
+				--	ファイル名
+				  - %(filename)s
+				  - pathname のファイル名部分
+				--	funcName
+				  - %(funcName)s
+				  - ロギングの呼び出しを含む関数の名前
+				--	levelname
+				  - %(levelname)s
+				  - メッセージのための文字のロギングレベル ('DEBUG', 'INFO', 'WARNING', 'ERROR', 'CRITICAL')
+				--	levelno
+				  - %(levelno)s
+				  - メッセージのための数値のロギングレベル (DEBUG, INFO, WARNING, ERROR, CRITICAL)
+				--	lineno
+				  - %(lineno)d
+				  - ロギングの呼び出しが発せられたソース行番号 (利用できる場合のみ)
+				--	message
+				  - %(message)s
+				  - msg % args として求められた、ログメッセージ。 Formatter.format() が呼び出されたときに設定されます
+				--	module
+				  - %(module)s
+				  - モジュール (filename の名前部分)
+				--	name
+				  - %(name)s
+				  - ロギングに使われたロガーの名前
+				--	pathname
+				  - %(pathname)s
+				  - ロギングの呼び出しが発せられたファイルの完全なパス名 (利用できる場合のみ)
+				--	process
+				  - %(process)d
+				  - プロセス ID (利用可能な場合のみ)
+				--	processName
+				  - %(processName)s
+				  - プロセス名 (利用可能な場合のみ)
+				--	thread
+				  - %(thread)d
+				  - スレッド ID (利用可能な場合のみ)
+				--	threadName
+				  - %(threadName)s
+				  - スレッド名 (利用可能な場合のみ)
+				/E
+		..
+	..
+	+AWS CloudFormation
+		与える文字列を条件分岐させる|
+		#AWSTemplateFormatVersion: 2010-09-09
+		#Parameters:
+		#  Env:
+		#	 Type: String
+		#	 Default: dev
+		#	 AllowedValues:
+		#	   - dev
+		#	   - prod
+		#	 Description: "Enter an environment name"
+		#Conditions:
+		#  IsProd: !Equals [!Ref Env, prod]
+		#Resources:
+		#  MyBucket:
+		#	 Type: AWS::S3::Bucket
+		#	 Properties:
+		#	   #ここが肝
+		#	   BucketName: !Sub
+		#		 - "MyBucket${Suffix}"
+		#		 - Suffix : !If [IsProd, "", !Sub "-${AWS::AccountId}"]
+		/E
+	..
+..
+-
++Commands(&C)
+	+AWS CLI
+		(&p)名前付きプロファイル一覧の取得 ▶▶▶ aws configure list-profiles|| <#title,,#clip> || RegExReplace | (^.+▶▶▶ ) || AddHistory
+		path to config in wsl2         | \\wsl$\Ubuntu-20.04\home\hayatuyo\.aws\
+		path to config in windows      | c:\work\WSL\.aws\
+		+SNS
+			list all subscriptions unsubscribed || <#blank,,#clip> || RegExReplace | ^.*$ | aws sns list-subscriptions `| jq '.Subscriptions[] `| select( .SubscriptionArn `| test("PendingConfirmation"))' || AddHistory
+		..
+		+CloudFormation
+			CodeBuild で使わえるDocker Imageの一覧 / 目的のアーキテクチャに合致する、最新ではないバージョンを含めて全てのバージョンの一覧を出力するコマンド | aws codebuild list-curated-environment-images `|` jq  '.platforms[] `|` select( .platform `|` test("AMAZON_LINUX_2")) `|` .languages[] `|` select( .language `|` test("STANDARD")) `|` .images[] `|` select (.name `|` test ("(x86_64-standard)") ) `|` select (.name `|` test ("(corretto)") `|` not) `|` .versions'
+			CodeBuild で使わえるDocker Imageの一覧 / 目的のアーキテクチャに合致する最新のバージョンを出力するコマンド                                       | aws codebuild list-curated-environment-images `|` jq  '.platforms[] `|` select( .platform `|` test("AMAZON_LINUX_2")) `|` .languages[] `|` select( .language `|` test("STANDARD")) `|` .images[] `|` select (.name `|` test ("(x86_64-standard)") ) `|` select (.name `|` test ("(corretto)") `|` not) `|` .versions `|` max'
+		..
+	..
+	+Google(&O)
+		-site:it-swarm-ja.com
+	..
+	+&Git
+		+(&B)Branch
+			(&B)ブランチ名を変更|
+				HAYATUYO_TEMP_CHANGING_BRANCH_NAME_OLD_NAME="xxxx"
+				HAYATUYO_TEMP_CHANGING_BRANCH_NAME_NEW_NAME="yyyy"
+				HAYATUYO_TEMP_CHANGING_BRANCH_NAME_REMOTE_NAME="origin"
+
+				echo -e "\n\non ${HAYATUYO_TEMP_CHANGING_BRANCH_NAME_REMOTE_NAME}\n\tfrom ${HAYATUYO_TEMP_CHANGING_BRANCH_NAME_OLD_NAME}\n\tto   ${HAYATUYO_TEMP_CHANGING_BRANCH_NAME_NEW_NAME}\n\n"
+
+				git branch --move                                                         ${HAYATUYO_TEMP_CHANGING_BRANCH_NAME_OLD_NAME} ${HAYATUYO_TEMP_CHANGING_BRANCH_NAME_NEW_NAME}
+				git push --set-upstream ${HAYATUYO_TEMP_CHANGING_BRANCH_NAME_REMOTE_NAME}                                                ${HAYATUYO_TEMP_CHANGING_BRANCH_NAME_NEW_NAME}
+				git push --delete       ${HAYATUYO_TEMP_CHANGING_BRANCH_NAME_REMOTE_NAME} ${HAYATUYO_TEMP_CHANGING_BRANCH_NAME_OLD_NAME}
+
+				git branch --all `|` grep --color ${HAYATUYO_TEMP_CHANGING_BRANCH_NAME_NEW_NAME}
+				/E
+			(&B)AWS CodeCommit の デフォルトブランチ名を master から main へ変更する手順|
+				1. まずローカルリポジトリにて変更する。
+				   - git branch --move master main
+				2. main ブランチをリモートブランチにプッシュする。
+				   - git push --set-upstream origin main
+				3. AWS CodeCommit には「デフォルトブランチ」という概念がある。これが master ブランチのままだと master ブランチを削除できないので、 main ブランチを「デフォルトブランチ」にする。
+				   - aws --profile xxxx codecommit update-default-branch --repository-name NNNN --default-branch-name main
+				4. master ブランチを削除する。
+				   - git push origin --delete  master
+				/E
+		..
+		ローカルブランチをリモートブランチで強制的に上書きする|git fetch origin main && git reset --hard origin/main
+		+Message
+			 (&M)2行目以降のメッセージ |` -m "" -m ""`
+		..
+		+Commit(&G)
+			&fix：バグ修正						 |git commit -m "refs #xxxx [fix] "		-m "" -m ""
+			&hotfix：クリティカルなバグ修正		 |git commit -m "refs #xxxx [hotfix] "	-m "" -m ""
+			&add：新規（ファイル）機能追加		 |git commit -m "refs #xxxx [add] "		-m "" -m ""
+			&update：機能修正（バグではない）	 |git commit -m "refs #xxxx [update] "	-m "" -m ""
+			&change：仕様変更					 |git commit -m "refs #xxxx [change] "	-m "" -m ""
+			&clean：整理（リファクタリング等）	 |git commit -m "refs #xxxx [clean] "	-m "" -m ""
+			&disable：無効化（コメントアウト等） |git commit -m "refs #xxxx [disable] " -m "" -m ""
+			&remove：削除（ファイル）			 |git commit -m "refs #xxxx [remove] "	-m "" -m ""
+			&upgrade：バージョンアップ			 |git commit -m "refs #xxxx [upgrade] " -m "" -m ""
+			&revert：変更取り消し				 |git commit -m "refs #xxxx [revert] "	-m "" -m ""
+		..
+		+logs
+			tags一覧|git log --no-walk --tags --date=format:'%Y-%m-%d' --pretty="%ad %d" --decorate=full
+		..
+		+svn on git(&V)
+			clone | git svn clone
+			pull  | git rebase main
+			1. feature ブランチでのコミット（通常のgitと同様）								   | git commit
+			2. feature ブランチから main ブランチへのマージ					| git merge	 --squash --ff <BRANCH>
+			3. feature ブランチから main ブランチへマージした差分のコミット（通常のgitと同様） | git commit
+			(&M)3. feature ブランチから main ブランチへマージした差分のコミット（メッセージ付き） | git commit -m "refs xxx [] yyy"
+			4. main ブランチから svn リポジトリへの push					| git svn dcommit
+		..
+		+&Submodule(&S)
+			(&A)submodule を追加する|
+				>>>>1. $git submodule add REMOTES-URL /path/to/submodule/
+				>>>>2. $git status
+				>>>>3. $ls	-l /path/to/submodule/
+				>>>>4. $git diff --cached
+				>>>>   - <<親モジュールが参照している>>
+				>>>>   - 親モジュールが参照している、submodule のコミットを表示させる。
+				>>>>   - >+Subproject commit e85490ff4b298c51d414e0cb08a7bc45768dd2e0
+				>>>>5. $git commit -m "xxxx"
+				>>>>6. $cd /path/to/submodule/
+				>>>>7. $git show
+				>>>>   - submodule のHEADが [[親モジュールが参照している][親モジュールから参照されているコミット]] に等しいことを確認する。
+				/E
+			(&U)submodule を更新する|
+				>1. submodule のディレクトリに入り、対象のブランチやコミットをチェックアウトする
+				>2. submodule の外側に戻り、その submodule の現在のコミットを記録する (指し示す先を変更する)
+				>	1. $git status
+				>	2. $git diff
+				>	3. $git add /path/to/submodule/
+				>	4. $git commit -m "xxxx"
+				/E
+			親モジュールのHEADにsubmodule を追従させる| $ git submodule update --recursive [--remote] [--force]
+			親モジュールをcloneするときに submodules も再帰的にcloneするオプション|$ git clone --recurse-submodules
+		..
+		+config
+			git config -l --show-origin
+			git config -l --show-origin `| grep alias
+			git config --global credential.helper 'cache --timeout=36000'
+			git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/libexec/git-core/git-credential-wincred.exe"
+			git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/libexec/git-core/git-credential-manager.exe"(obsoleted?)
+		..
+		&Delete local  branch|git branch	  --delete xxx
+		&Delete remote branch|git push origin --delete xxx
+		+差分(&D)
+			git diff hoge fuga
+			git diff hoge fuga --name-only
+		..
+		+Stash
+			stashの一覧を表示する | git stash list
+			stashで保存された差分を表示する | git diff stash@{0}
+		..
+		+Tags
+			create a tag|
+				#+begin_src bash
+				HAYATUYO_TEMP_GIT_TAG_NAME="xxxx"
+				HAYATUYO_TEMP_GIT_TAG_LONG_MESSAGE="xxxx"
+
+				echo -e "\n- ${HAYATUYO_TEMP_GIT_TAG_NAME}\n- ${HAYATUYO_TEMP_GIT_TAG_LONG_MESSAGE}"
+
+				git tag --annotate ${HAYATUYO_TEMP_GIT_TAG_NAME} --message "${HAYATUYO_TEMP_GIT_TAG_LONG_MESSAGE}"
+				git push origin    ${HAYATUYO_TEMP_GIT_TAG_NAME}
+				#+end_src
+				/E
+			push a tag to remote	| git push origin short-name
+			List all tags at remote | git ls-remote --tags --sort=v:refname `|` grep -v "\^{}"
+			List all tags with date, hash and message |git log --no-walk --tags --pretty="%ai %h %d %s" --decorate=full
+			Remove a tag at local	| git tag -d xxxx
+			Remove a tag at REMOTE	| git push origin --delete xxxx
+		..
+		+export
+			mkdir ../export/ && git archive --format=zip HEAD > ../export/hoge.zip
+		..
+	..
+	+vscode(&V)
+		PlantUML/図として出力(&V)|PlantUML: Export Current Diagram
+	..
+	+WSL
+		WSLで開いているディレクトリをエクスプローラーで開く;explorer.exe $(wslpath -w $(pwd)) || <#title,,#clip> || RegExReplace | ^.+; |  || AddHistory
+		&Passの変換とcd	|| RegExReplace | m)^.*$ | cd $(wslpath "$0")
+		windowsのパスのまま、ワンライナーでcdする| `wslpath "C:\work\"`
+		vmmemのメモリ制限の設定場所 --> c:\Users\hayakat\.wslconfig || <#title,,#clip> || RegExReplace | ^.+(--> )|	 || AddHistory
+		WSLのシャットダウン via powershell --> wsl --shutdown  || <#title,,#clip> || RegExReplace | ^.+(--> )|	|| AddHistory
+	..
+	+linux(&L)
+		+python
+			(&p)venv activate			| source ./venv/bin/activate
+			(&p)venv バージョンチェック | python --version && pip --version
+			(&p)venv deactivate			| deactivate
+		..
+		+文字コード変換
+			単一ファイル	   | iconv -f UTF8 -t SJIS FILE_FROM > FILE_TO
+			ディレクトリ内一括 | find -type f -exec sh -c 'for f; do iconv -f UTF8 -t SJIS "$f" > "${f%.csv}_sjis.csv"; done' sh {} \;
+		..
+		+TERMINAL
+			export PS1="\[\e]0;HELLO@WORLD: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]HELLO@WORLD\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$"
+			export PS1="\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$"
+			format of prompt(blue)|export PS1="\[\e]0;31m\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;33;44m\]\u@\h\[\033[00m\]:\[\033[01;37;44m\]\w\[\033[00m\]\$"
+			format of prompt(pink)|export PS1="\[\e]0;31m\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32;45m\]\u@\h\[\033[00m\]:\[\033[01;34;45m\]\w\[\033[00m\]\$"
+			clear screen and buffer|alias cls='clear & printf "\033c"'
+			formats of prompt(variety)|
+			export PS1="\[\e]0;31m\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32;40m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$"
+			export PS1="\[\e]0;31m\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32;41m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$"
+			export PS1="\[\e]0;31m\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32;42m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$"
+			export PS1="\[\e]0;31m\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32;43m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$"
+			export PS1="\[\e]0;31m\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32;44m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$"
+			export PS1="\[\e]0;31m\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32;45m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$"
+			export PS1="\[\e]0;31m\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32;46m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$"
+			export PS1="\[\e]0;31m\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32;47m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$"
+			/E
+		..
+		+(&L)update & upgrade
+			(&L)sudo update-alternatives --config python3        |sudo update-alternatives --config python3
+			(&L)sudo apt update                                  |sudo apt update
+			(&L)sudo apt list --upgradable                       |sudo apt list --upgradable
+			(&L)sudo apt upgrade -y                              |sudo apt upgrade -y
+			(&L)盲で全部 $sudo apt update && sudo apt upgrade -y || <#title,,#clip> || RegExReplace | (^.+\$) || AddHistory
+		..
+		CPUのビット長の確認|getconf LONG_BIT
+		+(&S)ディストリビューションの確認
+			(&S)ディストリビューションの確認|lsb_release  -a
+			(&S)ディストリビューションの確認|cat /etc/os-release
+			(&S)ディストリビューションの確認|cat /etc/lsb-release
+			(&S)ディストリビューションの確認|cat /etc/issue
+		..
+		+zip, tar
+			 (&z)targz, 圧縮|tar -zcvf xxxx.tar.gz directory
+			 (&z)targz, 解凍|tar -zxvf xxxx.tar.gz
+			 (&z)targz, 圧縮|tar -cvf xxxx.tar directory
+			 (&z)targz, 解凍|tar -xvf xxxx.tar
+			 (&z)zip, 圧縮|zip -r xxxx.zip directory
+			 (&z)zip, 解凍|unzip xxxx.zip
+		..
+		+docker
+			sudo service docker start
+		..
+		+imagemagic
+			タイル状に配置する | montage left.jpg right.jpg -tile 2x1 -geometry +0+0 out.jpg
+			枠の追加|
+			SRC_PNG=xxxx.png
+			DST_BASENAME=($(echo ${SRC_PNG} `|` sed 's/\.[^\.]*//'))
+			DST_EXT=png
+
+			SHADOW_COLOR="black"
+			SHADOW_OPACITY=80
+			SHADOW_SIGMA=10
+			SHADOW_MOVE_X=10
+			SHADOW_MOVE_y=10
+
+			FRAME_COLOR="none"
+			FRAME_WIDTH=2%
+
+			BORDER_COLOR="black"
+			BORDER_WIDTH=1
+
+			NEW_NAME=($(echo ${DST_BASENAME}_${SHADOW_COLOR}_${SHADOW_OPACITY}_${SHADOW_SIGMA}_${SHADOW_MOVE_X}_${SHADOW_MOVE_y}_${FRAME_COLOR}_${FRAME_WIDTH}_${BORDER_COLOR}_${BORDER_WIDTH}.${DST_EXT}))
+
+			convert ${SRC_PNG}																									 \
+			-bordercolor ${FRAME_COLOR} -border ${FRAME_WIDTH}x${FRAME_WIDTH}													 \
+			\( +clone -background ${SHADOW_COLOR} -shadow ${SHADOW_OPACITY}x${SHADOW_SIGMA}+${SHADOW_MOVE_X}+${SHADOW_MOVE_Y} \) \
+			  -background none -compose DstOver -flatten																		 \
+			  -compose Over																										 \
+			  -bordercolor ${BORDER_COLOR} -border ${BORDER_WIDTH}																 \
+			  ${NEW_NAME}
+			/E
+		..
+		+bash
+			繰り返し | while true; do ls -l /var/vpp/tmp/; sleep 5; done
+		..
+		+find
+			(&F)execの内部で拡張子を置換する（in-line シェルスクリプトを使う） | find -type f -exec sh -c 'for f; do convert "$f" "${f%.png}.jpg"; done' sh {} \;
+			(&M)最終Modified日時（分指定）                    | -mmin
+			(&M)最終Modified日時（日指定）                    | -mtime
+			(&A)最終Accessed日時（分指定）                    | -amin
+			(&A)最終Accessed日時（日指定）                    | -atime
+			(&C)最終Changed日時（メタデータを含めて。分指定） | -cmin
+			(&C)最終Changed日時（メタデータを含めて。日指定） | -ctime
+		..
+		+awk && sed
+			CSVファイルにて、二重引用符内がさらにカンマ区切りになっている場合でも誤って二重引用符内のカンマで切ってしまうこと無く、awkでその要素を抜き出す方法|
+			# 例として、第4列目を当該の列とする。
+			awk '{
+				for (i = 0; ++i <= NF;)
+					if ( i == 4 ){
+						printf "%s\n", $i
+					}
+			}' FPAT='([^,]+)`|`("[^"]+")' input.csv
+			/E
+		..
+		+pandoc
+			org --> gfm | pandoc --wrap=none --from=org --to=gfm XXXX.org -o XXXX.md --number-sections --standalone --toc-depth=5 --toc=true #目次（toc）を出力するには --standalone オプションも付けなければならない。
+		..
+	..
+	+ffmpeg ffprobe mediainfo(&F)
+		ffmpeg -i xxxx.mp4 -vn -acodec copy xxxx.aac
+		ffmpeg -i xxxx.aac xxxx.wav
+		mediainfo(&M)|mediainfo input.mp4 --Full --Output=XML > input.xml
+		Duration (container)(&D)						   |ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1							xxxx.mp4 -sexagesimal
+		Duration(stream)(&D)							   |ffprobe -v error -select_streams v:0 -show_entries stream=duration -of default=noprint_wrappers=1:nokey=1		xxxx.mp4 -sexagesimal
+		Frame Rate(average for the first video stream)(&F) |ffprobe -v error -select_streams v:0 -show_entries stream=avg_frame_rate -of default=noprint_wrappers=1:nokey=1 xxxx.mp4
+		Resolution(Width x Height)(&R)					   |ffprobe -v error -select_streams v:0 -show_entries stream=height,width -of csv=s=x:p=0							xxxx.mp4 `|` grep -i pkt_pts_time -A100 -B 100
+		PTS Time<1>(&P)										  |ffprobe -v error -show_frames -read_intervals "%+#3"															   xxxx.mp4 `|` grep -i start		 -A100 -B 100
+		PTS Time<2>(&P)										  |ffprobe -show_streams -i "9S_1920x1080_30p_16-9.mp4" `|` grep -i start -A100 -B 100
+	..
+	+SVN
+		チェック（変更のみ）(&S)|svn status -q `| grep -e "^M"
+		tortoiseSVNのパスワードの場所 | C:\Users\hayakat\AppData\Roaming\Subversion\auth\svn.simple
+		tortoiseSVNのパスワードの復号ツール | C:\work\tools\TSvnPwd.exe
+	..
+	;&Emacs||RUN|C:\emacs-26.3\bin\runemacs.exe
+	&Emacs||RUN|C:\emacs-27.1\bin\runemacs.exe --mm
+	+slack(&S)
+		ショートカットキー(&S)|https://slack.com/intl/ja-jp/help/articles/201374536-Slack-%E3%81%AE%E3%82%AD%E3%83%BC%E3%83%9C%E3%83%BC%E3%83%89%E3%82%B7%E3%83%A7%E3%83%BC%E3%83%88%E3%82%AB%E3%83%83%E3%83%88
+	..
+..
++IssueTrackingSystem(&1)
+	gitコミット報告(textile)|
+		以下のコミットで修正済みでした。次回のリリースに含めます。
+		`| コミット先		  `| `|
+		`| コミット日時		  `| `|
+		`| コミットid		  `| `|
+		`| コミットメッセージ `| `|
+		/E
+	小チケットが全て完了になったので...(&1)|小チケットが全て完了になったので、親である本チケットも完了にいたします。
+..
++エクセル(&4)
+	シート名をセルから参照する(&4)|=COUNTA(indirect("'"&$A3&"'"&"!$K1:$K200"))-1
+..
+;<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; THE BEGINNING OF FSI
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
++FSI(&F)
+	+部署(&F)
+		+部署名(&F)
+			(&F) 6G ▶▶▶ ＮＩ（ＮＥＴ）６Ｇ || <#title,,#clip> || RegExReplace | (^.+▶▶▶ ) || AddHistory
+			(&F) 8G ▶▶▶ ＮＩ（ＮＥＴ）８Ｇ || <#title,,#clip> || RegExReplace | (^.+▶▶▶ ) || AddHistory
+		..
+	..
+	+projects(&P)
+		+SampleProject
+			+用語(&Y)
+				プロジェクトの名称（略称）(&P)   | xyz-abc
+				プロジェクトの名称（長いの）(&P) | 〇〇向け△△対応◆◆支援システム
+				+DB(&D)
+				..
+				+API(&D)
+				..
+				+文書(&B)
+				..
+				+組織(&O)
+				..
+			..
+			+Directories and Pathes
+				+ローカル(&L)
+		            c:\path\to\local\home\directory
+				..
+				+共有フォルダ(&K)
+		            \\path\to\remote\home\directory
+				..
+				+git(&L)
+		            https://git-codecommit.ap-northeast-1.amazonaws.com/v1/repos/xxxx-yyyy-zzzz
+				..
+			..
+			+IssueTrackingSystems
+				自分のチケット       | https://example.com
+				〇〇さんののチケット | https://example.com
+			..
+			+人名(&J)
+				齋藤（春）さん
+				斉藤（秋）さん
+				国広（山）さん
+				國廣（風）さん
+			..
+			+ブックマーク(&B)
+				春夏秋冬（コピーのみ）  | https://example.com
+				春夏秋冬（開く） || Run | https://example.com
+			..
+			+AWS(&A)
+				+(&d)開発環境
+					ログイン to 123412341234(&d) || Run | https://123412341234.signin.aws.amazon.com/console/
+				..
+				+(&s)検証環境
+					ログイン to 111222333444(&s) || Run | https://111222333444.signin.aws.amazon.com/console/
+				..
+				+(&p)本番環境
+					ログイン to 777788889999(&p) || Run | https://777788889999.signin.aws.amazon.com/console/
+				..
+			..
+			+Command
+				+AWS CLI
+				..
+				+AWS SAM
+				..
+				+SQL
+				..
+				+Postman
+				..
+				+docker and docker compose
+				..
+				+npm
+				..
+			..
+		..
+	..
+..
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; THE END OF FSI
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
++用語(&Y)
+	自作PC
+	+git(&g)
+		master
+		develop
+		hotfix
+		release
+		feature
+		-
+		ブランチ
+		branches
+		コミット
+		commit
+		プッシュ
+		push
+		-
+		親リポジトリ
+		親リポジトリのディレクトリ
+		submodule （子リポジトリ）
+		submodule （子リポジトリ）のディレクトリ
+	..
+	+AWS(&A)
+		+XXX
+			permanently delete(&X) | permanently delete
+			Delete
+			完全に削除(&J) | 完全に削除
+		..
+		+VPC と ネットワーク(&V)
+			VPC
+			subnet
+			サブネット
+			public subnet
+			パブリックサブネット
+			private subnet
+			プライベートサブネット
+			-
+			security group
+			セキュリティグループ
+			ルーティング
+			ルートテーブル
+			Internet GateWay
+			インターネットゲートウェイ
+			Transit GateWay
+			トランジットゲートウェイ
+			-
+			VPC Peering
+			VPC ピアリング
+			VPC Endpoint
+			VPC エンドポイント
+		..
+		+データ分析(&D)
+			AWS Glue(&G)          | AWS Glue
+			crawler(&C)           | AWS Glue crawler
+			job(&J)           | AWS Glue job
+			Amazon Athena(&A)     | Amazon Athena
+			Amazon QuickSight(&Q) | Amazon QuickSight
+			AWS Glue DataBrew(&D)|AWS Glue DataBrew
+		..
+		+Amazon EventBridge
+			Amazon EventBridge
+			EventBridge
+			rule
+		..
+		+sagemaker(&S)
+			sagemaker(&S)              |sagemaker
+			sagemaker pipeline(&P)     |sagemaker pipeline
+			sagemaker パイプライン(&P) |sagemaker パイプライン
+			パイプライン(&P)           |パイプライン
+			ステップ(&P)               |ステップ
+		..
+		&AWS CLI|AWS CLI
+		&AWSマネージメントコンソール|AWSマネージメントコンソール
+		AWS CloudFormation(&F)|AWS CloudFormation
+        CloudWatch(&W)|CloudWatch
+		lambda function
+		+CodeSuite(&S)
+			CodeArtifact(&A)|CodeArtifact
+			CodeBuild(&B)   |CodeBuild
+			CodeCommit(&C)  |CodeCommit
+			CodeDeploy(&D)  |CodeDeploy
+			CodePipeline(&P)|CodePipeline
+		..
+		Secrets Manager
+        Secrets Manager の secret
+		+MediaConvert(&M)
+			ジョブテンプレート(&J)|ジョブテンプレート
+			出力プリセット(&K)|出力プリセット
+			出力グループ(&L)|出力グループ
+		..
+		S3
+		+Provisioning Services
+			CloudFormation
+			OpsWork
+			Elastic Beanstalk
+		..
+	..
+	+Snowflake用語(&S)
+		Snowflake
+		SnowSQL
+		Snowflake Scripting
+		Snowpark
+		warehouse
+		+Roles
+			AccountAdmin
+			SysAdmin
+			SecurityAdmin
+			UserAdmin
+			Public
+		..
+		+warehouses
+			COMPUTE_WH
+		..
+	..
+	+Azure用語(&Z)
+		+Azure Functions(&F)
+			Azure Functions(&F)|Azure Functions
+		..
+		+Azure Logic Apps(&L)
+			Azure Logic Apps(&L)|Azure Logic Apps
+		..
+		+Azure Media Services(&M)
+			Azure Media Services(&M)|Azure Media Services
+			Azure Media Services Explorer(&E)|Azure Media Services Explorer
+			Azure Media Player(&P)|Azure Media Player
+			Streaming Policy(&J)|Streaming Policy
+			Streaming Locator(&J)|Streaming Locator
+			Live Event(&J)|Live Event
+			Live Output(&J)|Live Output
+			ストリーミングエンドポイント
+		..
+		+Azure Storage Services(&S)
+			Azure Storage Services(&S)|Azure Storage Services
+            broadcast(&J)|broadcast
+            wall(&K)|wall
+		..
+		+認証系(&N)
+			Azure Key Vault(&K)|Azure Key Vault
+            Azure Active Directory(&A)|Azure Active Directory
+		..
+		Azure Application Insights
+	..
+	+IT用語
+		switch over
+	..
+	+Web用語
+		microservices
+		プロダクション環境(&P)|プロダクション環境
+		本番環境(&H)|本番環境
+		ステージング環境(&S)|ステージング環境
+		開発環境(&K)|開発環境
+		+(&Y)HTTP
+			(&Y)リクエストヘッダー|リクエストヘッダー
+			(&Y)リクエストボディ  |リクエストボディ
+			(&Y)レスポンスヘッダー|レスポンスヘッダー
+			(&Y)レスポンスボディ  |レスポンスボディ
+		..
+	..
+	+microsoft用語
+		職場または学校にアクセスする
+	..
+..
+-
++■テキスト修飾(&X)
+	+記号で囲む(&X)
+		各行を 「」     で囲む || RegExReplace | m)^.*$ | 【$0】
+		各行を 『』     で囲む || RegExReplace | m)^.*$ | 【$0】
+		各行を 【】     で囲む || RegExReplace | m)^.*$ | 【$0】
+		-
+		各行を (丸括弧) で囲む || RegExReplace | m)^.*$ | ($0)
+		各行を [角括弧] で囲む || RegExReplace | m)^.*$ | [$0]
+		-
+		各行を ""       で囲む || RegExReplace | m)^.*$ | "$0"
+		各行を ''       で囲む || RegExReplace | m)^.*$ | '$0'
+	..
+	+(&Q)引用記号
+		> (&Q)引用記号の追加 || RegExReplace | m)^      |  >`
+		> (&Q)引用記号の削除 || RegExReplace | m)(^> ?)`| ^>
+	..
+	// コメント		|| RegExReplace | m)^ | // `
+	/* コメント */		|| RegExReplace | s).+ | /* $0 */
+	<!-- HTMLコメント -->	|| RegExReplace | s).+ | <!-- $0 -->
+	-
+	// コメントの削除	|| RegExReplace | m)^// `|^//
+	空行を削除		|| RegExReplace | m)^[\r\n]+
+	改行を削除		|| RegExReplace | [\r\n]
+	-
+	各行先頭に連番追加	|| AddLineNumber | : `
+	各行をセンタリング	|| AlignLine
+	各行の左右を装飾	|| AlignLine | 1 | 60 | =
+	各行を右寄せ		|| AlignLine | 2
+	-
+	改行整形(36文字)		|| FormatLine | 36
+	改行整形(36文字+ぶら下げ)	|| FormatLine | 36 | ,,,.,、,。,，,．,？,！,）,」,』,!,),?,\,]
+	-
+	行ソート		|| Sort
+	行ソート(逆順)		|| Sort | R
+	行ソート(重複行削除)	|| Sort | U
+..
++■テキスト変換(&U)
+	大文字に変換		|| RegExReplace | s).+ | $U{0}
+	小文字に変換		|| RegExReplace | s).+ | $L{0}
+	-
+	半角に変換		|| SingleStr
+	全角に変換		|| DoubleStr
+	-
+	カタカナ→ひらがな変換	|| HiraStr
+	ひらがな→カタカナ変換	|| KataStr
+	-
+	10⇔0x16進数相互変換	|| ConvertHex
+	10→0x16進数変換	|| ConvertHex | 0x16
+	10→16進数変換		|| ConvertHex | 16
+	16→10進数変換		|| ConvertHex | 10
+	-
+	URLエンコード		|| EncodeURL
+	URLデコード		|| EncodeURL | 1
+	-
+	Base64エンコード	|| EncodeBase64
+	Base64デコード		|| EncodeBase64 | 1
+	Base64デコード(バイナリ)|| EncodeBase64 | 1 | Binary
+	-
+	暗号化			|| Encrypt | ~INPUT
+	復号			|| Encrypt | ~INPUT | 1
+	-
+	行末に<br>を追加	|| RegExReplace | m)$ | <br>
+	-
+	任意の文字を置き換え	|| RegExReplace | ~INPUT | ~INPUT
+..
+-
++ファイル関連
+	ファイルを開く...	|| Run | *.*
+	-
+	Help.htmlを開く		|| Run | Help.html
+	URLを開く		|| Run | http://blank-note.sakura.ne.jp/
+	-
+	ファイルのフルパス名...	|| FilePath
+	フォルダのフルパス名...	|| FolderPath
+	-
+	ファイルの差し込み...	|| PasteFile
+	指定ファイルの差し込み	| ReadMe.txt | PasteFile
+	-
+	■ファイルに追記...	|| AppendFile | `r`n
+	■指定ファイルに追記	|| AppendFile | `r`n------------------`r`n | ~BLANK | memo.txt | UTF-8
+	■ファイルを上書き...	|| AppendFile | ~BLANK | ~BLANK | ~BLANK | UTF-8 | delete
+	-
+	ファイルリスト作成...		|| FileList
+	ファイルツリー作成...		|| FileList | T
+	フォルダツリー作成...		|| FileList | D T
+	ファイルリスト作成(*.txtのみ)...|| FileList | N | *.txt
+	-
+	ファイルのCRC32...	|| CRC32 | Binary
+	ファイルのSHA-256...	|| SHA256 | Binary
+	ファイルのMD5...	|| FilePath || RegExReplace | s).+ | certutil -hashfile "$0" MD5 || Run | ~BLANK | O || RegExReplace | m)^.+\:.*$ || RegExReplace | [ \r\n]
+	-
+	ファイルの暗号化...	|| Encrypt | ~INPUT | 0 | Binary
+	ファイルの復号...	|| Encrypt | ~INPUT | 1 | Binary
+	-
+	Base64エンコード(Data URI)	|| EncodeBase64 | 0 | Binary | 1
+..
++クリップボード関連
+	■分割コピー(改行区切り)			|| SplitCopy
+	■分割コピー(改行区切り+逆順)			|| SplitCopy | ~NULL | ~NULL | R
+	■分割コピー(タブ区切り)			|| SplitCopy | `	`
+	-
+	■履歴に追加					|| AddHistory
+	■キープ					|| Keep
+	-
+	クリップボードマネージャーを開く...		|| OpenManager
+	クリップボード履歴メニューを開く...		|| OpenHistory
+	-
+	現在のクリップボードをクリア			|| <#blank,#clip>
+	現在のクリップボードの内容をプレーンテキストとして貼り付ける	|| <#clip,#paste>
+	■現在のクリップボードと選択範囲を入れ替える	|| <#clip,#paste> || KeyStroke | ^{x} | Macro
+	-
+	クリップボード履歴をクリア			|| ClearHistory
+	クリップボード履歴を確認せずにクリア		|| ClearHistory | 0
+	-
+	キープ中の履歴をクリア				|| ClearKeep
+	キープ中の履歴を確認せずにクリア		|| ClearKeep | 0
+	-
+	クリップボード履歴の整理:100番目以降の履歴を削除		|| CompactHistory | 100 | 0   | 0
+	クリップボード履歴の整理:500文字以上の履歴を削除		|| CompactHistory | 0   | 500 | 0
+	クリップボード履歴の整理:重複する履歴を削除＆件数を999件に制限	|| CompactHistory | 1000 | 0 | 1
+	-
+	クリップボード履歴を書き出し			|| ExportHistory || AppendFile | ~BLANK | ~BLANK | ~BLANK | UTF-8 | delete
+	1-10番目の履歴を連結して貼り付け		|| ExportHistory | ~NULL | 1-10
+..
++設定関連(&O)
+	+サスペンド(&H)
+		(&H)ホットキーのサスペンド || SuspendHotkey | 1
+		(&H)履歴をサスペンド       || SuspendHistory | 1
+		(&H)履歴のサスペンドを解除 || SuspendHistory | 0
+	..
+	-
+	+検索(&S)
+		履歴の一覧・検索(&S)...	|| OpenManager
+		定型文の一覧・検索(&S)...	|| OpenManager | 1
+	..
+	;;-
+	;ダイレクトペーストON/OFF		|| DirectMode
+	;ダイレクトペーストON			|| DirectMode | 1
+	;ダイレクトペーストOFF			|| DirectMode | 0
+	-
+	FIFO ペーストON				|| FifoMode | 1
+	FIFO ペーストOFF				|| FifoMode | 0
+	LIFO ペーストON				|| LifoMode | 1
+	LIFO ペーストOFF				|| LifoMode | 0
+
+	;-
+	;シンプルモードON/OFF			|| SimpleMode
+	;シンプルモードON			|| SimpleMode | 1
+	;シンプルモードOFF			|| SimpleMode | 0
+
+	;-
+	;テキストコピー時の自動処理OFF		|| OnCopy
+	;テキストコピー時の自動処理１ON/OFF	|| OnCopy | 1
+	;テキストコピー時の自動処理２ON		|| OnCopy | 2 | 1
+	;テキスト貼付時の自動処理１ON/OFF	|| OnPaste | 1
+	-
+	設定画面を開く				|| OpenConfig
+	設定ファイルのパス(&P)|c:/work/tools/ClipboardHistory/Config.txt
+	(&O)設定ファイルを開く（特定のアプリで開く）                          || Run | "C:\emacs\bin\emacsclientw.exe" "c:\work\tools\ClipboardHistory\Config.txt"
+	;;(&O)設定ファイルを開く（特定のアプリで開く）                        || Run | "C:\Users\hayakat\AppData\Local\Programs\Microsoft VS Code\Code.exe" "c:\work\tools\ClipboardHistory\Config.txt"
+	(&O)設定ファイルを開く（拡張子 txt に関連付けられているアプリで開く） || Run | "c:\work\tools\ClipboardHistory\Config.txt"
+	現在の設定ファイルを読み込み直す(&R)	|| Reload
+	プロファイル切り替え-Config.txt		|| Reload | Config.txt
+	プロファイル切り替え-ConfigB.txt	|| Reload | 20241120_193746_Config.txt
+	-
+	アプリを終了				|| Exit
+..
+-
+;キーストローク(&K)		| username{Tab}password | KeyStroke
+ランダム文字列生成(&N)		|| RandomStr | 8
+マウスカーソル位置の色(&R)	|| ColorPicker
+式を入力して計算(&0)		|| <#blank> || Calc
+■選択テキストを計算	|| Calc
+■選択テキストの文字数(&L)	|| StrLen
+-
++■Googleで検索(&G)
+	Googleで検索(&G) || <#copy> || StrReplace | # | %23 || RegExReplace | ^ | https://www.google.co.jp/search?q= || Run
+	qiitaで検索(&J)  || <#copy> || StrReplace | # | %23 || RegExReplace | ^ | https://www.google.co.jp/search?q=site%3Aqiita.com+ || Run
+	ptythonで検索(&K)|| <#copy> || StrReplace | # | %23 || RegExReplace | ^ | https://www.google.co.jp/search?q=site%3Adocs.python.org%2F3+ || Run
+	日本語で検索(&F) || <#copy> || StrReplace | # | %23 || RegExReplace | ^ | https://www.google.co.jp/search?hl=ja&lr=lang_ja&q= || Run
+..
++高度な使い方
+	■Perlで選択テキストを変換						|| Run | test.pl | I O
+	■半角カタカナを全角に＆数字を半角に＆英字を大文字に変換		|| DoubleStr | K || SingleStr | D || RegExReplace | s).+ | $U{0}
+	-
+	指定の単語リストで定型文を検索...					| ＯＯＯ県`n東京都`n大阪府 | OpenManager | 1
+	20文字以上のクリップボード履歴を検索して20桁に整形して貼り付ける...	| .{20,} | OpenManager || FormatLine | 20
+	クリップボード履歴メニューから選んで引用記号を付けて貼り付ける...	|| OpenHistory || RegExReplace | m)^ | > `
+	-
+	Ctrl+Vで指定の文字列をFIFOペースト		| 項目１`n項目２`n項目３`n項目４ || FifoMode | 1 || SplitCopy
+	文字列を貼り付け後カーソルを移動		| [] | PasteStr || KeyStroke | {Left} | Macro
+	-
+	パスワード『pass』でメニューファイル中の暗号を復号して貼り付け		| 2AKmCDn8JgsWy7 | Encrypt | ~INPUT | 1
+	-
+	カーソル行の行頭を●でマーク			|| <,#line> || RegExReplace | ^[○●]`|^ | ●
+	カーソル行の行頭を○でマーク			|| <,#line> || RegExReplace | ^[○●]`|^ | ○
+	-
+	ファイルを読み込んで20桁に整形して貼り付ける	|| PasteFile || FormatLine | 20 | ,,,.,、,。,，,．,？,！,）,」,』,!,),?,\,]
+	5-10番目の履歴からURLを削除してファイルに保存	|| ExportHistory | `r`n-----------`r`n | 5-10 || RegExReplace | http(s)?://([\w-]+\.)+[\w-]+(/[\w- ./?%&=]*)? | ~BLANK || AppendFile | ~BLANK | ~BLANK | ~BLANK | UTF-8 | delete
+	カーソル行を式と見なして計算し答えに置き換える	|| <#cut,#line,#paste> || Calc
+	計算式を入力して答えを貼り付ける...		|| <#input,#paste> || Calc
+	時分秒を足した数をクリップボードに送る		| HH+mm+ss | <,#clip> || Date | L0x0409 || Calc
+	現在時刻を全角でツールチップで2秒表示		| yyyy年M月d日ddd曜日`r`ntth時m分s秒 | Date || DoubleStr || ToolTip | ~BLANK | 2000
+	文章中の全文字数から原稿料を計算		|| <#copy,#all,#msgbox> || RegExReplace | [\r\n] || StrLen || RegExReplace | $ | *5 || Calc || RegExReplace | $ | 円
+	エクスプローラーで選択中のファイル名を全角に変更|| KeyStroke | {F2}^{c} | Macro || Wait | 200 || <%Clipboard%> || StrReplaceEx | %Clipboard% || DoubleStr || PasteStr || KeyStroke | {Enter} | Macro
+..
+スニペットの編集(&9)|c:\work\tools\ClipboardHistory_153\Config.txt
+
+;===================定型文メニュー２～５===================
+;※デフォルトではキーが未割り当てです。設定画面から変更できます。
+
+@NoteHotkey=
+定型文メニュー2|メニューを使用する場合は、Config.txtのこの位置を編集してください|<,#msgbox>
+
+@NoteHotkey=
+定型文メニュー3|メニューを使用する場合は、Config.txtのこの位置を編集してください|<,#msgbox>
+
+@NoteHotkey=
+定型文メニュー4|メニューを使用する場合は、Config.txtのこの位置を編集してください|<,#msgbox>
+
+@NoteHotkey=
+定型文メニュー5|メニューを使用する場合は、Config.txtのこの位置を編集してください|<,#msgbox>
+
+;この位置に６番目以降の定型文メニューを追加できます
+
+;===================ダイレクトキー１～５===================
+;※デフォルトではキーが未割り当てです。設定画面から変更できます。
+
+@DirectHotkey=
+||OpenManager
+
+@DirectHotkey=
+||OpenManager
+
+@DirectHotkey=
+||OpenManager
+
+@DirectHotkey=
+||OpenManager
+
+@DirectHotkey=
+||OpenManager
+
+;この位置に６番目以降のホットキーを追加できます
+
+;===================クリップボード履歴メニュー１～５===================
+
+@HistoryHotkey=Ctrl,200
+@HistoryHotkey=
+@HistoryHotkey=
+@HistoryHotkey=
+@HistoryHotkey=
+
+;この位置に６番目以降のホットキーを追加できます
+
+;===================テキストコピー時の自動処理===================
+;※追加・削除などのカスタマイズが可能です
+
+;20230627
+@DirectHotkey=ONCOPY,1
+履歴取得の前に500ms待機（起動時から有効）|| Wait | 500
+
+@DirectHotkey=ONCOPY
+各行先頭に > を挿入 || <#clip,#clip> || RegExReplace | m)^ | > ` || AddHistory
+
+@DirectHotkey=ONCOPY
+各行先頭に // を挿入 || <#clip,#clip> || RegExReplace | m)^ | // ` || AddHistory
+
+@DirectHotkey=ONCOPY
+各行を 二重引用符で囲む "..." || <#clip,#clip> || RegExReplace | m)^.*$ | "$0" || AddHistory
+
+@DirectHotkey=ONCOPY
+各行先頭に 001: の連番を挿入 || <#clip,#clip> || AddLineNumber | : ` | 3 || AddHistory
+
+@DirectHotkey=ONCOPY
+末尾の改行を削除 || <#clip,#clip> || RTrim | `r`n || AddHistory
+
+@DirectHotkey=ONCOPY
+テキストコピー時に音で通知 || SoundPlay
+
+@DirectHotkey=ONCOPY
+テキストコピー時にツールチップで通知 || <#clip> || RegExReplace | Ss)^(.{50}).+$ | $1 ... || ToolTip
+
+@DirectHotkey=ONCOPY
+[履歴のみ]末尾の改行を削除 || <#clip> || RTrim | `r`n || AddHistory
+
+@DirectHotkey=ONCOPY
+[履歴を除く]各行先頭に > を挿入 || <#clip,#clip> || AddHistory || RegExReplace | m)^ | > `
+
+@DirectHotkey=ONCOPY,0,EXCEL.EXE|OUTLOOK.EXE
+エクセルとアウトルック上での履歴取得を禁止 || <#blank> || AddHistory
+
+;===================テキスト貼り付け/クリップボード転送時の自動処理===================
+;※追加・削除などのカスタマイズが可能です
+
+@DirectHotkey=ONPASTE
+各行先頭に > を挿入 || <#clip,#clip> || RegExReplace | m)^ | > `
+
+@DirectHotkey=ONPASTE
+各行先頭に // を挿入 || <#clip,#clip> || RegExReplace | m)^ | // `
+
+@DirectHotkey=ONPASTE
+各行を 二重引用符で囲む "..." || <#clip,#clip> || RegExReplace | m)^.*$ | "$0"
+
+@DirectHotkey=ONPASTE
+各行先頭に 001: の連番を挿入 || <#clip,#clip> || AddLineNumber | : ` | 3
+
+@DirectHotkey=ONPASTE
+末尾の改行を削除 || <#clip,#clip> || RTrim | `r`n
+
+;///////////////以下基本設定。設定画面から変更されます//////////////
+@CloseMenuByHotkey=1
+@CompactHistoryOnExit=
+@DirectModKey=,0,0,,
+@EnableAccessKey=1
+@EncryptSaveFile=0
+@ExcludeEXE=
+@ExitFifoPaste=1,2,0
+@FifoHotkey=^v
+@FollowCursor=1
+@KeepAfterPaste=2,1
+@KeepOrderHistory=0,0,0,0
+@ManagerAlwaysOnTop=1
+@ManagerClearResult=1
+@ManagerColor=
+@ManagerDontAutoHide=0
+@ManagerFollowCursor=1
+@ManagerHideGrid=0
+@ManagerHideNumber=0
+@ManagerHideSearch=0
+@ManagerPreview=1
+@ManagerSize=500,600,80,0
+@ManagerTree=1,1,1,1
+@MaxHistoryCount=10000
+@MaxHistoryLength=5000
+@MenuLength=100,35,5,35,36
+@PasteMethod=^{v}
+@PreviewSize=
+@RecordMethod=0
+@RecordOnManager=0
+@RecordPath=0
+@SaveFile=ClipboardHistory.dat
+@SearchMode=0
+@SimpleHistory=0
+@SimplePreview=1
+@StartRecord=1
+@SwapIcon=1
+@SwapShift=1
+
+@MenuDir=
+@AddUtilityMenu=1
+@DarkMode=1
+@DisableIme=1
+@ManagerHideTitle=0
+@ManagerSingleClick=0
+@SimpleColor=
+@SimpleHeader=1
