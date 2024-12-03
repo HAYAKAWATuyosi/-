@@ -1,0 +1,1705 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org796beb4">1. 今日の目指すところ</a>
+<ul>
+<li><a href="#org6415ad3">1.1. 今日、体験していただくこと</a></li>
+<li><a href="#org6c5f52f">1.2. 今日、知っていただく（学べる）こと; マインドのブラッシュアップ</a></li>
+</ul>
+</li>
+<li><a href="#org4773309">2. 今日の話の位置付け</a>
+<ul>
+<li><a href="#org64f9cba">2.1. 地政学の7階層</a></li>
+<li><a href="#org61b299e">2.2. なぜ道具を使うのか？</a></li>
+<li><a href="#org709f4ff">2.3. ■寄り道: LLMが発達した現在でも定型句ツールを使う意義はあるのか？</a></li>
+</ul>
+</li>
+<li><a href="#org1f82c4c">3. 今日の本題; 定型句管理ツールの活用</a>
+<ul>
+<li><a href="#orgc8425bf">3.1. 文字入力の高速化方法、あれこれ</a></li>
+<li><a href="#orgd73a06e">3.2. 定型句とは？</a></li>
+<li><a href="#org010eae4">3.3. 定型句管理ツール「ClipboardHistory」のススメ</a></li>
+<li><a href="#orgc8b75d8">3.4. 実践</a></li>
+<li><a href="#orgb72beb2">3.5. 使用上の注意</a></li>
+<li><a href="#org981a3bb">3.6. 活用のためのアイディア</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org796beb4" class="outline-2">
+<h2 id="org796beb4"><span class="section-number-2">1.</span> 今日の目指すところ</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org6415ad3" class="outline-3">
+<h3 id="org6415ad3"><span class="section-number-3">1.1.</span> 今日、体験していただくこと</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>静的定型句<br /></li>
+<li>動的定型句<br /></li>
+<li>クリップボード履歴からのFIFOペースト<br /></li>
+<li>定型句 と launcher との組み合わせ<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org6c5f52f" class="outline-3">
+<h3 id="org6c5f52f"><span class="section-number-3">1.2.</span> 今日、知っていただく（学べる）こと; マインドのブラッシュアップ</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li>複利的効果<br /></li>
+<li>怠惰な心理を克服する戦術<br /></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org4773309" class="outline-2">
+<h2 id="org4773309"><span class="section-number-2">2.</span> 今日の話の位置付け</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-org64f9cba" class="outline-3">
+<h3 id="org64f9cba"><span class="section-number-3">2.1.</span> 地政学の7階層</h3>
+<div class="outline-text-3" id="text-2-1">
+<ol class="org-ol">
+<li>世界観<br /></li>
+<li>政策<br /></li>
+<li>大戦略<br /></li>
+<li>軍事戦略<br /></li>
+<li>作戦<br /></li>
+<li>戦術<br /></li>
+<li>技術<br />
+<ul class="org-ul">
+<li>戦闘に勝つためのどのように技術を使うか？<br />
+<ul class="org-ul">
+<li>ツールやテクニックの獲得<br /></li>
+<li>敵兵の殺し方<br /></li>
+<li>などなど<br /></li>
+</ul></li>
+</ul></li>
+</ol>
+
+<p>
+戦略の階層を個人向けに修正 : 地政学を英国で学んだ<br />
+<a href="https://geopoli.exblog.jp/19661333/">https://geopoli.exblog.jp/19661333/</a><br />
+</p>
+</div>
+</div>
+<div id="outline-container-org61b299e" class="outline-3">
+<h3 id="org61b299e"><span class="section-number-3">2.2.</span> なぜ道具を使うのか？</h3>
+<div class="outline-text-3" id="text-2-2">
+<ul class="org-ul">
+<li>一般論<br />
+<ul class="org-ul">
+<li>正確<br /></li>
+<li>早い<br /></li>
+<li>楽（ラク）<br /></li>
+</ul></li>
+<li>特に、文字入力における定型句ツールを使う意義<br />
+<ul class="org-ul">
+<li>正確 =  ◎<br /></li>
+<li>早い =  ○ときには△<br /></li>
+<li>楽（ラク） =  ○ときには△<br /></li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-orgce95483" class="outline-4">
+<h4 id="orgce95483"><span class="section-number-4">2.2.1.</span> 正確だから道具を使う</h4>
+<div class="outline-text-4" id="text-2-2-1">
+<p>
+みなさんは、こんな間違えやトラブル、お悩みの経験、ありませんでしょうか？<br />
+</p>
+</div>
+<div id="outline-container-org02cbbd5" class="outline-5">
+<h5 id="org02cbbd5"><span class="section-number-5">2.2.1.1.</span> 日付と曜日の組み合わせの不一致</h5>
+<div class="outline-text-5" id="text-2-2-1-1">
+<ul class="org-ul">
+<li>正誤<br />
+<ul class="org-ul">
+<li>正; xx/10（金）<br /></li>
+<li>誤; xx/10（木）<br /></li>
+</ul></li>
+<li>影響<br />
+<ul class="org-ul">
+<li>∴メールの再送信<br /></li>
+<li>∴予定の認識のズレ<br />
+<ul class="org-ul">
+<li>＜日付側＞xx/10（木）<br /></li>
+<li>＜曜日側＞xx/11（金）<br /></li>
+</ul></li>
+<li>∴再アポイントメント<br />
+<ul class="org-ul">
+<li>∴失注！？<br /></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org6655d61" class="outline-5">
+<h5 id="org6655d61"><span class="section-number-5">2.2.1.2.</span> 人名の漢字</h5>
+<div class="outline-text-5" id="text-2-2-1-2">
+<ul class="org-ul">
+<li>例<br />
+<ul class="org-ul">
+<li>高橋、髙橋<br /></li>
+<li>国広、國廣<br /></li>
+<li>斉藤、斎藤、齎藤<br />
+<ul class="org-ul">
+<li>斉: 整える。等しい。同じ。「斉唱」<br /></li>
+<li>斎（齋）: 心身を清める。慎む。祈祷する。「斎潔」<br /></li>
+<li>齎: もたらす、贈る（はなむけ）、与える、渡す<br /></li>
+</ul></li>
+</ul></li>
+<li>影響<br />
+<ul class="org-ul">
+<li>∴（相手の）不満、ストレス<br />
+<ul class="org-ul">
+<li>∴情報の滞り（表面に出ない）や諍い（表面に顕現）<br />
+<ul class="org-ul">
+<li>∴プロジェクトの失敗、友情の決裂<br /></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgad5486e" class="outline-5">
+<h5 id="orgad5486e"><span class="section-number-5">2.2.1.3.</span> 西暦と元号の変換</h5>
+<div class="outline-text-5" id="text-2-2-1-3">
+<ul class="org-ul">
+<li>昭和: 西暦 - 1925<br /></li>
+<li>平成: 西暦 - 1988<br /></li>
+<li>令和: 西暦 - 2018<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org3db4c5e" class="outline-5">
+<h5 id="org3db4c5e"><span class="section-number-5">2.2.1.4.</span> typo（打ち損じ）や「てにをは」（間違い、あるいは修正漏れ）</h5>
+<div class="outline-text-5" id="text-2-2-1-4">
+<ul class="org-ul">
+<li>同音異義語<br /></li>
+<li>文章を推敲したが、助詞が変更されずに、下のまま残されてしまう、など。<br />
+<ul class="org-ul">
+<li>推敲前<br />
+<ul class="org-ul">
+<li>今日の午後は汐留オフィスに行き、そのまま直帰する予定です。<br /></li>
+</ul></li>
+<li>推敲後（修正漏れ）<br />
+<ul class="org-ul">
+<li>今日【の】18時まで汐留オフィス【に】勤務し、19時から【直帰】する予定です。<br /></li>
+</ul></li>
+</ul></li>
+<li>影響<br />
+<ul class="org-ul">
+<li>（自分の）評価が下がる。<br />
+<ul class="org-ul">
+<li>「漢字も書けないなんて！」<br /></li>
+<li>「『てにをは』もちゃんと使えないなんて！」<br /></li>
+<li>「間違ったままの文章を送ってくるなんて、失礼！」<br /></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-orgafe2f29" class="outline-6">
+<h6 id="orgafe2f29"><span class="section-number-6">2.2.1.4.1.</span> ■寄り道: 誰も指摘してくれない。</h6>
+<div class="outline-text-6" id="text-2-2-1-4-1">
+<ul class="org-ul">
+<li>指摘してくれるのは、親ぐらい。<br /></li>
+<li>間違いの指摘は失礼、非倫理的（？）<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga1377e1" class="outline-6">
+<h6 id="orga1377e1"><span class="section-number-6">2.2.1.4.2.</span> ■寄り道: 拙速の文化？</h6>
+<div class="outline-text-6" id="text-2-2-1-4-2">
+<ul class="org-ul">
+<li>同音異義語や「てにをは」の間違いを修正するほうが野暮・「ダサい」（？）<br /></li>
+<li>間違いの指摘は失礼、非倫理的（？）<br /></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org0f71fbb" class="outline-5">
+<h5 id="org0f71fbb"><span class="section-number-5">2.2.1.5.</span> うろ覚え・勘違い</h5>
+<div class="outline-text-5" id="text-2-2-1-5">
+<ul class="org-ul">
+<li>影響<br />
+<ul class="org-ul">
+<li>∴コミュニケーションの行き違い、認識違い<br />
+<ul class="org-ul">
+<li>∴設計ミス・「出戻り」<br />
+<ul class="org-ul">
+<li>∴プロジェクトの失敗<br /></li>
+</ul></li>
+</ul></li>
+<li>∴（相手の）不満、ストレス<br />
+<ul class="org-ul">
+<li>∴情報の滞り（恣意的な情報隠蔽。表面に出ない、水面下。）や諍い（表面に顕現）<br />
+<ul class="org-ul">
+<li>∴プロジェクトの失敗、友情の決裂<br /></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org4dee598" class="outline-5">
+<h5 id="org4dee598"><span class="section-number-5">2.2.1.6.</span> 打つのが面倒に感じる</h5>
+<div class="outline-text-5" id="text-2-2-1-6">
+<ul class="org-ul">
+<li>影響<br />
+<ul class="org-ul">
+<li>∴低い集中力<br />
+<ul class="org-ul">
+<li>∴間違いの誘発<br /></li>
+</ul></li>
+<li>∴省略語の乱用<br />
+<ul class="org-ul">
+<li>∴コミュニケーションの行き違い、認識違い<br />
+<ul class="org-ul">
+<li>∴設計ミス・「出戻り」<br />
+<ul class="org-ul">
+<li>∴プロジェクトの失敗<br /></li>
+</ul></li>
+</ul></li>
+<li>省略語の例<br />
+<ul class="org-ul">
+<li>FSI? AWS? NHK? MSF? MAGA? KU会?<br />
+<ul class="org-ul">
+<li>MSF; Medecins Sans Frontieres「国境なき医師団」<br /></li>
+<li>MAGA; Make America Great Again!<br /></li>
+<li>KU会; 大学の登山サークル「渓友会」<br /></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org6791166" class="outline-4">
+<h4 id="org6791166"><span class="section-number-4">2.2.2.</span> 早いから？ 楽だから？</h4>
+<div class="outline-text-4" id="text-2-2-2">
+<ul class="org-ul">
+<li>注意: 道具の使用は not 目的 but 手段<br /></li>
+<li>文字入力においては、必ずしも早くないかもしれない。<br />
+<ul class="org-ul">
+<li>概ね多くの場合は、道具を使うと早くなるはず。<br /></li>
+<li>しかし、正確さのために、早さを妥協することもある。<br />
+<ul class="org-ul">
+<li>例; 前述の人名とか<br /></li>
+</ul></li>
+</ul></li>
+<li>文字入力においては、必ずしも楽ではないかもしれない。<br />
+<ul class="org-ul">
+<li>概ね多くの場合は、道具を使うと楽になるはず。<br /></li>
+<li>しかし、正確さのために、楽さを妥協することもある、かも！<br />
+<ul class="org-ul">
+<li>＜例を思い付くきませんでした＞<br /></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org709f4ff" class="outline-3">
+<h3 id="org709f4ff"><span class="section-number-3">2.3.</span> ■寄り道: LLMが発達した現在でも定型句ツールを使う意義はあるのか？</h3>
+<div class="outline-text-3" id="text-2-3">
+</div>
+<div id="outline-container-orga5ed29f" class="outline-4">
+<h4 id="orga5ed29f"><span class="section-number-4">2.3.1.</span> 情報革命（インターネット）と知能革命（人工知能、深層学習）</h4>
+<div class="outline-text-4" id="text-2-3-1">
+<ol class="org-ol">
+<li>農業革命<br /></li>
+<li>産業革命<br /></li>
+<li>情報革命と知能革命<br /></li>
+</ol>
+</div>
+<div id="outline-container-org14fbf39" class="outline-5">
+<h5 id="org14fbf39"><span class="section-number-5">2.3.1.1.</span> 消えた職業、消える職業</h5>
+<div class="outline-text-5" id="text-2-3-1-1">
+<ul class="org-ul">
+<li>文字起こし（音声 → 文章）<br /></li>
+<li>翻訳・通訳<br /></li>
+<li>イラストレイター（画家、挿絵画家）<br /></li>
+<li>ライター（文筆家）<br /></li>
+<li>映像<br /></li>
+<li>脚本<br /></li>
+<li>経営！？<br /></li>
+<li>政治！？<br /></li>
+<li>プログラマー！？<br /></li>
+<li>プロジェクトマネージャー！？<br /></li>
+<li>&#x2026;<br /></li>
+</ul>
+<p>
+「そして誰もいなくなった」<br />
+</p>
+</div>
+<div id="outline-container-org7c978c6" class="outline-6">
+<h6 id="org7c978c6"><span class="section-number-6">2.3.1.1.1.</span> 課題図書</h6>
+<div class="outline-text-6" id="text-2-3-1-1-1">
+<ul class="org-ul">
+<li>アフターデジタル<br /></li>
+<li>世界のエリートはなぜ「美意識」を鍛えるのか? 経営における「アート」と「サイエンス」<br /></li>
+<li>成田悠輔, 2022, 22世紀の民主主義 選挙はアルゴリズムになり、政治家はネコになる<br /></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org452e4eb" class="outline-5">
+<h5 id="org452e4eb"><span class="section-number-5">2.3.1.2.</span> 入力方式の進化</h5>
+<div class="outline-text-5" id="text-2-3-1-2">
+<p>
+AI（人工知能、深層学習（機械学習））によって可能になった（近い将来、可能になる）入力方式<br />
+</p>
+
+<ul class="org-ul">
+<li>音声認識（スマフォに完備）＜既存＞<br />
+<ul class="org-ul">
+<li>要約も！<br /></li>
+</ul></li>
+<li>視線入力（ポインティングデバイスとして）＜近い将来 or ある？ 特殊なハードウェアが必要？＞<br /></li>
+<li>脳波入力（チンパンジーで成功済み）＜近い将来＞<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf891705" class="outline-5">
+<h5 id="orgf891705"><span class="section-number-5">2.3.1.3.</span> 疑問「そもそも論」</h5>
+<div class="outline-text-5" id="text-2-3-1-3">
+<p>
+音声入力（や脳波入力）が発達すれば、キーボード入力の高速化以前の問題として、そもそもキーボード入力は不要になるのでは？<br />
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">欲しい能力</th>
+<th scope="col" class="org-left">そもそも論</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">千切りキャベツ</td>
+<td class="org-left">スライサーとか回転するマシーンで済む。</td>
+</tr>
+
+<tr>
+<td class="org-left">うなぎ「串打ち3年、裂き8年、焼き一生」</td>
+<td class="org-left">料理屋に行けば済む。</td>
+</tr>
+
+<tr>
+<td class="org-left">飛行機の運転</td>
+<td class="org-left">パイロットを雇う。</td>
+</tr>
+
+<tr>
+<td class="org-left">高速キーボード入力</td>
+<td class="org-left">????</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="outline-container-org5fe2b3f" class="outline-4">
+<h4 id="org5fe2b3f"><span class="section-number-4">2.3.2.</span> 2024年の「落とし所」</h4>
+<div class="outline-text-4" id="text-2-3-2">
+<ul class="org-ul">
+<li>人工知能（深層学習）はシンギュラリティに既に到達しているかもしれない。<br /></li>
+<li>しかし、人工知能お金を生む分野から発達している。<br />
+<ul class="org-ul">
+<li>画像認識・画像生成・映像生成&#x2026;<br /></li>
+<li>「新しい技術は戦争と性産業から」<br /></li>
+<li>文字入力？<br />
+<ul class="org-ul">
+<li>それが早くなっても、それ自体はお金を産まない。<br /></li>
+<li>みんなソコソコ早いから、不便を感じていない？ 需要がない？<br /></li>
+</ul></li>
+</ul></li>
+<li>ただし、プログラミングは既に人工知能（深層学習）を使う時代。<br />
+<ul class="org-ul">
+<li>特殊な用途<br /></li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-org1181bc6" class="outline-5">
+<h5 id="org1181bc6"><span class="section-number-5">2.3.2.1.</span> 結論</h5>
+<div class="outline-text-5" id="text-2-3-2-1">
+<dl class="org-dl">
+<dt>2024年11月</dt><dd>日常の文章における定型句（スニペット）やコピペの履歴の活用にまだ「歩がある」。<br /></dd>
+<dt>202X年XX月</dt><dd>脳波入力普及率94%<br /></dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-org68d3e25" class="outline-5">
+<h5 id="org68d3e25"><span class="section-number-5">2.3.2.2.</span> 課題図書</h5>
+<div class="outline-text-5" id="text-2-3-2-2">
+<ul class="org-ul">
+<li>イノベーションのジレンマ<br /></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org1f82c4c" class="outline-2">
+<h2 id="org1f82c4c"><span class="section-number-2">3.</span> 今日の本題; 定型句管理ツールの活用</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-orgc8425bf" class="outline-3">
+<h3 id="orgc8425bf"><span class="section-number-3">3.1.</span> 文字入力の高速化方法、あれこれ</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+種々の文字入力を高速化する方法が IME から提供されています。<br />
+</p>
+</div>
+<div id="outline-container-org13565bc" class="outline-4">
+<h4 id="org13565bc"><span class="section-number-4">3.1.1.</span> IME</h4>
+<div class="outline-text-4" id="text-3-1-1">
+<ul class="org-ul">
+<li>日本語入力プログラム<br /></li>
+<li>（Japanese） Input Method Editor<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org94aa231" class="outline-4">
+<h4 id="org94aa231"><span class="section-number-4">3.1.2.</span> 文字入力を高速化する方法</h4>
+<div class="outline-text-4" id="text-3-1-2">
+<ul class="org-ul">
+<li>短縮読み<br />
+<ul class="org-ul">
+<li>「おつはや」→「お疲れさまです。早川です。」<br /></li>
+<li>「いかとお」→「以下の通りです。」<br /></li>
+</ul></li>
+<li>一発アルファベット変換（F10キー）<br />
+<ul class="org-ul">
+<li>日本語入力（IMEをON）のままでも、アルファベットを入力できる。<br /></li>
+</ul></li>
+<li>一発カタカナ変換（ctrl-i）<br /></li>
+<li>一発ひらがな変換（ctrl-u）<br />
+<ul class="org-ul">
+<li>予想される反論: 別にエンターキーを押せば済むのでは？<br /></li>
+<li>→ エンターキーを押してしまうと、変換が確定してしまうので、推敲できない。<br /></li>
+</ul></li>
+<li>確定後の再変換<br />
+<ul class="org-ul">
+<li>漢字の変換ミス<br /></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd1e462c" class="outline-4">
+<h4 id="orgd1e462c"><span class="section-number-4">3.1.3.</span> しかし、IMEのもどかしさよ</h4>
+<div class="outline-text-4" id="text-3-1-3">
+<p>
+自分が入力したい言葉は頭の中で確定している。<br />
+しかし、PCに対する操作がもどかしい。<br />
+</p>
+</div>
+<div id="outline-container-org955a578" class="outline-5">
+<h5 id="org955a578"><span class="section-number-5">3.1.3.1.</span> PCに対する操作</h5>
+<div class="outline-text-5" id="text-3-1-3-1">
+<ol class="org-ol">
+<li>平仮名をPCに入力する。<br />
+<ul class="org-ul">
+<li>平仮名の入力を間違えるもどかしさ<br /></li>
+</ul></li>
+<li>漢字を候補の中から選択する。<br />
+<ul class="org-ul">
+<li>候補の選択を間違えるもどかしさ<br />
+<ul class="org-ul">
+<li>復旧方法「変換キー」; 買える &lt;&#x2013;&gt; 帰る &lt;&#x2013;&gt; 変える<br /></li>
+</ul></li>
+</ul></li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-orga6c8849" class="outline-4">
+<h4 id="orga6c8849"><span class="section-number-4">3.1.4.</span> 対策: IMEのもどかしさを低減するために&#x2026;</h4>
+<div class="outline-text-4" id="text-3-1-4">
+<p>
+平仮名入力や漢字変換を減らし、<br />
+代わりに定型句を活用しよう！<br />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd73a06e" class="outline-3">
+<h3 id="orgd73a06e"><span class="section-number-3">3.2.</span> 定型句とは？</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+定型句には「静的定型句」と「動的定型句」がある。<br />
+</p>
+
+<ul class="org-ul">
+<li>静的定型句（いわゆる定型句）<br />
+<ul class="org-ul">
+<li>一言一句まで完全に決まり切った文字列<br />
+<ul class="org-ul">
+<li>「寿限無 寿限無 五劫のすり切れ 海砂利水魚の 水行末、雲来末、風来末 食う寝るところに住むところ やぶらこうじのぶらこうじ パイポパイポパイポのシューリンガン シューリンガンのグーリンダイ グーリンダイのポンポコピーのポンポコナーの長久命の長助」<br /></li>
+<li>「お疲れ様です。NET 6G（NI）の早川です。」<br /></li>
+</ul></li>
+</ul></li>
+<li>動的定型句<br />
+<ul class="org-ul">
+<li>一定の規則の下、与えられる引数（パラメータ）や状況に応じて変わる文字列<br />
+<ul class="org-ul">
+<li>日時<br />
+<ul class="org-ul">
+<li>20241124-005343<br /></li>
+<li>↓3秒後<br /></li>
+<li>20241124-005346<br /></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org010eae4" class="outline-3">
+<h3 id="org010eae4"><span class="section-number-3">3.3.</span> 定型句管理ツール「ClipboardHistory」のススメ</h3>
+<div class="outline-text-3" id="text-3-3">
+</div>
+<div id="outline-container-orgf9d7317" class="outline-4">
+<h4 id="orgf9d7317"><span class="section-number-4">3.3.1.</span> 実演（披露）</h4>
+</div>
+
+<div id="outline-container-orgcb8fea6" class="outline-4">
+<h4 id="orgcb8fea6"><span class="section-number-4">3.3.2.</span> 定型句ツール「ClipboardHistory」の長所</h4>
+<div class="outline-text-4" id="text-3-3-2">
+<ul class="org-ul">
+<li>階層化できる。<br />
+<ul class="org-ul">
+<li>どこに何があるのかすら覚えなくてもいい。<br /></li>
+<li>段階的に絞り込んでいけばいい。<br /></li>
+</ul></li>
+<li>「アクセスキー」（<a href="#org9b1f196">後述</a>）を設定できる。<br />
+<ul class="org-ul">
+<li>階層を深堀りするときの操作を、マウスやカーソルキー以外にも、キーボードでも行える。<br />
+<ul class="org-ul">
+<li>手がキーボードのホームポジションから離れず、高速な操作を可能とする。<br /></li>
+</ul></li>
+</ul></li>
+<li>設定ファイルがテキストである<br />
+<ul class="org-ul">
+<li>読める。人間が読んで、そのまま理解できる。<br /></li>
+<li>変更点（差分）を確認できる。<br /></li>
+<li>ファイルが小さい、軽い。<br /></li>
+</ul></li>
+<li><b>FIFO</b> と <b>LILO</b> で、貼り付け順序を制御できる。<br />
+<ul class="org-ul">
+<li>＜後ほど実践していただきます＞<br /></li>
+</ul></li>
+<li>メニュー構成を好みで変えられる。<br />
+<ul class="org-ul">
+<li>定型句用メニュー<br /></li>
+<li>履歴用メニュー<br /></li>
+</ul></li>
+<li><p>
+ランチャーにもなる。<br />
+</p>
+<ul class="org-ul">
+<li>実態は cmdの"start"コマンド ？<br /></li>
+</ul>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">定型句の意味</th>
+<th scope="col" class="org-left">起動するもの</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">URL</td>
+<td class="org-left">WEBブラウザ</td>
+</tr>
+
+<tr>
+<td class="org-left">パス（末尾がバックスラッシュ）</td>
+<td class="org-left">エクスプローラー</td>
+</tr>
+
+<tr>
+<td class="org-left">パス（末尾が".xlsx"）</td>
+<td class="org-left">エクセル</td>
+</tr>
+
+<tr>
+<td class="org-left">パス（末尾が".js"）</td>
+<td class="org-left">VsCode</td>
+</tr>
+</tbody>
+</table>
+<ul class="org-ul">
+<li>※もちろん、ランチャー機能を使わずに、クリップボードに貼り付けるだけの操作もできる。<br /></li>
+</ul></li>
+<li>クリップボード（キャッシュ）内の文字列を編集できる。<br />
+<ul class="org-ul">
+<li>例1: 括弧で括る。<br /></li>
+<li>例2: 引用符の記号「&gt;」を付ける<br /></li>
+<li>例3: 引用符の記号「&gt;」を外す。<br /></li>
+</ul></li>
+<li>『後付け』もできる。<br />
+<ul class="org-ul">
+<li>「PAP対応」(Pop up in Application Process、造語？)<br /></li>
+<li>「後付け」ができない場合: カーソルの当て直しが必要<br />
+<ol class="org-ol">
+<li>入力先にカーソルを当てる。<br /></li>
+<li>クリップボードを操作する。<br />
+<ul class="org-ul">
+<li>クリップボードの操作後、いざ貼り付けようとしたら、カーソルが外れてしまっている！<br /></li>
+</ul></li>
+<li>入力先にカーソルを当て直す。<br /></li>
+<li>貼り付ける。<br /></li>
+</ol></li>
+<li>「後付け」ができる場合:「後付け」でも「先付け」でも、どちらも操作できる。<br />
+<ul class="org-ul">
+<li>「後付け」の場合<br />
+<ol class="org-ol">
+<li>入力先にカーソルを当てる。<br /></li>
+<li>クリップボードを操作する。<br />
+<ul class="org-ul">
+<li>カーソルが入力先から外れていない（戻る）<br /></li>
+</ul></li>
+<li>貼り付ける。<br /></li>
+</ol></li>
+<li>「先付け」の場合<br />
+<ol class="org-ol">
+<li>クリップボードを操作する。<br /></li>
+<li>入力先にカーソルを当てる。<br /></li>
+<li>貼り付ける。<br /></li>
+</ol></li>
+</ul></li>
+</ul></li>
+<li>作っているのが日本人である。<br /></li>
+<li>細かな使い勝手が良い。<br /></li>
+</ul>
+</div>
+<div id="outline-container-org9b1f196" class="outline-5">
+<h5 id="org9b1f196"><span class="section-number-5">3.3.2.1.</span> ■寄り道; アクセスキー</h5>
+<div class="outline-text-5" id="text-3-3-2-1">
+<p>
+実はショートカットキーには2種類ある！<br />
+</p>
+
+<ul class="org-ul">
+<li>ホットキー<br /></li>
+<li>アクセスキー<br /></li>
+</ul>
+</div>
+<div id="outline-container-org80cc3a9" class="outline-6">
+<h6 id="org80cc3a9"><span class="section-number-6">3.3.2.1.1.</span> 「ホットキー」</h6>
+<div class="outline-text-6" id="text-3-3-2-1-1">
+<ul class="org-ul">
+<li>いわゆるショートカットキー<br /></li>
+<li>紐付いているモノ<br />
+<ul class="org-ul">
+<li>ある瞬間に同時に押されるキーの組み合わせ<br /></li>
+<li>呼び出される機能<br /></li>
+</ul></li>
+<li>＜空間的＞<br />
+<ul class="org-ul">
+<li>空間に依存する = 同時に押されるキーの空間配置に依存する。<br /></li>
+<li>時間に依存しない<br />
+<ul class="org-ul">
+<li>「同時に押される」＝「瞬間的に押される」＝時間の前後関係がない。<br /></li>
+</ul></li>
+</ul></li>
+<li><p>
+具体例<br />
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">ctrl-c</td>
+<td class="org-left">コピー</td>
+</tr>
+
+<tr>
+<td class="org-left">ctrl-v</td>
+<td class="org-left">ペースト</td>
+</tr>
+
+<tr>
+<td class="org-left">ctrl-p</td>
+<td class="org-left">印刷</td>
+</tr>
+</tbody>
+</table></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org1a70cc7" class="outline-6">
+<h6 id="org1a70cc7"><span class="section-number-6">3.3.2.1.2.</span> 「アクセスキー」</h6>
+<div class="outline-text-6" id="text-3-3-2-1-2">
+<ul class="org-ul">
+<li>ポップアップするツールバーを目で見ながら、必要な機能に漸近していく方式<br /></li>
+<li>紐付いているモノ<br />
+<ul class="org-ul">
+<li>キーが押される順番<br /></li>
+<li>呼び出される機能<br /></li>
+</ul></li>
+<li>＜時間的＞<br />
+<ul class="org-ul">
+<li>時間に依存する = キーが押される順番に依存する。<br /></li>
+<li>（空間に依存しない？）<br /></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org6026da3" class="outline-6">
+<h6 id="org6026da3"><span class="section-number-6">3.3.2.1.3.</span> 「アクセスキー」の起動方法</h6>
+<div class="outline-text-6" id="text-3-3-2-1-3">
+<ul class="org-ul">
+<li>ALTキーから始める。<br />
+<ol class="org-ol">
+<li>まず、ALTキーのみを押して離す。<br />
+<ul class="org-ul">
+<li>その時（最初は）アルファベットなどは押さない。<br /></li>
+</ul></li>
+<li>順次アルファベットを押して、機能に漸近していく。<br /></li>
+</ol></li>
+<li>具体例<br />
+<ul class="org-ul">
+<li>（その場で）<br /></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org2444808" class="outline-4">
+<h4 id="org2444808"><span class="section-number-4">3.3.3.</span> 定型句ツール「ClipboardHistory」のダウンロードとインストール</h4>
+<div class="outline-text-4" id="text-3-3-3">
+<p>
+Clipboard History 1.9.1 (クリップボード履歴＆定型文) を公開しました - ぶらんくのーと: TOPICS<br />
+<a href="https://blank-note.sakura.ne.jp/topics/clipboard_history.html">https://blank-note.sakura.ne.jp/topics/clipboard_history.html</a><br />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc8b75d8" class="outline-3">
+<h3 id="orgc8b75d8"><span class="section-number-3">3.4.</span> 実践</h3>
+<div class="outline-text-3" id="text-3-4">
+<ul class="org-ul">
+<li>動的定型句/日時<br /></li>
+<li>FIFO<br /></li>
+<li>LILO<br /></li>
+<li>括弧で囲む<br /></li>
+<li>引用符を付ける、外す<br /></li>
+<li>ランチャー<br />
+<ul class="org-ul">
+<li>URL<br /></li>
+<li>アプリ<br /></li>
+<li>エクスプローラー<br /></li>
+</ul></li>
+<li>検索<br />
+<ul class="org-ul">
+<li>履歴の検索<br /></li>
+<li>定型句の検索<br /></li>
+</ul></li>
+<li>メニュー構成をお好みに変えてみる<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb72beb2" class="outline-3">
+<h3 id="orgb72beb2"><span class="section-number-3">3.5.</span> 使用上の注意</h3>
+<div class="outline-text-3" id="text-3-5">
+</div>
+<div id="outline-container-orgee457c0" class="outline-4">
+<h4 id="orgee457c0"><span class="section-number-4">3.5.1.</span> 使用上の注意 / 保持する履歴の量（エラー抑止）</h4>
+<div class="outline-text-4" id="text-3-5-1">
+<ul class="org-ul">
+<li>多すぎると、謎のエラーが発生する<br />
+<ul class="org-ul">
+<li>【件数】×【1件当たりの最大文字数】<br /></li>
+<li>1000 × 1000<br /></li>
+</ul></li>
+<li>エラー発生後に固まってしまったら、「再読み込み」で復旧しよう。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org716e9ee" class="outline-4">
+<h4 id="org716e9ee"><span class="section-number-4">3.5.2.</span> 使用上の注意 / パスワードのコピペ時（情報漏洩防止）</h4>
+<div class="outline-text-4" id="text-3-5-2">
+<ul class="org-ul">
+<li>パスワードは履歴に残さないようにする。<br />
+<ul class="org-ul">
+<li>「クリップボード履歴をサスペンド」<br /></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org981a3bb" class="outline-3">
+<h3 id="org981a3bb"><span class="section-number-3">3.6.</span> 活用のためのアイディア</h3>
+<div class="outline-text-3" id="text-3-6">
+</div>
+<div id="outline-container-orga648715" class="outline-4">
+<h4 id="orga648715"><span class="section-number-4">3.6.1.</span> 活用のためのアイディア / アクセスキーの選択方針</h4>
+<div class="outline-text-4" id="text-3-6-1">
+</div>
+<div id="outline-container-org563f2ee" class="outline-5">
+<h5 id="org563f2ee"><span class="section-number-5">3.6.1.1.</span> 方針</h5>
+<div class="outline-text-5" id="text-3-6-1-1">
+<ul class="org-ul">
+<li>頭文字<br /></li>
+<li>押しやすさ<br />
+<ul class="org-ul">
+<li>ホームポジション; j,k,f,d,&#x2026;<br /></li>
+<li>一つ前のアクセスキーの近く あるいは 同じ文字<br /></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgdf40f85" class="outline-5">
+<h5 id="orgdf40f85"><span class="section-number-5">3.6.1.2.</span> 例</h5>
+<div class="outline-text-5" id="text-3-6-1-2">
+<ol class="org-ol">
+<li>d = Datetimeの頭文字「D」<br /></li>
+<li>d = Dateの頭文字「D」<br /></li>
+<li>d = 2打目と同じ文字「D」<br /></li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-org03d6921" class="outline-4">
+<h4 id="org03d6921"><span class="section-number-4">3.6.2.</span> 活用のためのアイディア / 貼り付けず、見るだけでもいい</h4>
+<div class="outline-text-4" id="text-3-6-2">
+<p>
+ゼロベース: 必ずしも貼り付ける必要はない。見るだけでもいい。<br />
+</p>
+<ul class="org-ul">
+<li><p>
+旧暦での月の名（和風月名 わふうげつめい）<br />
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">旧暦の月</th>
+<th scope="col" class="org-left">和風月名</th>
+<th scope="col" class="org-left">由来と解説</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">1月</td>
+<td class="org-left">睦月（むつき）</td>
+<td class="org-left">正月に親類一同が集まる、睦び（親しくする）の月。</td>
+</tr>
+
+<tr>
+<td class="org-left">2月</td>
+<td class="org-left">如月（きさらぎ）</td>
+<td class="org-left">衣更着（きさらぎ）とも言う。まだ寒さが残っていて、衣を重ね着する（更に着る）月。</td>
+</tr>
+
+<tr>
+<td class="org-left">3月</td>
+<td class="org-left">弥生（やよい）</td>
+<td class="org-left">木草弥生い茂る（きくさいやおいしげる、草木が生い茂る）月。</td>
+</tr>
+
+<tr>
+<td class="org-left">4月</td>
+<td class="org-left">卯月（うづき）</td>
+<td class="org-left">卯の花の月。</td>
+</tr>
+
+<tr>
+<td class="org-left">5月</td>
+<td class="org-left">皐月（さつき）</td>
+<td class="org-left">早月（さつき）とも言う。早苗（さなえ）を植える月。</td>
+</tr>
+
+<tr>
+<td class="org-left">6月</td>
+<td class="org-left">水無月（みなづき、みなつき）</td>
+<td class="org-left">水の月（「無」は「の」を意味する）で、田に水を引く月の意と言われる。</td>
+</tr>
+
+<tr>
+<td class="org-left">7月</td>
+<td class="org-left">文月（ふみづき、ふづき）</td>
+<td class="org-left">稲の穂が実る月（穂含月：ほふみづき）</td>
+</tr>
+
+<tr>
+<td class="org-left">8月</td>
+<td class="org-left">葉月（はづき、はつき）</td>
+<td class="org-left">木々の葉落ち月（はおちづき）。</td>
+</tr>
+
+<tr>
+<td class="org-left">9月</td>
+<td class="org-left">長月（ながつき、ながづき）</td>
+<td class="org-left">夜長月（よながづき）。</td>
+</tr>
+
+<tr>
+<td class="org-left">10月</td>
+<td class="org-left">神無月（かんなづき）</td>
+<td class="org-left">神の月（「無」は「の」を意味する）の意味。全国の神々が出雲大社に集まり、各地の神々が留守になる月という説などもある。</td>
+</tr>
+
+<tr>
+<td class="org-left">11月</td>
+<td class="org-left">霜月（しもつき）</td>
+<td class="org-left">霜の降る月。</td>
+</tr>
+
+<tr>
+<td class="org-left">12月</td>
+<td class="org-left">師走（しわす）</td>
+<td class="org-left">師匠といえども趨走（すうそう、走り回る）する月。</td>
+</tr>
+</tbody>
+</table>
+<ul class="org-ul">
+<li>国立国会図書館, 和風月名（わふうげつめい） | 日本の暦<br />
+<ul class="org-ul">
+<li><a href="https://www.ndl.go.jp/koyomi/chapter3/s8.html">https://www.ndl.go.jp/koyomi/chapter3/s8.html</a><br /></li>
+</ul></li>
+</ul></li>
+<li><p>
+祝日<br />
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">名称</th>
+<th scope="col" class="org-left">日付</th>
+<th scope="col" class="org-left">備考</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">元日</td>
+<td class="org-left">1月1日</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">成人の日</td>
+<td class="org-left">1月8日</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">建国記念の日</td>
+<td class="org-left">2月11日</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">休日</td>
+<td class="org-left">2月12日</td>
+<td class="org-left">祝日法第3条第2項による休日</td>
+</tr>
+
+<tr>
+<td class="org-left">天皇誕生日</td>
+<td class="org-left">2月23日</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">春分の日</td>
+<td class="org-left">3月20日</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">昭和の日</td>
+<td class="org-left">4月29日</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">憲法記念日</td>
+<td class="org-left">5月3日</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">みどりの日</td>
+<td class="org-left">5月4日</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">こどもの日</td>
+<td class="org-left">5月5日</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">休日</td>
+<td class="org-left">5月6日</td>
+<td class="org-left">祝日法第3条第2項による休日</td>
+</tr>
+
+<tr>
+<td class="org-left">海の日</td>
+<td class="org-left">7月15日</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">山の日</td>
+<td class="org-left">8月11日</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">休日</td>
+<td class="org-left">8月12日</td>
+<td class="org-left">祝日法第3条第2項による休日</td>
+</tr>
+
+<tr>
+<td class="org-left">敬老の日</td>
+<td class="org-left">9月16日</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">秋分の日</td>
+<td class="org-left">9月22日</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">休日</td>
+<td class="org-left">9月23日</td>
+<td class="org-left">祝日法第3条第2項による休日</td>
+</tr>
+
+<tr>
+<td class="org-left">スポーツの日</td>
+<td class="org-left">10月14日</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">文化の日</td>
+<td class="org-left">11月3日</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">休日</td>
+<td class="org-left">11月4日</td>
+<td class="org-left">祝日法第3条第2項による休日</td>
+</tr>
+
+<tr>
+<td class="org-left">勤労感謝の日</td>
+<td class="org-left">11月23日</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+<ul class="org-ul">
+<li>国民の祝日について - 内閣府<br />
+<ul class="org-ul">
+<li><a href="https://www8.cao.go.jp/chosei/shukujitsu/gaiyou.html">https://www8.cao.go.jp/chosei/shukujitsu/gaiyou.html</a><br /></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgfb629bd" class="outline-4">
+<h4 id="orgfb629bd"><span class="section-number-4">3.6.3.</span> 活用のためのアイディア / 最終的には削除されてしまう部分が含まれていても良い</h4>
+<div class="outline-text-4" id="text-3-6-3">
+</div>
+<div id="outline-container-org2720f37" class="outline-5">
+<h5 id="org2720f37"><span class="section-number-5">3.6.3.1.</span> 考え方</h5>
+<div class="outline-text-5" id="text-3-6-3-1">
+<p>
+メールの執筆やチケットの起票などにおいて、<br />
+必須の要素を書き漏らさないように、<br />
+観点を列挙しておくために定型句を貼り付け、<br />
+記述が進むうちに、削除されてしまってもいい。<br />
+</p>
+</div>
+</div>
+<div id="outline-container-orgbbd0d09" class="outline-5">
+<h5 id="orgbbd0d09"><span class="section-number-5">3.6.3.2.</span> 具体例</h5>
+<div class="outline-text-5" id="text-3-6-3-2">
+<ul class="org-ul">
+<li>5W1H<br />
+<ul class="org-ul">
+<li>Who<br /></li>
+<li>Where<br /></li>
+<li>When<br /></li>
+<li>What<br /></li>
+<li>Why<br /></li>
+<li>How<br /></li>
+<li>How much<br /></li>
+</ul></li>
+<li>バグの報告（速報）<br />
+<ul class="org-ul">
+<li>環境<br />
+<ul class="org-ul">
+<li>開発? 検証? 本番?<br /></li>
+<li>アプリのver（git の commit ID）<br /></li>
+</ul></li>
+<li>発生時刻<br /></li>
+<li>発生手順<br /></li>
+<li>現象<br /></li>
+<li>影響範囲<br /></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org980884f" class="outline-4">
+<h4 id="org980884f"><span class="section-number-4">3.6.4.</span> 活用のためのアイディア / まず登録するもの / 汎プロジェクト</h4>
+<div class="outline-text-4" id="text-3-6-4">
+<ul class="org-ul">
+<li>部署名（詳細）<br /></li>
+<li>部署名（簡略）<br /></li>
+<li>メールアドレス<br /></li>
+<li>メールの署名<br /></li>
+<li>電話番号（私物）<br /></li>
+<li>メールアドレス（私物）<br /></li>
+<li>物品登録番号・バーコード番号・（固定IPアドレス）<br /></li>
+<li>linuxコマンド<br />
+<ul class="org-ul">
+<li>git系<br /></li>
+<li>apt系（ubuntu）<br /></li>
+<li>docker, docker composer, kubernates<br /></li>
+<li>find と xargs<br /></li>
+<li>sed や awk<br /></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org6962eda" class="outline-4">
+<h4 id="org6962eda"><span class="section-number-4">3.6.5.</span> 活用のためのアイディア / まず登録するもの / プロジェクト別</h4>
+<div class="outline-text-4" id="text-3-6-5">
+<ul class="org-ul">
+<li>プロジェクトの情報<br />
+<ul class="org-ul">
+<li>プロジェクトのコードネーム<br /></li>
+<li>登録番号（親番号）<br /></li>
+<li>ファイル名の接頭辞「yyyymmdd_【コードネーム】__」<br /></li>
+<li>AWSアカウントの情報<br />
+<ul class="org-ul">
+<li>ログインURL<br /></li>
+<li>AWSアカウント番号<br /></li>
+<li>AWSアカウントの別名（エイリアス）<br /></li>
+</ul></li>
+<li>Issue Tracking System<br />
+<ul class="org-ul">
+<li>チケット一覧のURL<br /></li>
+<li>チケット一覧のURL（未完了のみ）<br /></li>
+<li>チケット一覧のURL（自分が担当するもののみ）<br /></li>
+</ul></li>
+<li>お客様情報<br />
+<ul class="org-ul">
+<li>会社名<br /></li>
+<li>部署名<br /></li>
+<li>住所<br /></li>
+<li>電話番号<br /></li>
+</ul></li>
+<li>メンバー名<br />
+<ul class="org-ul">
+<li>同音異字がある方<br /></li>
+<li>同性の方がいる場合<br /></li>
+<li>難読の名字の方<br /></li>
+<li>外国籍の方（その方が望む、カタカナでの表記）<br /></li>
+</ul></li>
+<li>固有名詞<br />
+<ul class="org-ul">
+<li>法律名<br /></li>
+<li>制度名<br /></li>
+<li>組織名<br />
+<ul class="org-ul">
+<li>省庁名、部局名<br /></li>
+<li>独立行政法人名<br /></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org466db98" class="outline-4">
+<h4 id="org466db98"><span class="section-number-4">3.6.6.</span> 活用のためのアイディア / 日々更新（追加・変更）</h4>
+<div class="outline-text-4" id="text-3-6-6">
+<ul class="org-ul">
+<li>設計の成果物（設計中でも）<br />
+<ul class="org-ul">
+<li>データベース名<br /></li>
+<li>スキーマ名<br /></li>
+<li>テーブル名<br /></li>
+<li>文書名、ファイル名<br /></li>
+<li>画面名<br /></li>
+</ul></li>
+<li>呼び出すAPIの属性<br />
+<ul class="org-ul">
+<li>エンドポイント（URL）<br /></li>
+<li>パス<br /></li>
+<li>query文字列<br /></li>
+<li>httpのヘッダーやボディのkey名<br /></li>
+<li>AWSリソース名<br /></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org526a0a8" class="outline-4">
+<h4 id="org526a0a8"><span class="section-number-4">3.6.7.</span> 活用のためのアイディア / 日々更新（追加・変更）が面倒？</h4>
+<div class="outline-text-4" id="text-3-6-7">
+<p>
+Q. 面倒！<br />
+</p>
+</div>
+<div id="outline-container-org46148b3" class="outline-5">
+<h5 id="org46148b3"><span class="section-number-5">3.6.7.1.</span> A. 指数の力</h5>
+<div class="outline-text-5" id="text-3-6-7-1">
+<p>
+道具（定型句）単品ではなく、複数の道具（定型句）を掛け合わせることによる複利的効果<br />
+</p>
+</div>
+<div id="outline-container-orgbc54be1" class="outline-6">
+<h6 id="orgbc54be1"><span class="section-number-6">3.6.7.1.1.</span> 指数とは？</h6>
+<div class="outline-text-6" id="text-3-6-7-1-1">
+<p>
+累乗（るいじょう）とも言う。<br />
+</p>
+</div>
+<div id="outline-container-orgdb38a5a" class="outline-7">
+<h7 id="orgdb38a5a"><span class="section-number-7">3.6.7.1.1.1.</span> 数式の定義</h7>
+<div class="outline-text-7" id="text-3-6-7-1-1-1">
+<ul class="org-ul">
+<li>2の3乗 = 2 ** 3 = 2 ^ 3 = 2 * 2 * 2 = 8<br /></li>
+<li>3の4乗 = 3 ** 4 = 3 ^ 4 = 3 * 3 * 3 * 3 = 81<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org9614eda" class="outline-7">
+<h7 id="org9614eda"><span class="section-number-7">3.6.7.1.1.2.</span> 複利的効果</h7>
+<div class="outline-text-7" id="text-3-6-7-1-1-2">
+<ul class="org-ul">
+<li>1.070 ** 10 = 1.96 = 約2倍<br />
+<ul class="org-ul">
+<li>1.07 = +7%<br /></li>
+<li id="解釈">生産性を 7% の向上させる仕組みや道具を10個導入すると、生産性は2倍になる。<br /></li>
+<li id="解釈">年利 7% で再帰的に投資を続けると、10年には2倍になる。<br /></li>
+</ul></li>
+<li>1.002 ** 365 = 2.07 = 約2倍<br />
+<ul class="org-ul">
+<li>1.002 = +0.2%<br /></li>
+<li id="解釈">毎日0.2% ずつ向上すると、1年後には能力が 2倍 になる。<br />
+<ul class="org-ul">
+<li>1.002 ** 250 = 約1.6<br /></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga90853b" class="outline-7">
+<h7 id="orga90853b"><span class="section-number-7">3.6.7.1.1.3.</span> ■寄り道</h7>
+<div class="outline-text-7" id="text-3-6-7-1-1-3">
+<ul class="org-ul">
+<li>英語で指数を POWER と言う。<br />
+<ul class="org-ul">
+<li>3の二乗 = 3 * 3 = 9<br />
+<ul class="org-ul">
+<li>"the second power of 3"<br /></li>
+<li>"3 (raised) to the second power"<br /></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org570e565" class="outline-5">
+<h5 id="org570e565"><span class="section-number-5">3.6.7.2.</span> A. 面倒なのは、思い込みに過ぎない。</h5>
+<div class="outline-text-5" id="text-3-6-7-2">
+<ul class="org-ul">
+<li>思い込みを打破するために、定量的に観測する<br />
+<ul class="org-ul">
+<li>→ タイマーで所要時間を計測する<br /></li>
+</ul></li>
+</ul>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">洗濯物干し（一人暮らし、3日分）</td>
+<td class="org-left">8分</td>
+</tr>
+
+<tr>
+<td class="org-left">バックランジ 20回×3セット（休憩1分30秒）</td>
+<td class="org-left">7分～12分</td>
+</tr>
+
+<tr>
+<td class="org-left">ジョギング（5周 with 30秒の休み）</td>
+<td class="org-left">12分</td>
+</tr>
+
+<tr>
+<td class="org-left">化粧水と乳液を塗り込む</td>
+<td class="org-left">2分</td>
+</tr>
+
+<tr>
+<td class="org-left">爪にヤスリを掛ける（2日に1回）</td>
+<td class="org-left">5分</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-orga849285" class="outline-5">
+<h5 id="orga849285"><span class="section-number-5">3.6.7.3.</span> A. 業務なんだから、面倒かどうかに関係なくやる。</h5>
+<div class="outline-text-5" id="text-3-6-7-3">
+<ul class="org-ul">
+<li>Q2. 業務??? 定型句の登録はオプション（任意、ボランティア）では？<br /></li>
+<li>A2-2. 目線（基準）を高く持て。<br />
+<ul class="org-ul">
+<li>『少年よ、大志を抱け この老人のように』<br />
+<ul class="org-ul">
+<li>Boys, Be ambitious like this old man.<br /></li>
+<li>ウィリアム・スミス・クラーク<br /></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgffd5a53" class="outline-4">
+<h4 id="orgffd5a53"><span class="section-number-4">3.6.8.</span> 活用のためのアイディア / どこでも（ポータビリティ）</h4>
+<div class="outline-text-4" id="text-3-6-8">
+<p>
+便利なので、いつでもどこでも使いたい！<br />
+</p>
+
+<ul class="org-ul">
+<li>横浜オフィスだけでなく、<br /></li>
+<li>常駐先でも<br /></li>
+<li>自宅でも<br /></li>
+<li>南極でも<br /></li>
+<li>宇宙ステーションでも<br /></li>
+<li>火星でも<br /></li>
+</ul>
+
+<p>
+<b>GITHUB.COM</b> しか勝たん！<br />
+</p>
+</div>
+<div id="outline-container-orgea905f4" class="outline-5">
+<h5 id="orgea905f4"><span class="section-number-5">3.6.8.1.</span> 注意</h5>
+<div class="outline-text-5" id="text-3-6-8-1">
+<ul class="org-ul">
+<li>github.comにアップロード（git の push）する前に、社外秘情報を削除すべし。<br />
+<ul class="org-ul">
+<li>最上層に"FSI層"（"FSIブロック"）を設けるべし。<br /></li>
+<li>FSI層の削除を自動化すべし<br />
+<ul class="org-ul">
+<li>「Git Hook」<br /></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgbca2b62" class="outline-4">
+<h4 id="orgbca2b62"><span class="section-number-4">3.6.9.</span> 活用のためのアイディア / 虫食いでもいい。</h4>
+<div class="outline-text-4" id="text-3-6-9">
+</div>
+<div id="outline-container-org3cfe6cf" class="outline-5">
+<h5 id="org3cfe6cf"><span class="section-number-5">3.6.9.1.</span> 考え方</h5>
+<div class="outline-text-5" id="text-3-6-9-1">
+<ul class="org-ul">
+<li>完成形を貼り付ける必要なない。部分的に修正を施してもいい。（前項と似ている。）<br /></li>
+<li>ICT用語（IT用語）で言うと、Atomic性（原子性）を保証しなくてもいい。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge390e2b" class="outline-5">
+<h5 id="orge390e2b"><span class="section-number-5">3.6.9.2.</span> 前提条件; ）僕の）ファイル名（の接頭辞）の命名規則</h5>
+<div class="outline-text-5" id="text-3-6-9-2">
+<ul class="org-ul">
+<li>【日付】_【プロジェクトのコードネーム】_【チケット番号】_【短い説明文】.【拡張子】<br /></li>
+<li>例; 20241118_banana_1234_バグ発生時のDBのmem使用率.png<br />
+<ul class="org-ul">
+<li>【日付】=20241118<br /></li>
+<li>【プロジェクトのコードネーム】=banana<br /></li>
+<li>【チケット番号】=1234<br /></li>
+<li>【短い説明文】=バグ発生時のDBのmem使用率<br /></li>
+<li>【拡張子】=png<br /></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org3fc5f88" class="outline-5">
+<h5 id="org3fc5f88"><span class="section-number-5">3.6.9.3.</span> 具体例</h5>
+<div class="outline-text-5" id="text-3-6-9-3">
+<p>
+上記の命名規則に対して、以下の定型句を使うと、間違い（規則からの逸脱）が減らせる。<br />
+</p>
+<ul class="org-ul">
+<li>「yyyymmdd_banana__」<br />
+<ul class="org-ul">
+<li>注意:末尾で、アンダースコア（アンダーバー）が2つ連即している。<br /></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
