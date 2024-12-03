@@ -1608,7 +1608,7 @@ BugReport|
 	(&O)設定ファイルを開く（拡張子 txt に関連付けられているアプリで開く） || Run | "c:\work\tools\ClipboardHistory\Config.txt"
 	現在の設定ファイルを読み込み直す(&R)	|| Reload
 	プロファイル切り替え-Config.txt		|| Reload | Config.txt
-	プロファイル切り替え-ConfigB.txt	|| Reload | 20241120_193746_Config.txt
+	プロファイル切り替え-ConfigB.txt	|| Reload | ConfigB.txt
 	-
 	アプリを終了				|| Exit
 ..
