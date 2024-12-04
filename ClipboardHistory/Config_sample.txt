@@ -776,6 +776,9 @@ BugReport|
 		(&A)画像の置き場所を開く ▶▶▶ c:\Users\hayakat\AppData\Roaming\Anki2\main\collection.media\ || <#title,,#clip> || RegExReplace | (^.+▶▶▶ ) || AddHistory || Run
 		;; ↑注意: path / Anki / にも同じ定型句があるので、ここを変更したら、同時にそこも変更すること。
 	..
+	+ms-settings
+		(&M)職場または学校にアクセスする || Run | ms-settings:workplace
+	..
 ..
 +挨拶・声掛け(&A)
 	(&A)▶▶▶ 試験中であるなど、何らかの不都合がありましたら、それまでにご連絡ください。|| <#title,,#clip> || RegExReplace | (^.+▶▶▶ ) || AddHistory
