@@ -46,6 +46,10 @@
   - 同様の後発アプリがあるが、2打での切り換えができない
 * 実践
 ** インストール
+
+- Takla Software
+  - https://taklasoft.net/home/software/madokae/
+
 ** キーの割り当て方法
 1. 起動する
 2. ALT + r を押し、割り当てを変更するモードに遷移する。
